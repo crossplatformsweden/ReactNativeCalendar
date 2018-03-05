@@ -1,0 +1,147 @@
+{
+  "name": "ReactNativeTypeScript",
+  "version": "0.1.0",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crossplatformsweden/ReactNativeTypeScript"
+  },
+  "author": "Thomas Hagström <thomas@crossplatform.se>",
+  "contributors": [
+    "Thomas Hagström <thomas@crossplatform.se>",
+    "Ahmad Elmadi <ahmad@crossplatform.se>",
+    "Emil Apelgren <emil@crossplatform.se>"
+  ],
+  "devDependencies": {
+    "@expo/vector-icons": "^6.3.1",
+    "@types/axios": "^0.14.0",
+    "@types/axios-mock-adapter": "^1.10.0",
+    "@types/enzyme": "^3.1.9",
+    "@types/expo": "^24.0.7",
+    "@types/jest": "^22.1.3",
+    "@types/lodash": "^4.14.104",
+    "@types/react": "^16.0.38",
+    "@types/react-native": "^0.52.13",
+    "@types/react-native-elements": "^0.18.0",
+    "@types/react-navigation": "^1.1.0",
+    "@types/react-redux": "^5.0.15",
+    "@types/react-test-renderer": "^16.0.1",
+    "@types/redux-logger": "^3.0.5",
+    "@types/redux-mock-store": "0.0.13",
+    "@types/redux-promise": "^0.5.28",
+    "@types/redux-thunk": "^2.1.0",
+    "@types/remote-redux-devtools": "^0.5.2",
+    "axios-mock-adapter": "^1.13.1",
+    "babel": "^6.23.0",
+    "babel-jest": "^22.4.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-airbnb": "^2.4.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-react-native": "^4.0.0",
+    "concurrently": "^3.5.1",
+    "jest": "^22.4.2",
+    "jest-cli": "^22.4.2",
+    "jest-enzyme": "^4.2.0",
+    "jest-expo": "^25.1.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^16.2.0",
+    "react-native-scripts": "1.11.1",
+    "react-native-typescript-transformer": "^1.2.3",
+    "react-test-renderer": "^16.2.0",
+    "remotedev-rn-debugger": "^0.8.3",
+    "rimraf": "^2.6.2",
+    "test-js": "0.0.4",
+    "ts-jest": "^22.4.1",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.2"
+  },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "scripts": {
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "test": "node node_modules/jest/bin/jest.js --watch",
+    "testbuild": "node node_modules/jest/bin/jest.js",
+    "postinstall": "remotedev-debugger --hostname localhost --port 5678 --injectserver",
+    "clean": "rimraf artifacts",
+    "build": "./node_modules/typescript/bin/tsc",
+    "build-watch": "./node_modules/typescript/bin/tsc --watch",
+    "build-test-watch": "./node_modules/typescript/bin/tsc --watch | node node_modules/jest/bin/jest.js --watch",
+    "lint": "tslint source/**/*.ts"
+  },
+  "remotedev": {
+    "hostname": "localhost",
+    "port": 5678
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "useBabelrc": true
+      }
+    },
+    "preset": "jest-expo",
+    "verbose": true,
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ],
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.(js)$": "<rootDir>/node_modules/babel-jest",
+      "\\.(ts|tsx)$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js|jsx)$",
+    "testMatch": null,
+    "testPathIgnorePatterns": [
+      "\\.snap$",
+      "<rootDir>/node_modules/",
+      "<rootDir>/dist/"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(react-native|vector-icons|react-native/Libraries/Image/RelativeImageStub|react-navigation|jest-resolve|expo|lodash|enzyme|react|jest-enzyme|enzyme|jest-expo|jest-serializer-enzyme|react-native-elements|react-native-google-places-autocomplete)/)"
+    ],
+    "setupFiles": [
+      "./config/jest/globalFetch.ts",
+      "./config/enzyme/index.ts"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react",
+      "<rootDir>/node_modules/react-dom",
+      "<rootDir>/node_modules/react-addons-test-utils"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/react-native-router-flux/node_modules/react-native/Libraries/Core/Devtools/setupDevtools.js"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "expo": "^25.0.0",
+    "lodash": "^4.17.5",
+    "react": "16.2.0",
+    "react-native": "^0.52.0",
+    "react-native-indicators": "^0.12.0",
+    "react-native-router-flux": "^4.0.0-beta.28",
+    "react-navigation": "^1.1.2",
+    "react-navigation-redux": "^0.1.0",
+    "react-navigation-redux-helpers": "^1.0.1",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.1",
+    "redux-persist": "^5.9.1",
+    "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.2.0",
+    "remote-redux-devtools": "^0.5.12",
+    "tslib": "^1.9.0"
+  }
+}
