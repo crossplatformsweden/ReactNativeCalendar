@@ -24,6 +24,17 @@ ShallowWrapper {
       >
         Welcome
       </Text>,
+      "style": Array [
+        Object {
+          "alignItems": "flex-start",
+          "flex": 1,
+          "flexDirection": "row",
+          "justifyContent": "center",
+        },
+        Object {
+          "padding": 20,
+        },
+      ],
     },
     "ref": null,
     "rendered": Object {
@@ -55,6 +66,17 @@ ShallowWrapper {
         >
           Welcome
         </Text>,
+        "style": Array [
+          Object {
+            "alignItems": "flex-start",
+            "flex": 1,
+            "flexDirection": "row",
+            "justifyContent": "center",
+          },
+          Object {
+            "padding": 20,
+          },
+        ],
       },
       "ref": null,
       "rendered": Object {
