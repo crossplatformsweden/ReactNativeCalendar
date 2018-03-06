@@ -22,6 +22,9 @@ const Theme = StyleSheet.create({
   container: {
     flex: 1,
   },
+  paddingDefault: {
+    padding: 10,
+  },
   containerCentered: {
     position: 'absolute',
     top: 0,
@@ -40,6 +43,22 @@ const Theme = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   containerBottom: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 0,
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+  },
+  alignCentered: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  alignTop: {
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+  },
+  alignBottom: {
     position: 'absolute',
     left: 0,
     right: 0,

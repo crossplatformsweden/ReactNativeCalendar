@@ -10,6 +10,9 @@ module.exports = {
       height: 1,
     }),
   },
+  Animated: {
+
+  },
   AsyncStorage: {
     setItem: () => new Promise(resolve => resolve(), null),
     getItem: key =>

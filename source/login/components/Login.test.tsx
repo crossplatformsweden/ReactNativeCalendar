@@ -3,7 +3,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import * as types from '../../types';
-import Main from './Main';
+import Login from './Login';
 
 jest.unmock('react-native');
 
@@ -11,7 +11,7 @@ function setup() {
   const props: types.IProps = {
   };
 
-  const enzymeWrapper = shallow(<Main {...props} /> );
+  const enzymeWrapper = shallow(<Login {...props} /> );
 
   return {
     props,
@@ -26,7 +26,7 @@ describe('components', () => {
    *    const busyProps = enzymeWrapper.find(BusyIndicator).props();
    *    expect(busyProps.isBusy).toBe(false);
    */
-  describe('Main', () => {
+  describe('Login', () => {
     it('should render self and subcomponents', () => {
       const { enzymeWrapper } = setup();
       expect(enzymeWrapper).toMatchSnapshot();

@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 import Theme from '../../styles';
 
@@ -7,16 +8,18 @@ const styles = StyleSheet.create({
     padding: { padding: 20 },
 });
 
-const main = () => {
-    const getText = (text) => {
-        return text;
-    };
+class Main extends React.Component<{}, {}> {
+    componentDidMount() {
+        Actions.push('login');
+    }
 
-    return (
-        <View style={[Theme.horizontalTopCenter, styles.padding]}>
-            <Text>{getText('Welcome')}</Text>
-        </View>
-    );
-};
+    render() {
+        return (
+            <View style={[Theme.container, styles.padding]}>
+                <Text>Home</Text>
+            </View>
+        );
+    }
+}
 
-export default main;
+export default Main;

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`components Main should render self and subcomponents 1`] = `
+exports[`components Login should render self and subcomponents 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
@@ -23,23 +23,31 @@ ShallowWrapper {
           allowFontScaling={true}
           ellipsizeMode="tail"
         >
-          Welcome 
+          Login
         </Text>,
         <TextInput
           allowFontScaling={true}
+          autoFocus={true}
+          keyboardType="email-address"
           onChangeText={[Function]}
-          placeholder="Type name"
-        />,
-        <Progress
-          amount={0}
+          placeholder="Username"
         />,
       ],
       "style": Array [
         Object {
-          "flex": 1,
+          "alignItems": "center",
+          "bottom": 0,
+          "justifyContent": "center",
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
         },
         Object {
-          "padding": 20,
+          "backgroundColor": "#ffffff",
+        },
+        Object {
+          "padding": 10,
         },
       ],
     },
@@ -52,11 +60,11 @@ ShallowWrapper {
         "props": Object {
           "accessible": true,
           "allowFontScaling": true,
-          "children": "Welcome ",
+          "children": "Login",
           "ellipsizeMode": "tail",
         },
         "ref": null,
-        "rendered": "Welcome ",
+        "rendered": "Login",
         "type": [Function],
       },
       Object {
@@ -65,19 +73,10 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "allowFontScaling": true,
+          "autoFocus": true,
+          "keyboardType": "email-address",
           "onChangeText": [Function],
-          "placeholder": "Type name",
-        },
-        "ref": null,
-        "rendered": null,
-        "type": [Function],
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "function",
-        "props": Object {
-          "amount": 0,
+          "placeholder": "Username",
         },
         "ref": null,
         "rendered": null,
@@ -98,23 +97,31 @@ ShallowWrapper {
             allowFontScaling={true}
             ellipsizeMode="tail"
           >
-            Welcome 
+            Login
           </Text>,
           <TextInput
             allowFontScaling={true}
+            autoFocus={true}
+            keyboardType="email-address"
             onChangeText={[Function]}
-            placeholder="Type name"
-          />,
-          <Progress
-            amount={0}
+            placeholder="Username"
           />,
         ],
         "style": Array [
           Object {
-            "flex": 1,
+            "alignItems": "center",
+            "bottom": 0,
+            "justifyContent": "center",
+            "left": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
           },
           Object {
-            "padding": 20,
+            "backgroundColor": "#ffffff",
+          },
+          Object {
+            "padding": 10,
           },
         ],
       },
@@ -127,11 +134,11 @@ ShallowWrapper {
           "props": Object {
             "accessible": true,
             "allowFontScaling": true,
-            "children": "Welcome ",
+            "children": "Login",
             "ellipsizeMode": "tail",
           },
           "ref": null,
-          "rendered": "Welcome ",
+          "rendered": "Login",
           "type": [Function],
         },
         Object {
@@ -140,19 +147,10 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "allowFontScaling": true,
+            "autoFocus": true,
+            "keyboardType": "email-address",
             "onChangeText": [Function],
-            "placeholder": "Type name",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "amount": 0,
+            "placeholder": "Username",
           },
           "ref": null,
           "rendered": null,
