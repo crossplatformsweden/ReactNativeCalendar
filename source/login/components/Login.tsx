@@ -28,6 +28,7 @@ class Main extends React.Component<{}, {}> {
     }
 
     onTextChanged = (text: string) => {
+        this.userName = text;
         if (text && text.length > 5) { Actions.pop(); }
     }
 

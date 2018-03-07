@@ -1,7 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { StyleSheet, Platform } from 'react-native';
-import CardStackStyleInterpolator from 'react-navigation/src/views/CardStack/CardStackStyleInterpolator';
+import { Platform } from 'react-native';
 import {
     Scene,
     Router,
@@ -19,26 +18,13 @@ import {
 import Main from '../../main';
 import Login from '../../login';
 
-const reducerCreate = params => {
+const reducerCreate = (params: any) => {
     const defaultReducer = new Reducer(params);
-    return (state, action) => {
+    return (state: any, action: any) => {
         console.log('ACTION:', action);
         return defaultReducer(state, action);
     };
 };
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1, backgroundColor: 'transparent', justifyContent: 'center',
-        alignItems: 'center',
-    },
-    tabBarStyle: {
-        backgroundColor: '#eee',
-    },
-    tabBarSelectedItemStyle: {
-        backgroundColor: '#ddd',
-    },
-});
 
 const getSceneStyle = () => ({
     backgroundColor: '#F5FCFF',
@@ -60,13 +46,8 @@ const AppNavigator = () => {
                     <Modal
                         // @ts-ignore
                         key='modal'
-                        hideNavBar
-                        transitionConfig={() => ({
-                            screenInterpolator: CardStackStyleInterpolator.forFadeFromBottomAndroid,
-                        })}>
-                        <Lightbox key='lightbox'
-                        verticalPercent={0.5}
-                        horizontalPercent={0.9}>
+                        hideNavBar>
+                        <Lightbox key='lightbox'>
                             <Stack
                                 hideNavBar
                                 key='root2'
