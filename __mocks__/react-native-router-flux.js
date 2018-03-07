@@ -11,6 +11,8 @@ module.exports = {
     MapScreen: () => 'View',
     ProfileScreen: () => 'View',
     root: () => 'View',
+    push: jest.fn(),
+    pop: jest.fn(),
   },
 };
 

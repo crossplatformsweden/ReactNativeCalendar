@@ -13,12 +13,12 @@ class Main extends React.Component<{}, {}> {
                 <View style={[Theme.alignCentered, Theme.paddingDefault]}>
                     <Text style={[Theme.alignTop, Theme.paddingDefault]}>Login</Text>
                     <TextInput
-                        style={[Theme.alignTop, Theme.paddingDefault]}
+                        style={[Theme.alignTop, Theme.paddingDefault, {width: 200}]}
                         placeholder='Username'
                         autoFocus
                         keyboardType='email-address' />
                     <TextInput
-                        style={[Theme.alignTop, Theme.paddingDefault]}
+                        style={[Theme.alignTop, Theme.paddingDefault, {width: 200}]}
                         placeholder='Password'
                         secureTextEntry
                         onChangeText={(name) => this.onTextChanged(name)} />

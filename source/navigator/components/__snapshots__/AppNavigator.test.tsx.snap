@@ -17,37 +17,52 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": <View>
-        <UNDEFINED>
+      "children": <View
+        hideNavBar={true}
+        panHandlers={null}
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        <UNDEFINED
+          activeTintColor="#fede00"
+          lazy={true}
+          showLabel={true}
+          tabBarComponent={undefined}
+          tabBarStyle={
+            Object {
+              "backgroundColor": "#057dc2",
+              "flex": 1,
+            }
+          }
+        >
           <View
-            hideNavBar={true}
-            transitionConfig={[Function]}
-          >
-            <UNDEFINED>
-              <UNDEFINED
-                hideNavBar={true}
-                titleStyle={
-                  Object {
-                    "alignSelf": "center",
-                  }
-                }
-              >
-                <View
-                  component={[Function]}
-                  initial={true}
-                  title="Start"
-                />
-              </UNDEFINED>
-              <View
-                component={[Function]}
-                hideNavBar={true}
-              />
-            </UNDEFINED>
-          </View>
+            back={false}
+            component={[Function]}
+            icon={[Function]}
+            tabBarLabel="Start"
+            tintColor="#fede00"
+            title="Start"
+            titleStyle={
+              Object {
+                "alignSelf": "center",
+                "color": "green",
+              }
+            }
+          />
+          <View
+            back={false}
+            component={[Function]}
+            icon={[Function]}
+            tabBarLabel="Start2"
+            tintColor="#fede00"
+            title="Start2"
+          />
         </UNDEFINED>
       </View>,
       "createReducer": [Function],
-      "getSceneStyle": [Function],
       "uriPrefix": "myapp://",
     },
     "ref": null,
@@ -56,172 +71,125 @@ ShallowWrapper {
       "key": "root",
       "nodeType": "host",
       "props": Object {
-        "children": <UNDEFINED>
+        "children": <UNDEFINED
+          activeTintColor="#fede00"
+          lazy={true}
+          showLabel={true}
+          tabBarComponent={undefined}
+          tabBarStyle={
+            Object {
+              "backgroundColor": "#057dc2",
+              "flex": 1,
+            }
+          }
+        >
           <View
-            hideNavBar={true}
-            transitionConfig={[Function]}
-          >
-            <UNDEFINED>
-              <UNDEFINED
-                hideNavBar={true}
-                titleStyle={
-                  Object {
-                    "alignSelf": "center",
-                  }
-                }
-              >
-                <View
-                  component={[Function]}
-                  initial={true}
-                  title="Start"
-                />
-              </UNDEFINED>
-              <View
-                component={[Function]}
-                hideNavBar={true}
-              />
-            </UNDEFINED>
-          </View>
+            back={false}
+            component={[Function]}
+            icon={[Function]}
+            tabBarLabel="Start"
+            tintColor="#fede00"
+            title="Start"
+            titleStyle={
+              Object {
+                "alignSelf": "center",
+                "color": "green",
+              }
+            }
+          />
+          <View
+            back={false}
+            component={[Function]}
+            icon={[Function]}
+            tabBarLabel="Start2"
+            tintColor="#fede00"
+            title="Start2"
+          />
         </UNDEFINED>,
+        "hideNavBar": true,
+        "panHandlers": null,
+        "style": Object {
+          "flex": 1,
+        },
       },
       "ref": null,
       "rendered": Object {
         "instance": null,
-        "key": "overlay",
+        "key": "tabbar",
         "nodeType": "function",
         "props": Object {
-          "children": <View
-            hideNavBar={true}
-            transitionConfig={[Function]}
-          >
-            <UNDEFINED>
-              <UNDEFINED
-                hideNavBar={true}
-                titleStyle={
-                  Object {
-                    "alignSelf": "center",
-                  }
+          "activeTintColor": "#fede00",
+          "children": Array [
+            <View
+              back={false}
+              component={[Function]}
+              icon={[Function]}
+              tabBarLabel="Start"
+              tintColor="#fede00"
+              title="Start"
+              titleStyle={
+                Object {
+                  "alignSelf": "center",
+                  "color": "green",
                 }
-              >
-                <View
-                  component={[Function]}
-                  initial={true}
-                  title="Start"
-                />
-              </UNDEFINED>
-              <View
-                component={[Function]}
-                hideNavBar={true}
-              />
-            </UNDEFINED>
-          </View>,
+              }
+            />,
+            <View
+              back={false}
+              component={[Function]}
+              icon={[Function]}
+              tabBarLabel="Start2"
+              tintColor="#fede00"
+              title="Start2"
+            />,
+          ],
+          "lazy": true,
+          "showLabel": true,
+          "tabBarComponent": undefined,
+          "tabBarStyle": Object {
+            "backgroundColor": "#057dc2",
+            "flex": 1,
+          },
         },
         "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": "modal",
-          "nodeType": "host",
-          "props": Object {
-            "children": <UNDEFINED>
-              <UNDEFINED
-                hideNavBar={true}
-                titleStyle={
-                  Object {
-                    "alignSelf": "center",
-                  }
-                }
-              >
-                <View
-                  component={[Function]}
-                  initial={true}
-                  title="Start"
-                />
-              </UNDEFINED>
-              <View
-                component={[Function]}
-                hideNavBar={true}
-              />
-            </UNDEFINED>,
-            "hideNavBar": true,
-            "transitionConfig": [Function],
-          },
-          "ref": null,
-          "rendered": Object {
+        "rendered": Array [
+          Object {
             "instance": null,
-            "key": "lightbox",
-            "nodeType": "function",
+            "key": "main",
+            "nodeType": "host",
             "props": Object {
-              "children": Array [
-                <UNDEFINED
-                  hideNavBar={true}
-                  titleStyle={
-                    Object {
-                      "alignSelf": "center",
-                    }
-                  }
-                >
-                  <View
-                    component={[Function]}
-                    initial={true}
-                    title="Start"
-                  />
-                </UNDEFINED>,
-                <View
-                  component={[Function]}
-                  hideNavBar={true}
-                />,
-              ],
+              "back": false,
+              "component": [Function],
+              "icon": [Function],
+              "tabBarLabel": "Start",
+              "tintColor": "#fede00",
+              "title": "Start",
+              "titleStyle": Object {
+                "alignSelf": "center",
+                "color": "green",
+              },
             },
             "ref": null,
-            "rendered": Array [
-              Object {
-                "instance": null,
-                "key": "root",
-                "nodeType": "function",
-                "props": Object {
-                  "children": <View
-                    component={[Function]}
-                    initial={true}
-                    title="Start"
-                  />,
-                  "hideNavBar": true,
-                  "titleStyle": Object {
-                    "alignSelf": "center",
-                  },
-                },
-                "ref": null,
-                "rendered": Object {
-                  "instance": null,
-                  "key": "main",
-                  "nodeType": "host",
-                  "props": Object {
-                    "component": [Function],
-                    "initial": true,
-                    "title": "Start",
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": "View",
-                },
-                "type": undefined,
-              },
-              Object {
-                "instance": null,
-                "key": "login",
-                "nodeType": "host",
-                "props": Object {
-                  "component": [Function],
-                  "hideNavBar": true,
-                },
-                "ref": null,
-                "rendered": null,
-                "type": "View",
-              },
-            ],
-            "type": undefined,
+            "rendered": null,
+            "type": "View",
           },
-          "type": "View",
-        },
+          Object {
+            "instance": null,
+            "key": "main2",
+            "nodeType": "host",
+            "props": Object {
+              "back": false,
+              "component": [Function],
+              "icon": [Function],
+              "tabBarLabel": "Start2",
+              "tintColor": "#fede00",
+              "title": "Start2",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "View",
+          },
+        ],
         "type": undefined,
       },
       "type": "View",
@@ -234,37 +202,52 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": <View>
-          <UNDEFINED>
+        "children": <View
+          hideNavBar={true}
+          panHandlers={null}
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <UNDEFINED
+            activeTintColor="#fede00"
+            lazy={true}
+            showLabel={true}
+            tabBarComponent={undefined}
+            tabBarStyle={
+              Object {
+                "backgroundColor": "#057dc2",
+                "flex": 1,
+              }
+            }
+          >
             <View
-              hideNavBar={true}
-              transitionConfig={[Function]}
-            >
-              <UNDEFINED>
-                <UNDEFINED
-                  hideNavBar={true}
-                  titleStyle={
-                    Object {
-                      "alignSelf": "center",
-                    }
-                  }
-                >
-                  <View
-                    component={[Function]}
-                    initial={true}
-                    title="Start"
-                  />
-                </UNDEFINED>
-                <View
-                  component={[Function]}
-                  hideNavBar={true}
-                />
-              </UNDEFINED>
-            </View>
+              back={false}
+              component={[Function]}
+              icon={[Function]}
+              tabBarLabel="Start"
+              tintColor="#fede00"
+              title="Start"
+              titleStyle={
+                Object {
+                  "alignSelf": "center",
+                  "color": "green",
+                }
+              }
+            />
+            <View
+              back={false}
+              component={[Function]}
+              icon={[Function]}
+              tabBarLabel="Start2"
+              tintColor="#fede00"
+              title="Start2"
+            />
           </UNDEFINED>
         </View>,
         "createReducer": [Function],
-        "getSceneStyle": [Function],
         "uriPrefix": "myapp://",
       },
       "ref": null,
@@ -273,172 +256,125 @@ ShallowWrapper {
         "key": "root",
         "nodeType": "host",
         "props": Object {
-          "children": <UNDEFINED>
+          "children": <UNDEFINED
+            activeTintColor="#fede00"
+            lazy={true}
+            showLabel={true}
+            tabBarComponent={undefined}
+            tabBarStyle={
+              Object {
+                "backgroundColor": "#057dc2",
+                "flex": 1,
+              }
+            }
+          >
             <View
-              hideNavBar={true}
-              transitionConfig={[Function]}
-            >
-              <UNDEFINED>
-                <UNDEFINED
-                  hideNavBar={true}
-                  titleStyle={
-                    Object {
-                      "alignSelf": "center",
-                    }
-                  }
-                >
-                  <View
-                    component={[Function]}
-                    initial={true}
-                    title="Start"
-                  />
-                </UNDEFINED>
-                <View
-                  component={[Function]}
-                  hideNavBar={true}
-                />
-              </UNDEFINED>
-            </View>
+              back={false}
+              component={[Function]}
+              icon={[Function]}
+              tabBarLabel="Start"
+              tintColor="#fede00"
+              title="Start"
+              titleStyle={
+                Object {
+                  "alignSelf": "center",
+                  "color": "green",
+                }
+              }
+            />
+            <View
+              back={false}
+              component={[Function]}
+              icon={[Function]}
+              tabBarLabel="Start2"
+              tintColor="#fede00"
+              title="Start2"
+            />
           </UNDEFINED>,
+          "hideNavBar": true,
+          "panHandlers": null,
+          "style": Object {
+            "flex": 1,
+          },
         },
         "ref": null,
         "rendered": Object {
           "instance": null,
-          "key": "overlay",
+          "key": "tabbar",
           "nodeType": "function",
           "props": Object {
-            "children": <View
-              hideNavBar={true}
-              transitionConfig={[Function]}
-            >
-              <UNDEFINED>
-                <UNDEFINED
-                  hideNavBar={true}
-                  titleStyle={
-                    Object {
-                      "alignSelf": "center",
-                    }
+            "activeTintColor": "#fede00",
+            "children": Array [
+              <View
+                back={false}
+                component={[Function]}
+                icon={[Function]}
+                tabBarLabel="Start"
+                tintColor="#fede00"
+                title="Start"
+                titleStyle={
+                  Object {
+                    "alignSelf": "center",
+                    "color": "green",
                   }
-                >
-                  <View
-                    component={[Function]}
-                    initial={true}
-                    title="Start"
-                  />
-                </UNDEFINED>
-                <View
-                  component={[Function]}
-                  hideNavBar={true}
-                />
-              </UNDEFINED>
-            </View>,
+                }
+              />,
+              <View
+                back={false}
+                component={[Function]}
+                icon={[Function]}
+                tabBarLabel="Start2"
+                tintColor="#fede00"
+                title="Start2"
+              />,
+            ],
+            "lazy": true,
+            "showLabel": true,
+            "tabBarComponent": undefined,
+            "tabBarStyle": Object {
+              "backgroundColor": "#057dc2",
+              "flex": 1,
+            },
           },
           "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": "modal",
-            "nodeType": "host",
-            "props": Object {
-              "children": <UNDEFINED>
-                <UNDEFINED
-                  hideNavBar={true}
-                  titleStyle={
-                    Object {
-                      "alignSelf": "center",
-                    }
-                  }
-                >
-                  <View
-                    component={[Function]}
-                    initial={true}
-                    title="Start"
-                  />
-                </UNDEFINED>
-                <View
-                  component={[Function]}
-                  hideNavBar={true}
-                />
-              </UNDEFINED>,
-              "hideNavBar": true,
-              "transitionConfig": [Function],
-            },
-            "ref": null,
-            "rendered": Object {
+          "rendered": Array [
+            Object {
               "instance": null,
-              "key": "lightbox",
-              "nodeType": "function",
+              "key": "main",
+              "nodeType": "host",
               "props": Object {
-                "children": Array [
-                  <UNDEFINED
-                    hideNavBar={true}
-                    titleStyle={
-                      Object {
-                        "alignSelf": "center",
-                      }
-                    }
-                  >
-                    <View
-                      component={[Function]}
-                      initial={true}
-                      title="Start"
-                    />
-                  </UNDEFINED>,
-                  <View
-                    component={[Function]}
-                    hideNavBar={true}
-                  />,
-                ],
+                "back": false,
+                "component": [Function],
+                "icon": [Function],
+                "tabBarLabel": "Start",
+                "tintColor": "#fede00",
+                "title": "Start",
+                "titleStyle": Object {
+                  "alignSelf": "center",
+                  "color": "green",
+                },
               },
               "ref": null,
-              "rendered": Array [
-                Object {
-                  "instance": null,
-                  "key": "root",
-                  "nodeType": "function",
-                  "props": Object {
-                    "children": <View
-                      component={[Function]}
-                      initial={true}
-                      title="Start"
-                    />,
-                    "hideNavBar": true,
-                    "titleStyle": Object {
-                      "alignSelf": "center",
-                    },
-                  },
-                  "ref": null,
-                  "rendered": Object {
-                    "instance": null,
-                    "key": "main",
-                    "nodeType": "host",
-                    "props": Object {
-                      "component": [Function],
-                      "initial": true,
-                      "title": "Start",
-                    },
-                    "ref": null,
-                    "rendered": null,
-                    "type": "View",
-                  },
-                  "type": undefined,
-                },
-                Object {
-                  "instance": null,
-                  "key": "login",
-                  "nodeType": "host",
-                  "props": Object {
-                    "component": [Function],
-                    "hideNavBar": true,
-                  },
-                  "ref": null,
-                  "rendered": null,
-                  "type": "View",
-                },
-              ],
-              "type": undefined,
+              "rendered": null,
+              "type": "View",
             },
-            "type": "View",
-          },
+            Object {
+              "instance": null,
+              "key": "main2",
+              "nodeType": "host",
+              "props": Object {
+                "back": false,
+                "component": [Function],
+                "icon": [Function],
+                "tabBarLabel": "Start2",
+                "tintColor": "#fede00",
+                "title": "Start2",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "View",
+            },
+          ],
           "type": undefined,
         },
         "type": "View",

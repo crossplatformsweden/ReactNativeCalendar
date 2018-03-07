@@ -66,6 +66,13 @@ const Theme = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-end',
   },
+  tabBar: {
+    backgroundColor: Colors.CrossLightBlue,
+  },
+  tabBarTitle: {
+    color: 'green',
+    alignSelf: 'center',
+  },
   tabBarIcon: {
     color: 'white',
   },
