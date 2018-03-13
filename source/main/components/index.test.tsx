@@ -3,15 +3,14 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import * as types from '../../types';
-import Main from './';
+import { Main } from './';
 
 jest.unmock('react-native');
 
 function setup() {
-  const props: types.IProps = {
-  };
+  const props: types.IProps = {};
 
-  const enzymeWrapper = shallow(<Main {...props} /> );
+  const enzymeWrapper = shallow(<Main {...props} />);
 
   return {
     props,

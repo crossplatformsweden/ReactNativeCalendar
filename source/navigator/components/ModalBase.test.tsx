@@ -4,19 +4,19 @@ import { View, StyleSheet, Animated, Dimensions, Button } from 'react-native';
 import { shallow } from 'enzyme';
 
 import * as types from '../../types';
-import ModalBase, {IProps} from './ModalBase';
+import ModalBase, { IProps } from './ModalBase';
 
 jest.unmock('react-native');
 
 function setup() {
   const props: IProps = {
-      children: [(<View />)],
-      horizontalPercent: 0.5,
-      verticalPercent: 0.5,
-      hideClose: false,
+    children: [<View />],
+    horizontalPercent: 0.5,
+    verticalPercent: 0.5,
+    hideClose: false,
   };
 
-  const enzymeWrapper = shallow(<ModalBase {...props} /> );
+  const enzymeWrapper = shallow(<ModalBase {...props} />);
 
   return {
     props,
@@ -31,7 +31,7 @@ describe('components', () => {
    *    const busyProps = enzymeWrapper.find(BusyIndicator).props();
    *    expect(busyProps.isBusy).toBe(false);
    */
-  describe('LightboxBase', () => {
+  describe('ModelBase', () => {
     it('should render self and subcomponents', () => {
       const { enzymeWrapper } = setup();
       expect(enzymeWrapper).toMatchSnapshot();

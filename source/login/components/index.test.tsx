@@ -4,7 +4,7 @@ import { TextInput } from 'react-native';
 import { shallow } from 'enzyme';
 
 import * as types from '../../types';
-import Login from './';
+import { Login } from './';
 
 jest.unmock('react-native');
 

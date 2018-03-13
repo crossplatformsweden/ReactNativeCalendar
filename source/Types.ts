@@ -9,7 +9,7 @@ import * as navTypes from './navigator/types';
  * @interface appTypes.IApplicationState
  */
 export interface IApplicationState {
-    routes?: navTypes.INavigationState;
+    route?: navTypes.INavigationState;
 }
 
 /**

@@ -3,13 +3,16 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import Store, { configurePersistStore } from './Store';
-import AppNavigator from './navigator/components';
+import AppNavigator, { Routes } from './navigator/components';
 
+    // <PersistGate persistor={configurePersistStore}>
+    // </PersistGate>
 const AppContainer = () => (
   <Provider store={Store}>
-      <PersistGate persistor={configurePersistStore}>
-        <AppNavigator />
-      </PersistGate>
-  </Provider>);
+      <AppNavigator
+       // @ts-ignore
+       navigator={Routes} />
+  </Provider>
+);
 
 export default AppContainer;
