@@ -5,13 +5,13 @@ import { PersistGate } from 'redux-persist/integration/react';
 import Store, { configurePersistStore } from './Store';
 import AppNavigator, { Routes } from './navigator/components';
 
-    // <PersistGate persistor={configurePersistStore}>
-    // </PersistGate>
 const AppContainer = () => (
   <Provider store={Store}>
+     <PersistGate persistor={configurePersistStore}>
       <AppNavigator
        // @ts-ignore
        navigator={Routes} />
+     </PersistGate>
   </Provider>
 );
 

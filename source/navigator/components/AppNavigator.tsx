@@ -30,13 +30,6 @@ const mainIcon = () => (
   <FontAwesome name='map-o' size={TabIconSize} style={Theme.tabBarIcon} />
 );
 
-// on Android, the URI prefix typically contains a host in addition to scheme
-// @ts-ignore - bugged in current version
-const prefix = Platform.OS === 'android' ? 'myapp://myapp/' : 'myapp://';
-
-// For router:
-// uriPrefix={prefix}
-
 /**
  * Navigation routes for application
  */

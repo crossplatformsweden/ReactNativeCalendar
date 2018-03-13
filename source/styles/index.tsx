@@ -25,6 +25,10 @@ const Theme = StyleSheet.create({
   paddingDefault: {
     padding: 10,
   },
+  label: {
+    color: 'gray',
+    fontSize: 14,
+  },
   containerCentered: {
     position: 'absolute',
     top: 0,
@@ -58,6 +62,14 @@ const Theme = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
+  alignLeft: {
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+  },
+  alignRight: {
+    alignItems: 'flex-end',
+    justifyContent: 'flex-start',
+  },
   alignBottom: {
     position: 'absolute',
     left: 0,
@@ -82,11 +94,35 @@ const Theme = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'flex-start',
   },
+  horizontalTopLeft: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+  },
+  horizontalTopRight: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-start',
+  },
   verticalTopCenter: {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
+  },
+  verticalTopLeft: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+  },
+  verticalTopRight: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-end',
   },
   horizontal: {
     flex: 1,

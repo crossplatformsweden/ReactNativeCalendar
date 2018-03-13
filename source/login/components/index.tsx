@@ -13,18 +13,21 @@ export class Login extends React.Component<types.IProps, {}> {
       <Navigator.ModalBase hideClose>
         <View style={[Theme.alignCentered, Theme.paddingDefault]}>
           <Text style={[Theme.alignTop, Theme.paddingDefault]}>Login</Text>
+          <Text style={[Theme.alignLeft, Theme.label, Theme.paddingDefault]}>Username</Text>
           <TextInput
-            style={[Theme.alignTop, Theme.paddingDefault, { width: 200 }]}
+           style={[Theme.alignLeft, Theme.paddingDefault, { width: 200 }]}
             placeholder='Username'
             autoFocus
             keyboardType='email-address'
           />
+          <Text  style={[Theme.alignLeft, Theme.label, Theme.paddingDefault]}>Password</Text>
           <TextInput
-            style={[Theme.alignTop, Theme.paddingDefault, { width: 200 }]}
+           style={[Theme.alignLeft, Theme.paddingDefault, { width: 200 }]}
             placeholder='Password'
             secureTextEntry
             onChangeText={name => this.onTextChanged(name)}
           />
+          <Text style={[Theme.alignLeft, Theme.label, Theme.paddingDefault]}>Enter at least 5 characters</Text>
         </View>
       </Navigator.ModalBase>
     );
