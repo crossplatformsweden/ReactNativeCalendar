@@ -1,4 +1,4 @@
-Demonstrates how to use an Expo React-Native (CRNA) app with TypeScript, Redux, Jest and TSlint.
+Demonstrates how to use an Expo React-Native (CRNA) app with TypeScript, Redux, Redux-Persist, Jest and TSlint.
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
@@ -13,7 +13,7 @@ Below you'll find information about performing common tasks. The most recent ver
   * [npm run ios](#npm-run-ios)
   * [npm run android](#npm-run-android)
   * [npm run eject](#npm-run-eject)
-  * 
+  *
 * [Writing and Running Tests](#writing-and-running-tests)
 * [Environment Variables](#environment-variables)
   * [Configuring Packager IP Address](#configuring-packager-ip-address)
