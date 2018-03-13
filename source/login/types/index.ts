@@ -1,3 +1,7 @@
+import { FacebookLogin } from '../actions';
+
+export type FacebookLogin = typeof FacebookLogin;
+
 /**
  * A user object created when logging in
  * @typedef IUser
@@ -18,8 +22,12 @@ export interface IUser {
 }
 
 export class User implements IUser {
-    constructor(readonly accessToken: string, readonly name: string, readonly picture: string = '', readonly type: string) {
-    }
+  constructor(
+    readonly accessToken: string,
+    readonly name: string,
+    readonly picture: string = '',
+    readonly type: string
+  ) {}
 }
 
 /**

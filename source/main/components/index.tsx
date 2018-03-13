@@ -12,7 +12,9 @@ const styles = StyleSheet.create({
 
 export class Main extends React.Component<types.IProps, {}> {
   componentDidMount() {
-    Actions.push('login');
+    if (!this.props.login.isLoggedIn) {
+      Actions.push('login');
+    }
   }
 
   render() {
@@ -26,6 +28,7 @@ export class Main extends React.Component<types.IProps, {}> {
 
 const mapStateToProps = (state: types.IApplicationState) => ({
   route: state.route,
+  login: state.login,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<types.IProps>) => ({

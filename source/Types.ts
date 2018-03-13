@@ -1,4 +1,5 @@
 import * as navTypes from './navigator/types';
+import * as login from './login/types';
 
 /**
  * The global application state as contained in Redux
@@ -10,6 +11,7 @@ import * as navTypes from './navigator/types';
  */
 export interface IApplicationState {
     route?: navTypes.INavigationState;
+    login?: login.ILoginState;
 }
 
 /**
@@ -23,4 +25,5 @@ export interface IApplicationState {
 export interface IProps extends IApplicationState {
     // AppLoadingChanged?: appActions.AppLoadingChanged;
     dispatch?: any;
+    FacebookLogin?: login.FacebookLogin;
 }

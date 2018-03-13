@@ -48,6 +48,28 @@ ShallowWrapper {
         >
           Login
         </Text>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "justifyContent": "flex-start",
+              },
+              Object {
+                "color": "gray",
+                "fontSize": 14,
+              },
+              Object {
+                "padding": 10,
+              },
+            ]
+          }
+        >
+          Username
+        </Text>
         <TextInput
           allowFontScaling={true}
           autoFocus={true}
@@ -56,7 +78,7 @@ ShallowWrapper {
           style={
             Array [
               Object {
-                "alignItems": "center",
+                "alignItems": "flex-start",
                 "justifyContent": "flex-start",
               },
               Object {
@@ -68,6 +90,28 @@ ShallowWrapper {
             ]
           }
         />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "justifyContent": "flex-start",
+              },
+              Object {
+                "color": "gray",
+                "fontSize": 14,
+              },
+              Object {
+                "padding": 10,
+              },
+            ]
+          }
+        >
+          Password
+        </Text>
         <TextInput
           allowFontScaling={true}
           onChangeText={[Function]}
@@ -76,7 +120,7 @@ ShallowWrapper {
           style={
             Array [
               Object {
-                "alignItems": "center",
+                "alignItems": "flex-start",
                 "justifyContent": "flex-start",
               },
               Object {
@@ -88,6 +132,28 @@ ShallowWrapper {
             ]
           }
         />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          ellipsizeMode="tail"
+          style={
+            Array [
+              Object {
+                "alignItems": "flex-start",
+                "justifyContent": "flex-start",
+              },
+              Object {
+                "color": "gray",
+                "fontSize": 14,
+              },
+              Object {
+                "padding": 10,
+              },
+            ]
+          }
+        >
+          Enter at least 5 characters
+        </Text>
       </View>,
       "hideClose": true,
     },
@@ -116,6 +182,28 @@ ShallowWrapper {
           >
             Login
           </Text>,
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "alignItems": "flex-start",
+                  "justifyContent": "flex-start",
+                },
+                Object {
+                  "color": "gray",
+                  "fontSize": 14,
+                },
+                Object {
+                  "padding": 10,
+                },
+              ]
+            }
+          >
+            Username
+          </Text>,
           <TextInput
             allowFontScaling={true}
             autoFocus={true}
@@ -124,7 +212,7 @@ ShallowWrapper {
             style={
               Array [
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "flex-start",
                   "justifyContent": "flex-start",
                 },
                 Object {
@@ -136,6 +224,28 @@ ShallowWrapper {
               ]
             }
           />,
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "alignItems": "flex-start",
+                  "justifyContent": "flex-start",
+                },
+                Object {
+                  "color": "gray",
+                  "fontSize": 14,
+                },
+                Object {
+                  "padding": 10,
+                },
+              ]
+            }
+          >
+            Password
+          </Text>,
           <TextInput
             allowFontScaling={true}
             onChangeText={[Function]}
@@ -144,7 +254,7 @@ ShallowWrapper {
             style={
               Array [
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "flex-start",
                   "justifyContent": "flex-start",
                 },
                 Object {
@@ -156,6 +266,28 @@ ShallowWrapper {
               ]
             }
           />,
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "alignItems": "flex-start",
+                  "justifyContent": "flex-start",
+                },
+                Object {
+                  "color": "gray",
+                  "fontSize": 14,
+                },
+                Object {
+                  "padding": 10,
+                },
+              ]
+            }
+          >
+            Enter at least 5 characters
+          </Text>,
         ],
         "style": Array [
           Object {
@@ -197,13 +329,40 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "accessible": true,
+            "allowFontScaling": true,
+            "children": "Username",
+            "ellipsizeMode": "tail",
+            "style": Array [
+              Object {
+                "alignItems": "flex-start",
+                "justifyContent": "flex-start",
+              },
+              Object {
+                "color": "gray",
+                "fontSize": 14,
+              },
+              Object {
+                "padding": 10,
+              },
+            ],
+          },
+          "ref": null,
+          "rendered": "Username",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
             "allowFontScaling": true,
             "autoFocus": true,
             "keyboardType": "email-address",
             "placeholder": "Username",
             "style": Array [
               Object {
-                "alignItems": "center",
+                "alignItems": "flex-start",
                 "justifyContent": "flex-start",
               },
               Object {
@@ -223,13 +382,40 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
+            "accessible": true,
+            "allowFontScaling": true,
+            "children": "Password",
+            "ellipsizeMode": "tail",
+            "style": Array [
+              Object {
+                "alignItems": "flex-start",
+                "justifyContent": "flex-start",
+              },
+              Object {
+                "color": "gray",
+                "fontSize": 14,
+              },
+              Object {
+                "padding": 10,
+              },
+            ],
+          },
+          "ref": null,
+          "rendered": "Password",
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
             "allowFontScaling": true,
             "onChangeText": [Function],
             "placeholder": "Password",
             "secureTextEntry": true,
             "style": Array [
               Object {
-                "alignItems": "center",
+                "alignItems": "flex-start",
                 "justifyContent": "flex-start",
               },
               Object {
@@ -242,6 +428,33 @@ ShallowWrapper {
           },
           "ref": null,
           "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "accessible": true,
+            "allowFontScaling": true,
+            "children": "Enter at least 5 characters",
+            "ellipsizeMode": "tail",
+            "style": Array [
+              Object {
+                "alignItems": "flex-start",
+                "justifyContent": "flex-start",
+              },
+              Object {
+                "color": "gray",
+                "fontSize": 14,
+              },
+              Object {
+                "padding": 10,
+              },
+            ],
+          },
+          "ref": null,
+          "rendered": "Enter at least 5 characters",
           "type": [Function],
         },
       ],
@@ -286,6 +499,28 @@ ShallowWrapper {
           >
             Login
           </Text>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "alignItems": "flex-start",
+                  "justifyContent": "flex-start",
+                },
+                Object {
+                  "color": "gray",
+                  "fontSize": 14,
+                },
+                Object {
+                  "padding": 10,
+                },
+              ]
+            }
+          >
+            Username
+          </Text>
           <TextInput
             allowFontScaling={true}
             autoFocus={true}
@@ -294,7 +529,7 @@ ShallowWrapper {
             style={
               Array [
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "flex-start",
                   "justifyContent": "flex-start",
                 },
                 Object {
@@ -306,6 +541,28 @@ ShallowWrapper {
               ]
             }
           />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "alignItems": "flex-start",
+                  "justifyContent": "flex-start",
+                },
+                Object {
+                  "color": "gray",
+                  "fontSize": 14,
+                },
+                Object {
+                  "padding": 10,
+                },
+              ]
+            }
+          >
+            Password
+          </Text>
           <TextInput
             allowFontScaling={true}
             onChangeText={[Function]}
@@ -314,7 +571,7 @@ ShallowWrapper {
             style={
               Array [
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "flex-start",
                   "justifyContent": "flex-start",
                 },
                 Object {
@@ -326,6 +583,28 @@ ShallowWrapper {
               ]
             }
           />
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            ellipsizeMode="tail"
+            style={
+              Array [
+                Object {
+                  "alignItems": "flex-start",
+                  "justifyContent": "flex-start",
+                },
+                Object {
+                  "color": "gray",
+                  "fontSize": 14,
+                },
+                Object {
+                  "padding": 10,
+                },
+              ]
+            }
+          >
+            Enter at least 5 characters
+          </Text>
         </View>,
         "hideClose": true,
       },
@@ -354,6 +633,28 @@ ShallowWrapper {
             >
               Login
             </Text>,
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "alignItems": "flex-start",
+                    "justifyContent": "flex-start",
+                  },
+                  Object {
+                    "color": "gray",
+                    "fontSize": 14,
+                  },
+                  Object {
+                    "padding": 10,
+                  },
+                ]
+              }
+            >
+              Username
+            </Text>,
             <TextInput
               allowFontScaling={true}
               autoFocus={true}
@@ -362,7 +663,7 @@ ShallowWrapper {
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
+                    "alignItems": "flex-start",
                     "justifyContent": "flex-start",
                   },
                   Object {
@@ -374,6 +675,28 @@ ShallowWrapper {
                 ]
               }
             />,
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "alignItems": "flex-start",
+                    "justifyContent": "flex-start",
+                  },
+                  Object {
+                    "color": "gray",
+                    "fontSize": 14,
+                  },
+                  Object {
+                    "padding": 10,
+                  },
+                ]
+              }
+            >
+              Password
+            </Text>,
             <TextInput
               allowFontScaling={true}
               onChangeText={[Function]}
@@ -382,7 +705,7 @@ ShallowWrapper {
               style={
                 Array [
                   Object {
-                    "alignItems": "center",
+                    "alignItems": "flex-start",
                     "justifyContent": "flex-start",
                   },
                   Object {
@@ -394,6 +717,28 @@ ShallowWrapper {
                 ]
               }
             />,
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              ellipsizeMode="tail"
+              style={
+                Array [
+                  Object {
+                    "alignItems": "flex-start",
+                    "justifyContent": "flex-start",
+                  },
+                  Object {
+                    "color": "gray",
+                    "fontSize": 14,
+                  },
+                  Object {
+                    "padding": 10,
+                  },
+                ]
+              }
+            >
+              Enter at least 5 characters
+            </Text>,
           ],
           "style": Array [
             Object {
@@ -435,13 +780,40 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "accessible": true,
+              "allowFontScaling": true,
+              "children": "Username",
+              "ellipsizeMode": "tail",
+              "style": Array [
+                Object {
+                  "alignItems": "flex-start",
+                  "justifyContent": "flex-start",
+                },
+                Object {
+                  "color": "gray",
+                  "fontSize": 14,
+                },
+                Object {
+                  "padding": 10,
+                },
+              ],
+            },
+            "ref": null,
+            "rendered": "Username",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
               "allowFontScaling": true,
               "autoFocus": true,
               "keyboardType": "email-address",
               "placeholder": "Username",
               "style": Array [
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "flex-start",
                   "justifyContent": "flex-start",
                 },
                 Object {
@@ -461,13 +833,40 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "class",
             "props": Object {
+              "accessible": true,
+              "allowFontScaling": true,
+              "children": "Password",
+              "ellipsizeMode": "tail",
+              "style": Array [
+                Object {
+                  "alignItems": "flex-start",
+                  "justifyContent": "flex-start",
+                },
+                Object {
+                  "color": "gray",
+                  "fontSize": 14,
+                },
+                Object {
+                  "padding": 10,
+                },
+              ],
+            },
+            "ref": null,
+            "rendered": "Password",
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
               "allowFontScaling": true,
               "onChangeText": [Function],
               "placeholder": "Password",
               "secureTextEntry": true,
               "style": Array [
                 Object {
-                  "alignItems": "center",
+                  "alignItems": "flex-start",
                   "justifyContent": "flex-start",
                 },
                 Object {
@@ -480,6 +879,33 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "class",
+            "props": Object {
+              "accessible": true,
+              "allowFontScaling": true,
+              "children": "Enter at least 5 characters",
+              "ellipsizeMode": "tail",
+              "style": Array [
+                Object {
+                  "alignItems": "flex-start",
+                  "justifyContent": "flex-start",
+                },
+                Object {
+                  "color": "gray",
+                  "fontSize": 14,
+                },
+                Object {
+                  "padding": 10,
+                },
+              ],
+            },
+            "ref": null,
+            "rendered": "Enter at least 5 characters",
             "type": [Function],
           },
         ],
