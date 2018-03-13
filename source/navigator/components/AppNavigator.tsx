@@ -1,6 +1,6 @@
-/// <reference types="react-native-router-flux" />
 /// <reference types="react" />
 /// <reference types="react-native" />
+/// <reference types="react-native-router-flux" />
 
 // @ts-nocheck
 import React from 'react';
@@ -12,8 +12,8 @@ import {
 } from '@expo/vector-icons';
 
 import Theme, { Colors, TabIconSize } from '../../styles';
-import Main from '../../main';
-import Login from '../../login';
+import Main from '../../main/components';
+import Login from '../../login/components';
 
 const reducerCreate = (params: any) => {
   const defaultReducer = new Reducer(params);
@@ -27,14 +27,14 @@ const mainIcon = () => (
   <FontAwesome name='map-o' size={TabIconSize} style={Theme.tabBarIcon} />
 );
 
+      // // @ts-ignore
+      // uriPrefix={prefix}
 // on Android, the URI prefix typically contains a host in addition to scheme
 const prefix = Platform.OS === 'android' ? 'myapp://myapp/' : 'myapp://';
 const AppNavigator = () => {
   return (
     <Router
-      createReducer={reducerCreate}
-      // @ts-ignore
-      uriPrefix={prefix}>
+      createReducer={reducerCreate}>
       <Scene key='root' style={Theme.container} hideNavBar panHandlers={null}>
         <Modal key='modal' style={Theme.container}>
             <Tabs

@@ -1,3 +1,5 @@
+import * as navTypes from './navigator/types';
+
 /**
  * The global application state as contained in Redux
  *
@@ -7,7 +9,7 @@
  * @interface appTypes.IApplicationState
  */
 export interface IApplicationState {
-    // login?: login.ILoginReducer;
+    routes?: navTypes.INavigationState;
 }
 
 /**
@@ -20,4 +22,5 @@ export interface IApplicationState {
  */
 export interface IProps extends IApplicationState {
     // AppLoadingChanged?: appActions.AppLoadingChanged;
+    dispatch?: any;
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import * as types from '../../types';
-import Main from './Main';
+import Main from './';
 
 jest.unmock('react-native');
 

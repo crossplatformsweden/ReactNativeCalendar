@@ -1,18 +1,17 @@
 /// <reference types="jest"/>
 import React from 'react';
-import {TextInput} from 'react-native';
+import { TextInput } from 'react-native';
 import { shallow } from 'enzyme';
 
 import * as types from '../../types';
-import Login from './Login';
+import Login from './';
 
 jest.unmock('react-native');
 
 function setup() {
-  const props: types.IProps = {
-  };
+  const props: types.IProps = {};
 
-  const enzymeWrapper = shallow(<Login {...props} /> );
+  const enzymeWrapper = shallow(<Login {...props} />);
 
   return {
     props,
@@ -32,7 +31,10 @@ describe('components', () => {
       const { enzymeWrapper } = setup();
       expect(enzymeWrapper).toMatchSnapshot();
 
-      const userNameInput = enzymeWrapper.find(TextInput).at(0).props();
+      const userNameInput = enzymeWrapper
+        .find(TextInput)
+        .at(0)
+        .props();
       expect(userNameInput.placeholder).toEqual('Username');
     });
   });

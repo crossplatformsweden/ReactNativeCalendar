@@ -1,13 +1,13 @@
 import React from "react";
 import { View } from "react-native";
 
-import AppContainer from "./dist/App";
-import Theme from "./dist/styles/";
+import AppContainer from "./dist/AppContainer";
 
 const App = () => {
     return (
-      <View style={Theme.container}>
         <AppContainer />
-      </View>
     );
 }
+
+export default App;
+

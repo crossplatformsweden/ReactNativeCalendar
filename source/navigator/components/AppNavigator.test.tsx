@@ -9,6 +9,7 @@ jest.unmock('react-native');
 
 function setup() {
   const props: types.IProps = {
+    dispatch: {},
   };
 
   const enzymeWrapper = shallow(<AppNavigator {...props} /> );

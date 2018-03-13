@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TextInput } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
-import * as Navigator from '../../navigator';
+import * as Navigator from '../../navigator/components';
 import Theme from '../../styles';
 
 class Main extends React.Component<{}, {}> {
