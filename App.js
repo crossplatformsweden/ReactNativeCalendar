@@ -1,15 +1,13 @@
-import React from 'react';
-import { View} from 'react-native';
+import React from "react";
+import { View } from "react-native";
 
-import Navigator from './dist/navigator/components/AppNavigator';
-import Theme from './dist/styles/'
+import AppContainer from "./dist/App";
+import Theme from "./dist/styles/";
 
-export default class App extends React.Component {
-  render() {
+const App = () => {
     return (
       <View style={Theme.container}>
-        <Navigator />
+        <AppContainer />
       </View>
     );
-  }
 }
