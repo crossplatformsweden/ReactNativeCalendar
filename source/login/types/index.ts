@@ -1,3 +1,4 @@
+// login/types/index
 import { FacebookLogin } from '../actions';
 
 export type FacebookLogin = typeof FacebookLogin;

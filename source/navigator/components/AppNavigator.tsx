@@ -6,7 +6,6 @@
 // @ts-nocheck
 import React from 'react';
 import { connect, Dispatch } from 'react-redux';
-import { Platform } from 'react-native';
 import { Actions, Scene, Router, Modal, Tabs } from 'react-native-router-flux';
 import {
   FontAwesome,

@@ -3,15 +3,25 @@ import storage from 'redux-persist/es/storage';
 import { persistReducer } from 'redux-persist';
 
 import * as types from './Types';
-import NavReducer from './navigator/reducers';
-import LoginReducer from './login/reducers';
+import { NavigatorReducer } from './navigator/';
+import { LoginReducer } from './login/';
+import { UtilityReducer} from './utility';
+import { StorageReducer} from './storage';
 
 // Create a persist wrapper of the reducer
 // This will be used by redux-persist to restore state on app start
-const PersistNavReducer = persistReducer({ key: 'routes', storage }, NavReducer);
-const PersistLoginReducer = persistReducer({ key: 'login', storage }, LoginReducer);
+const PersistNavReducer = persistReducer(
+  { key: 'routes', storage },
+  NavigatorReducer
+);
+const PersistLoginReducer = persistReducer(
+  { key: 'login', storage },
+  LoginReducer
+);
 
 export default combineReducers<types.IApplicationState>({
-    routes: PersistNavReducer,
-    login: PersistLoginReducer,
-    });
+  routes: PersistNavReducer,
+  utility: UtilityReducer,
+  login: PersistLoginReducer,
+  storage: StorageReducer,
+});

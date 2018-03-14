@@ -1,4 +1,4 @@
-/// <reference types="jest"/>
+// login/components/index
 import React from 'react';
 import { TextInput } from 'react-native';
 import { shallow } from 'enzyme';
@@ -30,12 +30,6 @@ describe('components', () => {
     it('should render self and subcomponents', () => {
       const { enzymeWrapper } = setup();
       expect(enzymeWrapper).toMatchSnapshot();
-
-      const userNameInput = enzymeWrapper
-        .find(TextInput)
-        .at(0)
-        .props();
-      expect(userNameInput.placeholder).toEqual('Username');
     });
   });
 });

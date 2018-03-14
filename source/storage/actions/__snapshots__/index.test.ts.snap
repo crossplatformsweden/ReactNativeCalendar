@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storage actions GetByKey returns expected actions 1`] = `
+Array [
+  Object {
+    "reason": "Friskar upp minnet",
+    "sender": "GetByKey",
+    "type": "APP = BUSY LOADING",
+  },
+  Object {
+    "key": "GetByKey",
+    "type": "STORAGE = GOT KEY",
+    "value": Object {
+      "key": "GetByKey",
+    },
+  },
+  Object {
+    "exception": null,
+    "reason": null,
+    "sender": "GetByKey",
+    "type": "APP NO ERROR",
+  },
+  Object {
+    "reason": null,
+    "sender": "GetByKey",
+    "type": "APP = DONE LOADING",
+  },
+]
+`;
+
+exports[`Storage actions RemoveKey returns expected actions 1`] = `
+Array [
+  Object {
+    "reason": "Friskar upp minnet",
+    "sender": "RemoveKey",
+    "type": "APP = BUSY LOADING",
+  },
+  Object {
+    "key": "RemoveKey",
+    "type": "STORAGE = REMOVED KEY",
+  },
+  Object {
+    "reason": null,
+    "sender": "RemoveKey",
+    "type": "APP = DONE LOADING",
+  },
+]
+`;
+
+exports[`Storage actions SaveByKey returns  expected actions 1`] = `
+Array [
+  Object {
+    "reason": "Friskar upp minnet",
+    "sender": "SaveByKey",
+    "type": "APP = BUSY LOADING",
+  },
+  Object {
+    "key": "test key",
+    "type": "STORAGE = SAVED KEY",
+    "value": Object {
+      "name": "test name",
+      "phone": "555-222 33",
+    },
+  },
+  Object {
+    "exception": null,
+    "reason": null,
+    "sender": "SaveByKey",
+    "type": "APP NO ERROR",
+  },
+  Object {
+    "reason": null,
+    "sender": "SaveByKey",
+    "type": "APP = DONE LOADING",
+  },
+]
+`;

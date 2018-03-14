@@ -1,6 +1,7 @@
+// login/components/index
 import React from 'react';
 import { bindActionCreators } from 'redux';
-import { View, Text, TextInput } from 'react-native';
+import { View, Text } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { connect, Dispatch } from 'react-redux';
 import { SocialIcon } from 'react-native-elements';

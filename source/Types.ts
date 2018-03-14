@@ -1,5 +1,7 @@
-import * as navTypes from './navigator/types';
-import * as login from './login/types';
+import { NavigatorTypes } from './navigator/';
+import { LoginTypes } from './login/';
+import { UtilityTypes } from './utility/';
+import { StorageTypes } from './storage';
 
 /**
  * The global application state as contained in Redux
@@ -10,8 +12,10 @@ import * as login from './login/types';
  * @interface appTypes.IApplicationState
  */
 export interface IApplicationState {
-    route?: navTypes.INavigationState;
-    login?: login.ILoginState;
+  route?: NavigatorTypes.INavigationState;
+  login?: LoginTypes.ILoginState;
+  utility?: UtilityTypes.IUtilityState;
+  storage?: StorageTypes.IStorageState;
 }
 
 /**
@@ -23,7 +27,9 @@ export interface IApplicationState {
  * @interface IProps
  */
 export interface IProps extends IApplicationState {
-    // AppLoadingChanged?: appActions.AppLoadingChanged;
-    dispatch?: any;
-    FacebookLogin?: login.FacebookLogin;
+  // AppLoadingChanged?: appActions.AppLoadingChanged;
+  dispatch?: any;
+  FacebookLogin?: LoginTypes.FacebookLogin;
+  AppErrorChanged?: UtilityTypes.IAppErrorChanged;
+  AppLoadingChanged?: UtilityTypes.IAppLoadingChanged;
 }

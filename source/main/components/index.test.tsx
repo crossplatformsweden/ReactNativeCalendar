@@ -1,4 +1,4 @@
-/// <reference types="jest"/>
+// main/components/index.test
 import React from 'react';
 import { shallow } from 'enzyme';
 
@@ -8,7 +8,12 @@ import { Main } from './';
 jest.unmock('react-native');
 
 function setup() {
-  const props: types.IProps = {};
+  const props: types.IProps = {
+    login: {
+      user: null,
+      isLoggedIn: false,
+    },
+  };
 
   const enzymeWrapper = shallow(<Main {...props} />);
 

@@ -1,3 +1,4 @@
+// login/reducers/index
 import * as login from '../types';
 
 /**
