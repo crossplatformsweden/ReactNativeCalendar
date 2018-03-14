@@ -10,6 +10,7 @@ import * as types from '../../Types';
 import * as Navigator from '../../navigator/components';
 import Theme from '../../styles';
 import { FacebookLogin } from '../actions';
+import { BusyIndicator } from '../../utility';
 
 export class Login extends React.Component<types.IProps, {}> {
   render() {
@@ -25,6 +26,9 @@ export class Login extends React.Component<types.IProps, {}> {
           type='facebook'
         />
         </View>
+        <BusyIndicator
+        isBusy={this.props.utility.isBusy}
+        message={this.props.utility.busyReason} />
       </Navigator.ModalBase>
     );
   }
@@ -47,6 +51,7 @@ export class Login extends React.Component<types.IProps, {}> {
 const mapStateToProps = (state: types.IApplicationState) => ({
   route: state.route,
   login: state.login,
+  utility: state.utility,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<types.IProps>) => ({

@@ -9,7 +9,10 @@ import { Login } from './';
 jest.unmock('react-native');
 
 function setup() {
-  const props: types.IProps = {};
+  const props: types.IProps = {
+    login: { isLoggedIn: false },
+    utility: { isBusy: false, hasError: false, errorMessage: null },
+  };
 
   const enzymeWrapper = shallow(<Login {...props} />);
 
