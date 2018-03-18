@@ -2,6 +2,8 @@ Demonstrates how to use an Expo React-Native (CRNA) app with TypeScript, Redux, 
 
 Acts as a boilerplate for projects at [Crossplatform](http://www.crossplatform.se).
 
+![Build Status VSTS](https://crossplatformsweden.visualstudio.com/_apis/public/build/definitions/d78cd34c-7dba-4915-95f8-68d9b3dd56db/3/badge)
+
 ## Authentication
 The app has a Login page that's displayed modally and shows Facebook and Google login buttons implemented through Expo (ExpoKit SDK).
 To use these providers, configure appropriate fields in `app.json`.
