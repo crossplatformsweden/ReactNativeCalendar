@@ -11,6 +11,12 @@ import { SaveByKey, GetByKey, RemoveKey } from './';
  */
 const storeMock = configureMockStore<Store>();
 
+// Navigator will call connected components
+jest.mock('../../navigator', () => ({
+  Routes: 'View',
+  AppNavigator: 'Button',
+}));
+
 describe('Storage actions', () => {
   beforeEach(() => {
       // @ts-ignore

@@ -1,4 +1,5 @@
 // login/reducers/index.test
+/// <reference types="jest"/>
 import * as types from '../types';
 import LoginReducer from '../reducers';
 

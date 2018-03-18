@@ -1,0 +1,245 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components ComponentBase should render self and subcomponents 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <ComponentBase
+    FacebookLogin={[MockFunction]}
+    GetByKey={[MockFunction]}
+    GoogleLogin={[MockFunction]}
+    login={
+      Object {
+        "isLoggedIn": false,
+        "user": Object {
+          "accessToken": "1",
+          "name": "test",
+          "picture": "",
+          "type": "Google",
+        },
+      }
+    }
+    storage={
+      Object {
+        "key": "",
+        "value": null,
+      }
+    }
+    utility={
+      Object {
+        "busyReason": null,
+        "hasError": false,
+        "isBusy": false,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": Array [
+        <LoginBase
+          FacebookLogin={[MockFunction]}
+          GetByKey={[MockFunction]}
+          GoogleLogin={[MockFunction]}
+          login={
+            Object {
+              "isLoggedIn": false,
+              "user": Object {
+                "accessToken": "1",
+                "name": "test",
+                "picture": "",
+                "type": "Google",
+              },
+            }
+          }
+          storage={
+            Object {
+              "key": "",
+              "value": null,
+            }
+          }
+          utility={
+            Object {
+              "busyReason": null,
+              "hasError": false,
+              "isBusy": false,
+            }
+          }
+        />,
+        null,
+        <busyIndicator
+          isBusy={false}
+          message={null}
+          testID="busyIndicator"
+        />,
+      ],
+      "style": Object {
+        "flex": 1,
+      },
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "class",
+        "props": Object {
+          "FacebookLogin": [MockFunction],
+          "GetByKey": [MockFunction],
+          "GoogleLogin": [MockFunction],
+          "login": Object {
+            "isLoggedIn": false,
+            "user": Object {
+              "accessToken": "1",
+              "name": "test",
+              "picture": "",
+              "type": "Google",
+            },
+          },
+          "storage": Object {
+            "key": "",
+            "value": null,
+          },
+          "utility": Object {
+            "busyReason": null,
+            "hasError": false,
+            "isBusy": false,
+          },
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      null,
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "isBusy": false,
+          "message": null,
+          "testID": "busyIndicator",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": Array [
+          <LoginBase
+            FacebookLogin={[MockFunction]}
+            GetByKey={[MockFunction]}
+            GoogleLogin={[MockFunction]}
+            login={
+              Object {
+                "isLoggedIn": false,
+                "user": Object {
+                  "accessToken": "1",
+                  "name": "test",
+                  "picture": "",
+                  "type": "Google",
+                },
+              }
+            }
+            storage={
+              Object {
+                "key": "",
+                "value": null,
+              }
+            }
+            utility={
+              Object {
+                "busyReason": null,
+                "hasError": false,
+                "isBusy": false,
+              }
+            }
+          />,
+          null,
+          <busyIndicator
+            isBusy={false}
+            message={null}
+            testID="busyIndicator"
+          />,
+        ],
+        "style": Object {
+          "flex": 1,
+        },
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "class",
+          "props": Object {
+            "FacebookLogin": [MockFunction],
+            "GetByKey": [MockFunction],
+            "GoogleLogin": [MockFunction],
+            "login": Object {
+              "isLoggedIn": false,
+              "user": Object {
+                "accessToken": "1",
+                "name": "test",
+                "picture": "",
+                "type": "Google",
+              },
+            },
+            "storage": Object {
+              "key": "",
+              "value": null,
+            },
+            "utility": Object {
+              "busyReason": null,
+              "hasError": false,
+              "isBusy": false,
+            },
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        null,
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "isBusy": false,
+            "message": null,
+            "testID": "busyIndicator",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

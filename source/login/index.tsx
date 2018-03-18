@@ -1,7 +1,7 @@
 // login/index
-import LoginContainer, { Login } from './components';
+import LoginContainer, { LoginBase, Login } from './components';
 import LoginReducer from './reducers';
 import * as LoginTypes from './types';
-import { FacebookLogin } from './actions';
+import { FacebookLogin, GoogleLogin } from './actions';
 
-export { LoginContainer, Login, LoginReducer, LoginTypes, FacebookLogin };
+export { LoginContainer, LoginBase, Login, LoginReducer, LoginTypes, FacebookLogin, GoogleLogin };

@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Google actions GoogleLogin returns SUCCESS when done 1`] = `
+Array [
+  Object {
+    "reason": "Kollar vem du är",
+    "sender": "GoogleLogin",
+    "type": "APP = BUSY LOADING",
+  },
+  Object {
+    "payload": User {
+      "accessToken": "id",
+      "name": "test",
+      "picture": "http://www.crossplatform,se/",
+      "type": "Google",
+    },
+    "type": "LOGIN_SUCCESS",
+  },
+  Object {
+    "reason": "Friskar upp minnet",
+    "sender": "SaveByKey",
+    "type": "APP = BUSY LOADING",
+  },
+  Object {
+    "key": "STORAGE KEY = USER",
+    "type": "STORAGE = SAVED KEY",
+    "value": User {
+      "accessToken": "id",
+      "name": "test",
+      "picture": "http://www.crossplatform,se/",
+      "type": "Google",
+    },
+  },
+  Object {
+    "exception": null,
+    "reason": null,
+    "sender": "SaveByKey",
+    "type": "APP NO ERROR",
+  },
+  Object {
+    "reason": null,
+    "sender": "SaveByKey",
+    "type": "APP = DONE LOADING",
+  },
+  Object {
+    "exception": null,
+    "reason": null,
+    "sender": "GoogleLogin",
+    "type": "APP NO ERROR",
+  },
+  Object {
+    "reason": null,
+    "sender": "GoogleLogin",
+    "type": "APP = DONE LOADING",
+  },
+]
+`;

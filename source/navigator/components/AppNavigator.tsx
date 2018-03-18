@@ -1,10 +1,7 @@
-/// <reference types="react" />
-/// <reference types="react-redux" />
-/// <reference types="react-native" />
-/// <reference types="react-native-router-flux" />
-
+// navigator/components/AppNavigator
 // @ts-nocheck
 import React from 'react';
+import { Platform } from 'react-native';
 import { connect, Dispatch } from 'react-redux';
 import { Actions, Scene, Router, Modal, Tabs } from 'react-native-router-flux';
 import {
@@ -14,8 +11,12 @@ import {
 
 import * as types from '../../Types';
 import Theme, { Colors, TabIconSize } from '../../styles';
-import Main from '../../main/components';
-import Login from '../../login/components';
+import { NavigationConstants } from '../../navigator/types';
+
+// Component views used in navigation
+import { LoginContainer } from '../../login/';
+import { MainContainer } from '../../main/';
+import { ProfileContainer } from '../../profile/';
 
 interface RouterProps {
   sceneStyle?: any;
@@ -25,9 +26,26 @@ interface RouterProps {
   dispatch?: any;
 }
 
-const mainIcon = () => (
-  <FontAwesome name='map-o' size={TabIconSize} style={Theme.tabBarIcon} />
+const homeIcon = () => (
+  <FontAwesome name='home' size={TabIconSize} style={Theme.tabBarIcon} />
 );
+
+const profileIcon = () => (
+  <FontAwesome
+    name='user-circle-o'
+    size={TabIconSize}
+    style={Theme.tabBarIcon}
+  />
+);
+
+// TODO: Prefix breaks current version: use when stable
+/**
+ * App uri prefix used to deep link into the app
+ *
+ * On Android, the URI prefix typically contains a host in addition to scheme
+ */
+export const AppLink =
+  Platform.OS === 'android' ? 'myapp://myapp/' : 'myapp://';
 
 /**
  * Navigation routes for application
@@ -36,10 +54,11 @@ export const Routes = Actions.create(
   // @ts-ignore
   <Scene key='root' style={Theme.container} hideNavBar panHandlers={null}>
     <Modal
-  // @ts-ignore
-    key='modal' style={Theme.container}>
+      // @ts-ignore
+      key='modal'
+      style={Theme.container}
+    >
       <Tabs
-  // @ts-ignore
         activeBackgroundColor={Colors.CrossLightBlue}
         inactiveBackgroundColor={Colors.CrossDarkBlue}
         inactiveTintColor='grey'
@@ -50,26 +69,33 @@ export const Routes = Actions.create(
         key='tabMain'
       >
         <Scene
-          key='main'
-          icon={mainIcon}
-          tabBarLabel='Start'
-          titleStyle={Theme.tabBarTitle}
-          back={false}
           hideNavBar
           tintColor={Colors.CrossYellow}
-          component={Main}
+          titleStyle={Theme.tabBarTitle}
+          key={NavigationConstants.MAP}
+          component={MainContainer}
+          tabBarLabel='Home'
+          // @ts-ignore - bad TS map
+          icon={homeIcon}
         />
         <Scene
-          key='main2'
-          icon={mainIcon}
           hideNavBar
+          key={NavigationConstants.PROFILE}
+          component={ProfileContainer}
           tintColor={Colors.CrossYellow}
-          tabBarLabel='Login 2'
-          back={false}
-          component={Login}
+          tabBarLabel='Me'
+          titleStyle={{ color: 'white' }}
+          // @ts-ignore - bad TS map
+          icon={profileIcon}
         />
       </Tabs>
-      <Scene key='login' component={Login} hideNavBar back={false} />
+      <Scene
+        key={NavigationConstants.LOGIN}
+        component={LoginContainer}
+        hideNavBar
+        back={false}
+        direction='vertical'
+      />
     </Modal>
   </Scene>
 );

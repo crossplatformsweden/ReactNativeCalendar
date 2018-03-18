@@ -3,9 +3,15 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import * as types from '../../types';
-import { Main } from './';
+import { MainBase } from './';
 
 jest.unmock('react-native');
+
+// Navigator will call connected components
+jest.mock('../../navigator', () => ({
+  Routes: 'View',
+  AppNavigator: 'Button',
+}));
 
 function setup() {
   const props: types.IProps = {
@@ -15,7 +21,7 @@ function setup() {
     },
   };
 
-  const enzymeWrapper = shallow(<Main {...props} />);
+  const enzymeWrapper = shallow(<MainBase {...props} />);
 
   return {
     props,

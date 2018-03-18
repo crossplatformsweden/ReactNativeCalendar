@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App actions AppErrorChanged dispatches error message 1`] = `
+Array [
+  Object {
+    "exception": null,
+    "reason": "Error test",
+    "sender": null,
+    "type": "APP = HAS ERROR",
+  },
+]
+`;
+
+exports[`App actions AppLoadingChanged dispatches busy reason 1`] = `
+Array [
+  Object {
+    "reason": "Loading test",
+    "sender": "TestMethod",
+    "type": "APP = BUSY LOADING",
+  },
+]
+`;

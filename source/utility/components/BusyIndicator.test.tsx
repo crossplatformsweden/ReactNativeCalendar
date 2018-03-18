@@ -1,4 +1,5 @@
-// main/components/index.test
+// utility/components/BusyIndicator.test
+/// <reference types="jest"/>
 import React from 'react';
 import { shallow } from 'enzyme';
 import { DotIndicator } from 'react-native-indicators';
@@ -10,6 +11,12 @@ import BusyIndicator, {
 } from './BusyIndicator';
 
 jest.unmock('react-native');
+
+// Navigator will call connected components
+jest.mock('../../navigator', () => ({
+  Routes: 'View',
+  AppNavigator: 'Button',
+}));
 
 function setup(type = IndicatorType.MaterialIndicator) {
   const props: IBusyIndicatorProps = {

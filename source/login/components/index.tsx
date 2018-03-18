@@ -1,36 +1,29 @@
-// login/components/index
 import React from 'react';
 import { bindActionCreators } from 'redux';
-import { View, Text } from 'react-native';
-import { Actions } from 'react-native-router-flux';
 import { connect, Dispatch } from 'react-redux';
+import { View, StyleSheet, Image } from 'react-native';
 import { SocialIcon } from 'react-native-elements';
 
 import * as types from '../../Types';
-import * as Navigator from '../../navigator/components';
-import Theme from '../../styles';
-import { FacebookLogin } from '../actions';
-import { BusyIndicator } from '../../utility';
+import { StorageTypes, GetByKey } from '../../storage';
+import { FacebookLogin, GoogleLogin } from '..';
+import { ComponentBase } from '../../utility';
 
-export class Login extends React.Component<types.IProps, {}> {
-  render() {
-    return (
-      <Navigator.ModalBase hideClose>
-        <View style={[Theme.alignCentered, Theme.paddingDefault]}>
-          <Text style={[Theme.alignTop, Theme.paddingDefault]}>Login</Text>
-        <SocialIcon
-          title='Sign In With Facebook'
-          button
-          style={{width: 200}}
-          onPress={this.facebookLogin}
-          type='facebook'
-        />
-        </View>
-        <BusyIndicator
-        isBusy={this.props.utility.isBusy}
-        message={this.props.utility.busyReason} />
-      </Navigator.ModalBase>
-    );
+interface IState {}
+
+/**
+ * Login base component. Doesn't implement ComponentBase
+ * @class
+ */
+export class LoginBase extends React.Component<types.IProps, IState> {
+  componentWillMount() {
+    if (!this.props.login.isLoggedIn) {
+      this.props.GetByKey(StorageTypes.StorageConstants.STORAGE_USER_KEY);
+    }
+
+    if (super.componentWillMount) {
+      super.componentWillMount();
+    }
   }
 
   /**
@@ -38,28 +31,79 @@ export class Login extends React.Component<types.IProps, {}> {
    * @type {function}
    * @private
    */
-  facebookLogin = async () => {
+  async facebookLogin() {
     await this.props.FacebookLogin();
-    if (this.props.login.isLoggedIn) {
-      Actions.pop();
+    // @ts-ignore
+    if (super.checkLogin) {
+      // @ts-ignore
+      super.checkLogin();
     }
   }
 
-  userName: string = 'unknown';
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.logoContainer}>
+          <Image
+            source={require('../../../resources/icon.png')}
+            style={{
+              width: 120,
+              height: 120,
+            }}
+          /></View>
+        <SocialIcon
+          title='Sign In With Facebook'
+          button
+          // @ts-ignore - id is unknown
+          id='buttonFacebook'
+          onPress={this.facebookLogin}
+          type='facebook'
+        />
+        <SocialIcon
+          title='Sign In With Google'
+          button
+          // @ts-ignore - id is unknown
+          id='buttonGoogle'
+          onPress={this.props.GoogleLogin}
+          type='google-plus-official'
+        />
+      </View>
+    );
+  }
 }
 
+/**
+ * Login component. Implements ComponentBase
+ */
+export const Login = ComponentBase(LoginBase);
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    marginTop: 10,
+  },
+  logoContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+  },
+});
+
 const mapStateToProps = (state: types.IApplicationState) => ({
-  route: state.route,
   login: state.login,
   utility: state.utility,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<types.IProps>) => ({
-  dispatch,
   FacebookLogin: bindActionCreators(FacebookLogin, dispatch),
+  GoogleLogin: bindActionCreators(GoogleLogin, dispatch),
+  GetByKey: bindActionCreators(GetByKey, dispatch),
+  dispatch,
 });
 
 export default connect<types.IApplicationState, types.IProps>(
   mapStateToProps,
   mapDispatchToProps
+  // @ts-ignore - Redux base class issue
 )(Login);

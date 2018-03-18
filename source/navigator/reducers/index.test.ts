@@ -1,3 +1,4 @@
+// navigator/reducers/index.test
 /// <reference types="jest"/>
 import AppNavReducer from './index';
 

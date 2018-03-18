@@ -6,11 +6,13 @@ import BusyIndicator, {
   IndicatorType,
   Spinner,
 } from './components/BusyIndicator';
+import ComponentBase from './components/ComponentBase';
 import { AppErrorChanged, AppLoadingChanged } from './actions';
 
 export {
   AppErrorChanged,
   AppLoadingChanged,
+  ComponentBase,
   UtilityReducer,
   UtilityTypes,
   BusyIndicator,

@@ -1,5 +1,11 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  StyleSheet,
+  Dimensions,
+} from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 const { height: deviceHeight, width: deviceWidth } = Dimensions.get('window');
@@ -11,10 +17,18 @@ export interface IProps {
   hideClose: boolean;
 }
 
-const BaseModal = ({ children, verticalPercent, horizontalPercent, hideClose }: IProps
-    ) => {
-  const height = verticalPercent ? deviceHeight * verticalPercent : deviceHeight;
-  const width = horizontalPercent ? deviceHeight * horizontalPercent : deviceWidth;
+const BaseModal = ({
+  children,
+  verticalPercent,
+  horizontalPercent,
+  hideClose,
+}: IProps) => {
+  const height = verticalPercent
+    ? deviceHeight * verticalPercent
+    : deviceHeight;
+  const width = horizontalPercent
+    ? deviceHeight * horizontalPercent
+    : deviceWidth;
 
   const renderClose = () => {
     if (!hideClose) {
@@ -25,7 +39,8 @@ const BaseModal = ({ children, verticalPercent, horizontalPercent, hideClose }: 
           </TouchableOpacity>
         </View>
       );
-    } return null;
+    }
+    return null;
   };
 
   return (

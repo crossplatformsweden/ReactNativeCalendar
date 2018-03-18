@@ -2,6 +2,22 @@ Demonstrates how to use an Expo React-Native (CRNA) app with TypeScript, Redux, 
 
 Acts as a boilerplate for projects at [Crossplatform](http://www.crossplatform.se).
 
+## Authentication
+The app has a Login page that's displayed modally and shows Facebook and Google login buttons implemented through Expo (ExpoKit SDK).
+To use these providers, configure appropriate fields in `app.json`.
+
+Or you could bypass the login screen in `source/main/components/index.tsx` by commenting out:
+
+```javascript
+    if (!this.props.login.isLoggedIn) {
+      Actions.push('login');
+    }
+```
+
+Read more in Expo documentation:
+- https://docs.expo.io/versions/latest/sdk/facebook.html
+- https://docs.expo.io/versions/latest/sdk/google.html
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
@@ -33,7 +49,7 @@ Below you'll find information about performing common tasks. The most recent ver
   * [iOS Simulator won't open](#ios-simulator-wont-open)
   * [QR Code does not scan](#qr-code-does-not-scan)
 
-## <a name="updating-to-new-releases"></a>Updating to New Releases
+## Updating to New Releases
 
 You should only need to update the global installation of `create-react-native-app` very rarely, ideally never.
 
@@ -41,18 +57,18 @@ Updating the `react-native-scripts` dependency of your app should be as simple a
 
 Upgrading to a new version of React Native requires updating the `react-native`, `react`, and `expo` package versions, and setting the correct `sdkVersion` in `app.json`. See the [versioning guide](https://github.com/react-community/create-react-native-app/blob/master/VERSIONS.md) for up-to-date information about package version compatibility.
 
-## <a name="available-scripts"></a>Available Scripts
+## Available Scripts
 
 If Yarn was installed when the project was initialized, then dependencies will have been installed via Yarn, and you should probably use it to run these commands as well. Unlike dependency installation, command running syntax is identical for Yarn and NPM at the time of this writing.
 
 
-### <a name="npm-run-build"></a>`npm run build`
+### `npm run build`
 Start **TypeScript** compiler. Run at least once to generate **/dist** folder where JavaScript resides. You can also...
 
-### <a name="npm-run-build-watch"></a>`npm run build-watch`
+### `npm run build-watch`
 Start **TypeScript** compiler and watch for changes.
 
-### <a name="npm-start"></a>`npm start`
+### `npm start`
 
 Runs your app in development mode.
 
@@ -66,18 +82,18 @@ npm start -- --reset-cache
 yarn start -- --reset-cache
 ```
 
-#### <a name="npm-test"></a>`npm test`
+#### `npm test`
 
 Runs the [jest](https://github.com/facebook/jest) test runner on your tests in watch mode with interactive console. Remember to run `u` option when prompted to update snapshots. This is alias to `npm run test`
 
-#### <a name="npm-run-testbuild"></a>`npm run testbuild`
+#### `npm run testbuild`
 Run tests **without** watch - optimal for build servers.
 
-#### <a name="npm-run-ios"></a>`npm run ios`
+#### `npm run ios`
 
 Like `npm start`, but also attempts to open your app in the iOS Simulator if you're on a Mac and have it installed.
 
-#### <a name="npm-run-android"></a>`npm run android`
+#### `npm run android`
 
 Like `npm start`, but also attempts to open your app on a connected Android device or emulator. Requires an installation of Android build tools (see [React Native docs](https://facebook.github.io/react-native/docs/getting-started.html) for detailed setup). We also recommend installing Genymotion as your Android emulator. Once you've finished setting up the native build environment, there are two options for making the right copy of `adb` available to Create React Native App:
 
@@ -92,13 +108,13 @@ Like `npm start`, but also attempts to open your app on a connected Android devi
 2. Add the Genymotion tools directory to your path (instructions for [Mac](http://osxdaily.com/2014/08/14/add-new-path-to-path-command-line/), [Linux](http://www.computerhope.com/issues/ch001647.htm), and [Windows](https://www.howtogeek.com/118594/how-to-edit-your-system-path-for-easy-command-line-access/)).
 3. Make sure that you can run adb from your terminal.
 
-#### <a name="npm-run-eject"></a>`npm run eject`
+#### `npm run eject`
 
 This will start the process of "ejecting" from Create React Native App's build scripts. You'll be asked a couple of questions about how you'd like to build your project.
 
 **Warning:** Running eject is a permanent action (aside from whatever version control system you use). An ejected app will require you to have an [Xcode and/or Android Studio environment](https://facebook.github.io/react-native/docs/getting-started.html) set up.
 
-## <a name="customizing-app-display-name-and-icon"></a>Customizing App Display Name and Icon
+## Customizing App Display Name and Icon
 
 You can edit `app.json` to include [configuration keys](https://docs.expo.io/versions/latest/guides/configuration.html) under the `expo` key.
 
@@ -106,11 +122,11 @@ To change your app's display name, set the `expo.name` key in `app.json` to an a
 
 To set an app icon, set the `expo.icon` key in `app.json` to be either a local path or a URL. It's recommended that you use a 512x512 png file with transparency.
 
-## <a name="writing-and-running-tests"></a>Writing and Running Tests
+## Writing and Running Tests
 
 This project is set up to use [jest](https://facebook.github.io/jest/) for tests. You can configure whatever testing strategy you like, but jest works out of the box. Create test files with the `.test` extension to have the files loaded by jest. See the [the template project](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/App.test.js) for an example test. The [jest documentation](https://facebook.github.io/jest/docs/en/getting-started.html) is also a wonderful resource, as is the [React Native testing tutorial](https://facebook.github.io/jest/docs/en/tutorial-react-native.html).
 
-## <a name="environment-variables"></a>Environment Variables
+## Environment Variables
 
 You can configure some of Create React Native App's behavior using environment variables.
 
@@ -140,7 +156,7 @@ npm start
 
 The above example would cause the development server to listen on `exp://my-custom-ip-address-or-hostname:19000`.
 
-## <a name="sharing-and-deployment"></a>Sharing and Deployment
+## Sharing and Deployment
 
 Create React Native App does a lot of work to make app setup and development simple and straightforward, but it's very difficult to do the same for deploying to Apple's App Store or Google's Play Store without relying on a hosted service.
 
@@ -169,7 +185,7 @@ This is usually as simple as running `npm run eject` in your project, which will
 
 If you have made use of Expo APIs while working on your project, then those API calls will stop working if you eject to a regular React Native project. If you want to continue using those APIs, you can eject to "React Native + ExpoKit" which will still allow you to build your own native code and continue using the Expo APIs. See the [ejecting guide](https://github.com/react-community/create-react-native-app/blob/master/EJECTING.md) for more details about this option.
 
-## <a name="Troubleshooting"></a>Troubleshooting
+## Troubleshooting
 
 ### Networking
 

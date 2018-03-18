@@ -1,12 +1,13 @@
 // login/actions/index.test
 // @ts-ignore
-import configureMockStore, { MockStore } from 'redux-mock-store';
+/// <reference types="jest"/>
+import configureMockStore from 'redux-mock-store';
 import AxiosMockFactory from 'axios-mock-adapter';
 
 import { Store } from '../../Store';
 import * as loginTypes from '../types';
 import * as types from '../../Types';
-import {FacebookLogin, axios } from '../actions';
+import { FacebookLogin, axios } from '../actions/FacebookActions';
 import { UtilityTypes } from '../../utility/';
 import { StorageTypes } from '../../storage';
 
@@ -18,6 +19,12 @@ const storeMock = configureMockStore<Store>();
  * Mocks Axios HTTP requests for FacebookActions
  */
 const axiosMock = new AxiosMockFactory(axios);
+
+// Navigator will call connected components
+jest.mock('../../navigator', () => ({
+  Routes: 'View',
+  AppNavigator: 'Button',
+}));
 
 describe('Facebook actions', () => {
   beforeEach(() => {

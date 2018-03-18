@@ -4,7 +4,7 @@ exports[`components Main should render self and subcomponents 1`] = `
 ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
-  Symbol(enzyme.__unrendered__): <Main
+  Symbol(enzyme.__unrendered__): <MainBase
     login={
       Object {
         "isLoggedIn": false,

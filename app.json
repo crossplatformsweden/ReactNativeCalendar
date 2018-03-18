@@ -8,18 +8,18 @@
     "primaryColor": "#ffde00",
     "name": "MyApp",
     "description": "",
-    // "icon": "./resources/parkera.png",
+    "icon": "./resources/icon.png",
     "version": "0.0.1",
     "slug": "my-app",
     "scheme": "myapp",
     "ios": {
       "bundleIdentifier": "domain.company.appName",
-      // "config": {
-      //   "googleMapsApiKey": "MapsApiKey",
-      //   "googleSignIn": {
-      //     "reservedClientId": "ClientId"
-      //   }
-      // },
+      "config": {
+        "googleMapsApiKey": "MapsApiKey",
+        "googleSignIn": {
+          "reservedClientId": "ClientId"
+        }
+      },
       "buildNumber": "1.0.0",
       "isRemoteJSEnabled": true,
       "supportsTablet": false,
@@ -31,18 +31,18 @@
       "package": "domain.company.appName",
       "versionCode": 1,
       "config": {
-        // "googleSignIn": {
-        //   "certificateHash": "Hash",
-        //   "apiKey": "ApiKey"
-        // },
-        // "googleMaps": {
-        //   "apiKey": "MapsApiKey"
-        // }
+        "googleSignIn": {
+          "certificateHash": "Hash",
+          "apiKey": "ApiKey"
+        },
+        "googleMaps": {
+          "apiKey": "MapsApiKey"
+        }
       },
-      // "permissions": [
-      //   "CAMERA",
-      //   "ACCESS_FINE_LOCATION"
-      // ]
+      "permissions": [
+        "CAMERA",
+        "ACCESS_FINE_LOCATION"
+      ]
     },
     // "notification": {
     //   "icon": "./resources/notify.png",
@@ -50,26 +50,34 @@
     //   "androidMode": "collapse",
     //   "androidCollapsedTitle": "#{unread_notifications} new"
     // },
-    // "loading": {
-    //   "icon": "./resources/icon.png",
-    //   "backgroundColor": "#000000",
-    //   "backgroundImage": "./resources/splash.png",
-    //   "hideExponentText": true
-    // },
-    // "splash": {
-    //   "backgroundColor": "#000000",
-    //   "image": "./resources/splash.png",
-    //   "resizeMode": "cover"
-    // },
+    "loading": {
+      "icon": "./resources/icon.png",
+      "backgroundColor": "#000000",
+      "backgroundImage": "./resources/splash.png",
+      "hideExponentText": true
+    },
+    "splash": {
+      "backgroundColor": "#000000",
+      "image": "./resources/splash.jpeg",
+      "resizeMode": "cover"
+    },
     "androidStatusBar": {
       "barStyle": "dark-content",
       "backgroundColor": "#ffde00"
     },
-    // "facebookAppId": "MyFbId",
-    // "facebookDisplayName": "AppName",
-    // "facebookScheme": "fbMyFbID",
+    "facebookAppId": "01010101",
+    "facebookDisplayName": "AppName",
+    "facebookScheme": "fb01010101",
     "androidShowExponentNotificationInShellApp": true,
     "extra": {
+      "google": {
+        "maps": "id",
+        "webClientId": "id",
+        "androidStandaloneAppClientId": "id",
+        "iosStandaloneAppClientId": "id",
+        "androidClientId": "id",
+        "iosClientId": "id"
+      }
     }
   }
 }

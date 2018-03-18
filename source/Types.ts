@@ -1,7 +1,7 @@
 import { NavigatorTypes } from './navigator/';
 import { LoginTypes } from './login/';
 import { UtilityTypes } from './utility/';
-import { StorageTypes } from './storage';
+import { StorageTypes, SaveByKey, RemoveKey, GetByKey } from './storage';
 
 /**
  * The global application state as contained in Redux
@@ -32,4 +32,8 @@ export interface IProps extends IApplicationState {
   FacebookLogin?: LoginTypes.FacebookLogin;
   AppErrorChanged?: UtilityTypes.IAppErrorChanged;
   AppLoadingChanged?: UtilityTypes.IAppLoadingChanged;
+  GoogleLogin?: LoginTypes.GoogleLogin;
+  GetByKey?: GetByKey;
+  RemoveKey?: RemoveKey;
+  SaveByKey?: SaveByKey;
 }
