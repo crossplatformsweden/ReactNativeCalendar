@@ -5,7 +5,7 @@ import { shallow } from 'enzyme';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
 import * as types from '../../Types';
-import { Login, LoginTypes } from '../../Login/';
+import { Login, LoginTypes } from '../../login';
 import BusyIndicator from './BusyIndicator';
 
 jest.unmock('react-native');
