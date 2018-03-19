@@ -93,6 +93,11 @@ ShallowWrapper {
           title="Sign In With Google"
           type="google-plus-official"
         />,
+        <Button
+          color="blue"
+          onPress={undefined}
+          rounded={true}
+        />,
       ],
       "style": Object {
         "flex": 1,
@@ -176,6 +181,19 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "color": "blue",
+          "onPress": undefined,
+          "rounded": true,
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
     ],
     "type": [Function],
   },
@@ -224,6 +242,11 @@ ShallowWrapper {
             raised={true}
             title="Sign In With Google"
             type="google-plus-official"
+          />,
+          <Button
+            color="blue"
+            onPress={undefined}
+            rounded={true}
           />,
         ],
         "style": Object {
@@ -303,6 +326,19 @@ ShallowWrapper {
             "raised": true,
             "title": "Sign In With Google",
             "type": "google-plus-official",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "color": "blue",
+            "onPress": undefined,
+            "rounded": true,
           },
           "ref": null,
           "rendered": null,

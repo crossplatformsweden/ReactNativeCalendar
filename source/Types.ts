@@ -33,6 +33,7 @@ export interface IProps extends IApplicationState {
   AppErrorChanged?: UtilityTypes.IAppErrorChanged;
   AppLoadingChanged?: UtilityTypes.IAppLoadingChanged;
   GoogleLogin?: LoginTypes.GoogleLogin;
+  BankIdLogin?: LoginTypes.BankIdLogin;
   GetByKey?: GetByKey;
   RemoveKey?: RemoveKey;
   SaveByKey?: SaveByKey;

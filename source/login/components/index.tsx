@@ -2,12 +2,13 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect, Dispatch } from 'react-redux';
 import { View, StyleSheet, Image } from 'react-native';
-import { SocialIcon } from 'react-native-elements';
+import { SocialIcon, Button } from 'react-native-elements';
 
 import * as types from '../../Types';
 import { StorageTypes, GetByKey } from '../../storage';
 import { FacebookLogin, GoogleLogin } from '..';
 import { ComponentBase } from '../../utility';
+import { BankIdLogin } from '../actions';
 
 interface IState {}
 
@@ -50,7 +51,8 @@ export class LoginBase extends React.Component<types.IProps, IState> {
               width: 120,
               height: 120,
             }}
-          /></View>
+          />
+        </View>
         <SocialIcon
           title='Sign In With Facebook'
           button
@@ -66,6 +68,13 @@ export class LoginBase extends React.Component<types.IProps, IState> {
           id='buttonGoogle'
           onPress={this.props.GoogleLogin}
           type='google-plus-official'
+        />
+        <Button
+          // @ts-ignore
+          rounded
+          title='Sign in with BankId'
+          color='blue'
+          onPress={this.props.BankIdLogin}
         />
       </View>
     );
@@ -99,6 +108,7 @@ const mapDispatchToProps = (dispatch: Dispatch<types.IProps>) => ({
   FacebookLogin: bindActionCreators(FacebookLogin, dispatch),
   GoogleLogin: bindActionCreators(GoogleLogin, dispatch),
   GetByKey: bindActionCreators(GetByKey, dispatch),
+  BankIdLogin: bindActionCreators(BankIdLogin, dispatch),
   dispatch,
 });
 
