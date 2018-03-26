@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App actions AppLoadingChanged dispatches busy reason 1`] = `
+Array [
+  Object {
+    "createAd": Object {
+      "fromDate": "2018-03-26T14:13:32.332Z",
+      "toDate": "2018-03-26T15:13:32.332Z",
+    },
+    "type": "CREATE DID SUCCESS",
+  },
+]
+`;

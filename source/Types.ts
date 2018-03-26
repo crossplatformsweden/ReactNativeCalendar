@@ -2,6 +2,7 @@ import { NavigatorTypes } from './navigator/';
 import { LoginTypes } from './login/';
 import { UtilityTypes } from './utility/';
 import { StorageTypes, SaveByKey, RemoveKey, GetByKey } from './storage';
+import { CreateAdTypes } from './features/create-ad-page';
 
 /**
  * The global application state as contained in Redux
@@ -16,6 +17,7 @@ export interface IApplicationState {
   login?: LoginTypes.ILoginState;
   utility?: UtilityTypes.IUtilityState;
   storage?: StorageTypes.IStorageState;
+  createAd?: CreateAdTypes.ICreateState;
 }
 
 /**
