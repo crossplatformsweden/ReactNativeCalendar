@@ -22,6 +22,10 @@ export interface IUser {
   name: string;
   picture?: string;
   type: string;
+  username?: string;
+  password?: string;
+  email?: string;
+  autologin?: boolean;
 }
 
 export class User implements IUser {
@@ -29,7 +33,11 @@ export class User implements IUser {
     readonly accessToken: string,
     readonly name: string,
     readonly picture: string = '',
-    readonly type: string
+    readonly type: string,
+    readonly username: string = null,
+    readonly password: string = null,
+    readonly email: string = null,
+    readonly autologin: boolean = false
   ) {}
 }
 
@@ -48,19 +56,18 @@ export enum LoginConstants {
   LOGIN_FAILED = 'LOGIN_FAILED',
   /**
    * Login state: authentication succeeded
-   *
-   * @static
-   * @memberof LoginConstants
    */
   LOGIN_SUCCESS = 'LOGIN_SUCCESS',
 
   /**
    * Login state: authentication in progress
-   *
-   * @static
-   * @memberof LoginConstants
    */
   LOGIN_BUSY = 'Kollar vem du är',
+
+  /**
+   * Login state: logged out of app
+   */
+  LOGGED_OUT = 'LOGGED_OUT',
 }
 
 export interface ILoginState {

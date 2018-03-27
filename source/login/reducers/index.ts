@@ -33,6 +33,8 @@ const LoginReducer = (
       return Object.assign({}, state, CreateLoginState(false, null));
     case login.LoginConstants.LOGIN_SUCCESS:
       return Object.assign({}, state, CreateLoginState(true, action.user));
+      case login.LoginConstants.LOGGED_OUT:
+      return Object.assign({}, state, CreateLoginState(false, null));
     default:
       return state;
   }

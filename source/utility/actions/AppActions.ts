@@ -1,6 +1,7 @@
 // utility/actions/AppActions
 import * as Redux from 'redux';
 import * as appTypes from '../types';
+import Sentry from 'sentry-expo';
 
 /**
  * The app loading state has changed
@@ -43,6 +44,11 @@ export const AppErrorChanged = ({
 }: appTypes.IUtilityErrorPayload) => (
   dispatch: Redux.Dispatch<appTypes.IAppErrorChanged>
 ) => {
+  try {
+    Sentry.captureException(exception);
+  } catch (ex) {
+    console.log(ex);
+  }
   dispatch({
     type: hasError
       ? appTypes.UtilityConstants.APP_HAS_ERROR

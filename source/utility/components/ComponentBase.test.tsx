@@ -3,9 +3,12 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+// @ts-ignore
+import { MapView } from 'expo';
 
 import * as types from '../../Types';
-import { Login, LoginTypes } from '../../login';
+import { LoginTypes } from '../../login';
+import { Map } from '../../map/components/MapComponent';
 import BusyIndicator from './BusyIndicator';
 
 jest.unmock('react-native');
@@ -17,7 +20,6 @@ jest.mock('../../navigator', () => ({
 }));
 
 function setup() {
-
   const user: LoginTypes.IUser = {
     accessToken: '1',
     name: 'test',
@@ -25,22 +27,12 @@ function setup() {
     type: 'Google',
   };
   const props: types.IProps = {
-    GetByKey: jest.fn(),
-    FacebookLogin: jest.fn(),
-    GoogleLogin: jest.fn(),
+    login: { isLoggedIn: false },
     utility: { isBusy: false, busyReason: null, hasError: false },
-    login: {
-      user,
-      isLoggedIn: false,
-    },
-    storage: {
-      key: '',
-      value: null,
-    },
   };
 
   // We'll use Map as a concrete implementation of ComponentBase
-  const enzymeWrapper = shallow(<Login {...props} />);
+  const enzymeWrapper = shallow(<Map {...props} />);
 
   return {
     props,
@@ -54,9 +46,43 @@ describe('components', () => {
       const { enzymeWrapper } = setup();
       expect(enzymeWrapper).toMatchSnapshot();
 
-      // Test busy indicator in base class
       const busyProps = enzymeWrapper.find(BusyIndicator).props();
       expect(busyProps.isBusy).toBe(false);
+    });
+
+    it('should call lifecycle methods', () => {
+      const componentWillMount = jest.spyOn(
+        Map.prototype,
+        'componentWillMount'
+      );
+      const componentDidMount = jest.spyOn(Map.prototype, 'componentDidMount');
+      const componentWillReceiveProps = jest.spyOn(
+        Map.prototype,
+        'componentWillReceiveProps'
+      );
+      const componentDidUpdate = jest.spyOn(
+        Map.prototype,
+        'componentDidUpdate'
+      );
+
+      setup();
+
+      // Test lifecycle methods
+      expect(componentWillMount).toHaveBeenCalled();
+      expect(componentDidMount).toHaveBeenCalled();
+
+      // Lifecycle methods NOT called first run
+      expect(componentWillReceiveProps).not.toHaveBeenCalled();
+      expect(componentDidUpdate).not.toHaveBeenCalled();
+
+      componentWillMount.mockReset();
+      componentWillMount.mockRestore();
+      componentDidUpdate.mockReset();
+      componentDidUpdate.mockRestore();
+      componentDidMount.mockReset();
+      componentDidMount.mockRestore();
+      componentWillReceiveProps.mockReset();
+      componentWillReceiveProps.mockRestore();
     });
   });
 });

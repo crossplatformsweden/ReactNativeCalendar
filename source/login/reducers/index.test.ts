@@ -8,6 +8,7 @@ const userMock: types.IUser = {
   name: 'test',
   picture: 'http://',
   type: 'Google',
+  autologin: false,
 };
 
 describe('LoginReducer', () => {

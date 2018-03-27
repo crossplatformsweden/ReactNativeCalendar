@@ -12,12 +12,6 @@ import BusyIndicator, {
 
 jest.unmock('react-native');
 
-// Navigator will call connected components
-jest.mock('../../navigator', () => ({
-  Routes: 'View',
-  AppNavigator: 'Button',
-}));
-
 function setup(type = IndicatorType.MaterialIndicator) {
   const props: IBusyIndicatorProps = {
     isBusy: true,

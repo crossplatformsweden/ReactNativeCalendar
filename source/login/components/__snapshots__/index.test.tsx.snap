@@ -5,16 +5,15 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <LoginBase
-    FacebookLogin={[MockFunction]}
-    GetByKey={
+    AutoLogin={
       [MockFunction] {
         "calls": Array [
-          Array [
-            "STORAGE KEY = USER",
-          ],
+          Array [],
         ],
       }
     }
+    FacebookLogin={[MockFunction]}
+    GetByKey={[MockFunction]}
     GoogleLogin={[MockFunction]}
     login={
       Object {
@@ -78,7 +77,7 @@ ShallowWrapper {
           iconColor="white"
           iconSize={24}
           id="buttonFacebook"
-          onPress={[Function]}
+          onPress={[MockFunction]}
           raised={true}
           title="Sign In With Facebook"
           type="facebook"
@@ -149,7 +148,7 @@ ShallowWrapper {
           "iconColor": "white",
           "iconSize": 24,
           "id": "buttonFacebook",
-          "onPress": [Function],
+          "onPress": [MockFunction],
           "raised": true,
           "title": "Sign In With Facebook",
           "type": "facebook",
@@ -210,7 +209,7 @@ ShallowWrapper {
             iconColor="white"
             iconSize={24}
             id="buttonFacebook"
-            onPress={[Function]}
+            onPress={[MockFunction]}
             raised={true}
             title="Sign In With Facebook"
             type="facebook"
@@ -281,7 +280,7 @@ ShallowWrapper {
             "iconColor": "white",
             "iconSize": 24,
             "id": "buttonFacebook",
-            "onPress": [Function],
+            "onPress": [MockFunction],
             "raised": true,
             "title": "Sign In With Facebook",
             "type": "facebook",
