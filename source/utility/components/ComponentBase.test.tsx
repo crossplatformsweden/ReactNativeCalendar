@@ -3,12 +3,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
-// @ts-ignore
-import { MapView } from 'expo';
 
 import * as types from '../../Types';
 import { LoginTypes } from '../../login';
-import { Map } from '../../map/components/MapComponent';
+import { Main } from '../../main/components/';
 import BusyIndicator from './BusyIndicator';
 
 jest.unmock('react-native');
@@ -32,7 +30,7 @@ function setup() {
   };
 
   // We'll use Map as a concrete implementation of ComponentBase
-  const enzymeWrapper = shallow(<Map {...props} />);
+  const enzymeWrapper = shallow(<Main {...props} />);
 
   return {
     props,
@@ -52,16 +50,16 @@ describe('components', () => {
 
     it('should call lifecycle methods', () => {
       const componentWillMount = jest.spyOn(
-        Map.prototype,
+        Main.prototype,
         'componentWillMount'
       );
-      const componentDidMount = jest.spyOn(Map.prototype, 'componentDidMount');
+      const componentDidMount = jest.spyOn(Main.prototype, 'componentDidMount');
       const componentWillReceiveProps = jest.spyOn(
-        Map.prototype,
+        Main.prototype,
         'componentWillReceiveProps'
       );
       const componentDidUpdate = jest.spyOn(
-        Map.prototype,
+        Main.prototype,
         'componentDidUpdate'
       );
 

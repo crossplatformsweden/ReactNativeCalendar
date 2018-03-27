@@ -7,7 +7,6 @@ import NavigatorReducer from './navigator/reducers';
 import LoginReducer from './login/reducers';
 import UtilityReducer from './utility/reducers';
 import StorageReducer from './storage/reducers';
-import BankIdReducer from './bankid/reducers':
 
 // Create a persist wrapper of the reducer
 // This will be used by redux-persist to restore state on app start
@@ -25,5 +24,4 @@ export default combineReducers<types.IApplicationState>({
   utility: UtilityReducer,
   login: PersistLoginReducer,
   storage: StorageReducer,
-  bankid: BankIdReducer,
 });

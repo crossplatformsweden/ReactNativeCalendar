@@ -23,6 +23,7 @@ const bankIdLogin = 'BankIdLogin';
  * @public
  * @global
  */
+// @ts-ignore
 export const BankIdLogin = (personalNr: string) => async (
   dispatch: Redux.Dispatch<login.ILoginAction>
 ) => {
@@ -67,7 +68,7 @@ export const BankIdLogin = (personalNr: string) => async (
         AppErrorChanged({
           hasError: true,
           reason: 'Login was cancelled',
-          exception: login.LoginConstants.LOGIN_FAILED,
+          exception: new Error(login.LoginConstants.LOGIN_FAILED),
           sender: bankIdLogin,
         })
       );

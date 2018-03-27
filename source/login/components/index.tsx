@@ -34,7 +34,7 @@ export class LoginBase extends React.Component<types.IProps, IState> {
       <View style={styles.container}>
         <View style={styles.logoContainer}>
           <Image
-            source={require('../../../resources/parkera.png')}
+            source={require('../../../resources/icon.png')}
             style={{
               width: 120,
               height: 120,
