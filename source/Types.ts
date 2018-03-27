@@ -1,10 +1,7 @@
 import { NavigatorTypes } from './navigator/';
 import { LoginTypes } from './login/';
 import { UtilityTypes } from './utility/';
-import { MapTypes, GetLocation, GetMapPointForCoordiantes } from './map';
-import {GetSthlmParking, SthlmParkingTypes} from './sthlmparking';
 import { StorageTypes, SaveByKey, RemoveKey, GetByKey } from './storage';
-import {GeocodeTypes, GeocodeAddress} from './geocode';
 import { AutoLogin } from './login/actions/LoginActions';
 
 /**
@@ -20,9 +17,6 @@ export interface IApplicationState {
   login?: LoginTypes.ILoginState;
   utility?: UtilityTypes.IUtilityState;
   storage?: StorageTypes.IStorageState;
-  map?: MapTypes.IMapState;
-  geocoding?: GeocodeTypes.IGeocodeState;
-  sthlmparking?: SthlmParkingTypes.ISthlmParkingState;
 }
 
 /**
@@ -40,12 +34,9 @@ export interface IProps extends IApplicationState {
   AppErrorChanged?: UtilityTypes.IAppErrorChanged;
   AppLoadingChanged?: UtilityTypes.IAppLoadingChanged;
   GoogleLogin?: LoginTypes.GoogleLogin;
-  GeocodeAddress?: GeocodeAddress;
-  GetLocation?: GetLocation;
-  GetMapPointForCoordiantes?: GetMapPointForCoordiantes;
+  BankIdLogin?: LoginTypes.BankIdLogin;
   GetByKey?: GetByKey;
   RemoveKey?: RemoveKey;
   SaveByKey?: SaveByKey;
   AutoLogin?: AutoLogin;
-  GetSthlmParking?: GetSthlmParking;
 }

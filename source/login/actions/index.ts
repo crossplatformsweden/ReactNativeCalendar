@@ -1,5 +1,5 @@
 import { FacebookLogin } from './FacebookActions';
 import { GoogleLogin } from './GoogleActions';
-import { AutoLogin } from './LoginActions';
+import { BankIdLogin } from './BankIdActions';
 
-export { FacebookLogin, GoogleLogin, AutoLogin };
+export { FacebookLogin, GoogleLogin, BankIdLogin };

@@ -1,9 +1,11 @@
 // login/types/index
-import { FacebookLogin, GoogleLogin } from '../actions';
+import { FacebookLogin, GoogleLogin, BankIdLogin } from '../actions';
 
 export type FacebookLogin = typeof FacebookLogin;
 
 export type GoogleLogin = typeof GoogleLogin;
+
+export type BankIdLogin = typeof BankIdLogin;
 
 /**
  * A user object created when logging in
