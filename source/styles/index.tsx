@@ -136,6 +136,12 @@ const Theme = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
   },
+  verticalBottomCenter: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+  },
   backgroundWhite: {
     backgroundColor: '#ffffff',
   },

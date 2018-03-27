@@ -1,7 +1,3 @@
-
-
-
-
 const positionMock = {
   latitude: 1,
   longitude: 1,
@@ -20,58 +16,61 @@ const fbMock = {
 };
 
 // Mock the expo library
-module.exports =
-  {
-    PositionMock: positionMock,
-    GoogleMock: googleMock,
-    Location: {
-      setApiKey: jest.fn(),
-      getCurrentPositionAsync:
-        options =>
-          new Promise(
-            resolve => resolve(options ? {
-              coords: positionMock,
-            } : null)
-            , null,
+module.exports = {
+  PositionMock: positionMock,
+  GoogleMock: googleMock,
+  Location: {
+    setApiKey: jest.fn(),
+    getCurrentPositionAsync: options =>
+      new Promise(
+        resolve =>
+          resolve(
+            options
+              ? {
+                  coords: positionMock,
+                }
+              : null
           ),
-      watchPositionAsync: (opt, callback) => {
-        callback({
-          coords: positionMock,
-        });
-      },
+        null
+      ),
+    watchPositionAsync: (opt, callback) => {
+      callback({
+        coords: positionMock,
+      });
     },
-    Constants: {
-      platform: 'iOS',
-      manifest: {
-        extra: {
-          google: {
-            maps: 'AIzaSyARKWAxjv22kKCxPrGtg8TDu-BqsfUoags',
-            webClientId: 'mock',
-            androidStandaloneAppClientId: 'mock',
-            androidClientId: 'mock',
-            iosStandaloneAppClientId: 'mock',
-            iosClientId: 'mock',
-          },
+  },
+  Constants: {
+    platform: 'iOS',
+    manifest: {
+      extra: {
+        sentryPublicDsn: '11mock22',
+        sthlmparkingApiKey: '11mock22',
+        google: {
+          maps: '11googleMapsMockKey22',
+          webClientId: 'mock',
+          androidStandaloneAppClientId: 'mock',
+          androidClientId: 'mock',
+          iosStandaloneAppClientId: 'mock',
+          iosClientId: 'mock',
         },
-        facebookAppId: 'fbAppId',
       },
+      facebookAppId: 'fbAppId',
     },
-    Permissions: {
-      LOCATION: 'location',
-      askAsync: type => new Promise(resolve =>
-        resolve(type === 'location' ?
-          { status: 'granted' }
-          : null)),
-    },
-    Google: {
-      logInAsync: opt =>
-        new Promise(resolve =>
-          resolve(opt ? googleMock : null)),
-    },
-    Facebook: {
-      logInWithReadPermissionsAsync: (appId, opt) =>
-        new Promise((resolve) => {
-          resolve(appId && opt ? fbMock : null);
-        }),
-    },
-  };
+  },
+  Permissions: {
+    LOCATION: 'location',
+    askAsync: type =>
+      new Promise(resolve =>
+        resolve(type === 'location' ? { status: 'granted' } : null)
+      ),
+  },
+  Google: {
+    logInAsync: opt => new Promise(resolve => resolve(opt ? googleMock : null)),
+  },
+  Facebook: {
+    logInWithReadPermissionsAsync: (appId, opt) =>
+      new Promise(resolve => {
+        resolve(appId && opt ? fbMock : null);
+      }),
+  },
+};

@@ -53,11 +53,15 @@ describe('Facebook actions', () => {
       )
       .reply(200, expectedReply);
 
-    const expectedPayload = {
+    const expectedPayload: loginTypes.IUser = {
       name: expectedReply.name,
       picture: expectedReply.picture.data.url,
       accessToken: token,
       type: 'Facebook',
+      autologin: false,
+      email: null,
+      password: null,
+      username: null,
     };
 
     const NoError = (
@@ -89,18 +93,21 @@ describe('Facebook actions', () => {
       };
     };
 
+    const LoginSuccessAction: loginTypes.ILoginAction = {
+      type: loginTypes.LoginConstants.LOGIN_SUCCESS,
+      user: expectedPayload,
+      isLoggedIn: true,
+    };
+    const StorageSavedAction: StorageTypes.IStorageAction = {
+      type: StorageTypes.StorageConstants.STORAGE_SAVED,
+      key: StorageTypes.StorageConstants.STORAGE_USER_KEY,
+      value: expectedPayload,
+    };
     const expectedActions = [
       AppLoading('FacebookLogin', loginTypes.LoginConstants.LOGIN_BUSY),
-      {
-        type: loginTypes.LoginConstants.LOGIN_SUCCESS,
-        payload: expectedPayload,
-      },
+      LoginSuccessAction,
       AppLoading('SaveByKey', StorageTypes.StorageConstants.STORAGE_BUSY),
-      {
-        type: StorageTypes.StorageConstants.STORAGE_SAVED,
-        key: StorageTypes.StorageConstants.STORAGE_USER_KEY,
-        value: expectedPayload,
-      },
+      StorageSavedAction,
       NoError('SaveByKey'),
       AppLoadDone('SaveByKey'),
       NoError('FacebookLogin'),
