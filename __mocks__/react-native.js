@@ -1,8 +1,6 @@
-
-
 module.exports = {
   StyleSheet: {
-    create: styles => (styles),
+    create: styles => styles,
   },
   Dimensions: {
     get: () => ({
@@ -10,16 +8,10 @@ module.exports = {
       height: 1,
     }),
   },
-  Animated: {
-
-  },
+  Animated: {},
   AsyncStorage: {
     setItem: () => new Promise(resolve => resolve(), null),
-    getItem: key =>
-      new Promise(
-        resolve => resolve(`{"key": "${key}"}`),
-        null,
-      ),
+    getItem: key => new Promise(resolve => resolve(`{"key": "${key}"}`), null),
     removeItem: (key, callback) => {
       if (callback) {
         callback();
@@ -28,5 +20,3 @@ module.exports = {
     },
   },
 };
-
-

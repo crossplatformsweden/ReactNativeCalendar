@@ -103,7 +103,7 @@ export interface IUtilityException extends IReasonSender {
    * @type {string?}
    * @memberof IUtilityException
    */
-  exception?: string;
+  exception?: Error;
 }
 
 export interface IUtilityErrorPayload extends IUtilityException {
@@ -173,8 +173,8 @@ export interface IUtilityState extends ISenderMethod {
   /**
    * The exception that occured if any
    *
-   * @type {string}
+   * @type {Error}
    * @memberof IUtilityException
    */
-  exception?: string;
+  exception?: Error;
 }
