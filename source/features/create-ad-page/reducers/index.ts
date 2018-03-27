@@ -1,9 +1,11 @@
 import * as types from '../types';
+import moment from 'moment';
 
 // Default state!
 //
 const initialState: types.ICreateState = {
-    createAd: null,
+    createAd: { fromDate: moment(),
+                toDate: moment().add('h', '1')},
 };
 
 function CreateAdPageState(

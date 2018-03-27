@@ -8,6 +8,7 @@ import * as types from '../../Types';
 import { StorageTypes, GetByKey } from '../../storage';
 import { FacebookLogin, GoogleLogin } from '..';
 import { ComponentBase } from '../../utility';
+import { CreateAdBooking } from '../../features/create-ad-page/components/index';
 
 interface IState {}
 
@@ -67,6 +68,7 @@ export class LoginBase extends React.Component<types.IProps, IState> {
           onPress={this.props.GoogleLogin}
           type='google-plus-official'
         />
+        <CreateAdBooking />
       </View>
     );
   }
