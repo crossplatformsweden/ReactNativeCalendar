@@ -8,6 +8,7 @@ import * as types from '../../Types';
 import { StorageTypes, GetByKey } from '../../storage';
 import { FacebookLogin, GoogleLogin } from '..';
 import { ComponentBase } from '../../utility';
+import { Agenda } from 'react-native-calendars';
 
 interface IState {}
 
@@ -66,6 +67,18 @@ export class LoginBase extends React.Component<types.IProps, IState> {
           id='buttonGoogle'
           onPress={this.props.GoogleLogin}
           type='google-plus-official'
+        />
+        <Agenda style={{}}
+          // the list of items that have to be displayed in agenda. If you want to render item as empty date
+          // the value of date key kas to be an empty array []. If there exists no value for date key it is
+          // considered that the date in question is not yet loaded
+          items={
+            {'2018-05-22': [{text: 'item 1 - any js object'}],
+            '2018-05-23': [{text: 'item 2 - any js object'}],
+            '2018-05-24': [],
+            '2018-05-25': [{text: 'item 3 - any js object'}, {text: 'any js object'}],
+            }}
+            // specify how each item should be rendered in agenda
         />
       </View>
     );

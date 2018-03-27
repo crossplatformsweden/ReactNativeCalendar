@@ -10,6 +10,7 @@ import BusyIndicator from './BusyIndicator';
 
 jest.unmock('react-native');
 
+
 // Navigator will call connected components
 jest.mock('../../navigator', () => ({
   Routes: 'View',

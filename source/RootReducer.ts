@@ -7,6 +7,7 @@ import { NavigatorReducer } from './navigator/';
 import { LoginReducer } from './login/';
 import { UtilityReducer} from './utility';
 import { StorageReducer} from './storage';
+import { BookingReducer } from './adbook';
 
 // Create a persist wrapper of the reducer
 // This will be used by redux-persist to restore state on app start
@@ -24,4 +25,5 @@ export default combineReducers<types.IApplicationState>({
   utility: UtilityReducer,
   login: PersistLoginReducer,
   storage: StorageReducer,
+  adbook: BookingReducer,
 });

@@ -46,7 +46,7 @@ export const FacebookLogin = () => async (
     if (type === 'success' && token) {
       // Get the user's name using Facebook's Graph API
       const response = await axios.get(
-        `https://graph.facebook.com/me?fields=id,name,picture&access_token=${token}`
+        'https://graph.facebook.com/me?fields=id,name,picture&access_token=${token}'
       );
 
       /** @type {FacebookActions.User} */

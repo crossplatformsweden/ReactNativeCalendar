@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Book Book returns ADDED 1`] = `
+Array [
+  Object {
+    "booking": Booking {
+      "adress": "Någongata 37",
+      "lessee": Object {
+        "firstName": "Martin",
+        "lastName": "Ström",
+      },
+      "location": Object {
+        "lat": 1203,
+        "lon": 201,
+      },
+      "timeperiod": Object {
+        "timeEnd": "2018-03-27T12:49:23.119Z",
+        "timeStart": "2018-03-27T12:49:23.120Z",
+      },
+      "vehicle": Object {
+        "regNumber": "AAA123",
+        "vehicleModel": "Volvo",
+        "vehicleType": "SUV",
+      },
+    },
+    "type": "BOOKING_ADDED",
+  },
+]
+`;

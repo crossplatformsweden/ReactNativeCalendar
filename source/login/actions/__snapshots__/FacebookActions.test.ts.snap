@@ -8,45 +8,10 @@ Array [
     "type": "APP = BUSY LOADING",
   },
   Object {
-    "payload": User {
-      "accessToken": "fbTokenMock",
-      "name": "MockName",
-      "picture": "http://mockImageUrl/",
-      "type": "Facebook",
-    },
-    "type": "LOGIN_SUCCESS",
-  },
-  Object {
-    "reason": "Friskar upp minnet",
-    "sender": "SaveByKey",
-    "type": "APP = BUSY LOADING",
-  },
-  Object {
-    "key": "STORAGE KEY = USER",
-    "type": "STORAGE = SAVED KEY",
-    "value": User {
-      "accessToken": "fbTokenMock",
-      "name": "MockName",
-      "picture": "http://mockImageUrl/",
-      "type": "Facebook",
-    },
-  },
-  Object {
-    "exception": null,
-    "reason": null,
-    "sender": "SaveByKey",
-    "type": "APP NO ERROR",
-  },
-  Object {
-    "reason": null,
-    "sender": "SaveByKey",
-    "type": "APP = DONE LOADING",
-  },
-  Object {
-    "exception": null,
-    "reason": null,
+    "exception": [Error: Request failed with status code 404],
+    "reason": "LOGIN_FAILED",
     "sender": "FacebookLogin",
-    "type": "APP NO ERROR",
+    "type": "APP = HAS ERROR",
   },
   Object {
     "reason": null,

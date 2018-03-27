@@ -40,7 +40,7 @@ const componentBase = <P, S>(WrappedComponent: React.ComponentType<P>) =>
           Actions.pop();
         }
       } else if (Actions.LoginScreen) {
-        Actions.LoginScreen();
+        // Actions.LoginScreen();
       }
     }
 

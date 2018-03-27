@@ -1,5 +1,6 @@
 import { NavigatorTypes } from './navigator/';
 import { LoginTypes } from './login/';
+import { AdBookTypes } from './adbook';
 import { UtilityTypes } from './utility/';
 import { StorageTypes, SaveByKey, RemoveKey, GetByKey } from './storage';
 
@@ -16,6 +17,7 @@ export interface IApplicationState {
   login?: LoginTypes.ILoginState;
   utility?: UtilityTypes.IUtilityState;
   storage?: StorageTypes.IStorageState;
+  adbook?: AdBookTypes.IBookingState;
 }
 
 /**
@@ -36,4 +38,5 @@ export interface IProps extends IApplicationState {
   GetByKey?: GetByKey;
   RemoveKey?: RemoveKey;
   SaveByKey?: SaveByKey;
+  Book?: AdBookTypes.Book;
 }
