@@ -1,6 +1,7 @@
 // utility/index
 import UtilityReducer from './reducers';
 import * as UtilityTypes from './types';
+import SentryUtility from './SentryUtility';
 import BusyIndicator, {
   IBusyIndicatorProps,
   IndicatorType,
@@ -19,4 +20,5 @@ export {
   IBusyIndicatorProps,
   IndicatorType,
   Spinner,
+  SentryUtility
 };

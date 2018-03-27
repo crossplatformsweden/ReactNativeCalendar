@@ -3,10 +3,10 @@ import storage from 'redux-persist/es/storage';
 import { persistReducer } from 'redux-persist';
 
 import * as types from './Types';
-import { NavigatorReducer } from './navigator/';
-import { LoginReducer } from './login/';
-import { UtilityReducer} from './utility';
-import { StorageReducer} from './storage';
+import NavigatorReducer from './navigator/reducers';
+import LoginReducer from './login/reducers';
+import UtilityReducer from './utility/reducers';
+import StorageReducer from './storage/reducers';
 
 // Create a persist wrapper of the reducer
 // This will be used by redux-persist to restore state on app start

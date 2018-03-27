@@ -16,6 +16,7 @@ ShallowWrapper {
         "key": "",
         "value": Object {
           "accessToken": "1",
+          "autologin": false,
           "name": "test",
           "picture": "",
           "type": "Google",
@@ -45,27 +46,119 @@ ShallowWrapper {
       "children": <ScrollView
         testID="scrollView"
       >
-        <View>
+        <View
+          style={
+            Array [
+              Object {
+                "flex": 1,
+              },
+              Object {
+                "padding": 10,
+              },
+            ]
+          }
+        >
           <View>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "flex-start",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "padding": 10,
+                  },
+                ]
+              }
             >
-              test
-            </Text>
-            <UNDEFINED
-              activeOpacity={0.7}
-              large={true}
-              rounded={true}
-              source={
+              <Avatar
+                activeOpacity={0.7}
+                editButton={
+                  Object {
+                    "iconColor": "#fff",
+                    "iconName": "mode-edit",
+                    "iconType": "material",
+                    "size": null,
+                    "style": null,
+                    "underlayColor": "#000",
+                  }
+                }
+                large={true}
+                onEditPress={null}
+                rounded={true}
+                showEditButton={false}
+                source={
+                  Object {
+                    "uri": "",
+                  }
+                }
+              />
+            </View>
+            <FormLabel>
+              Namn
+            </FormLabel>
+            <FormInput
+              autoCapitalize="words"
+              normalizeFontSize={true}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              placeholder="Namn"
+              value="test"
+            />
+            <FormLabel>
+              Användarnamn
+            </FormLabel>
+            <FormInput
+              autoCapitalize="none"
+              normalizeFontSize={true}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              placeholder="Användarnamn"
+              value={null}
+            />
+            <FormLabel>
+              Lösenord
+            </FormLabel>
+            <FormInput
+              autoCapitalize="none"
+              normalizeFontSize={true}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              placeholder="Lösenord"
+              secureTextEntry={true}
+              value={null}
+            />
+            <FormLabel>
+              E-postadress
+            </FormLabel>
+            <FormInput
+              autoCapitalize="none"
+              keyboardType="email-address"
+              normalizeFontSize={true}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              placeholder="E-postadress"
+              value={null}
+            />
+            <FormLabel>
+              Autologin
+            </FormLabel>
+            <Switch
+              disabled={false}
+              onValueChange={[Function]}
+              style={
                 Object {
-                  "uri": "",
+                  "marginBottom": 10,
+                  "marginLeft": 15,
+                  "marginTop": 5,
                 }
               }
+              value={false}
             />
           </View>
-          <UNDEFINED
+          <Button
             icon={
               Object {
                 "name": "sign-out",
@@ -83,10 +176,14 @@ ShallowWrapper {
           />
         </View>
       </ScrollView>,
-      "style": Object {
-        "display": "flex",
-        "padding": 10,
-      },
+      "style": Array [
+        Object {
+          "flex": 1,
+        },
+        Object {
+          "padding": 10,
+        },
+      ],
     },
     "ref": null,
     "rendered": Object {
@@ -94,27 +191,119 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": <View>
+        "children": <View
+          style={
+            Array [
+              Object {
+                "flex": 1,
+              },
+              Object {
+                "padding": 10,
+              },
+            ]
+          }
+        >
           <View>
-            <Text
-              accessible={true}
-              allowFontScaling={true}
-              ellipsizeMode="tail"
+            <View
+              style={
+                Array [
+                  Object {
+                    "alignItems": "flex-start",
+                    "flexDirection": "row",
+                    "justifyContent": "center",
+                  },
+                  Object {
+                    "padding": 10,
+                  },
+                ]
+              }
             >
-              test
-            </Text>
-            <UNDEFINED
-              activeOpacity={0.7}
-              large={true}
-              rounded={true}
-              source={
+              <Avatar
+                activeOpacity={0.7}
+                editButton={
+                  Object {
+                    "iconColor": "#fff",
+                    "iconName": "mode-edit",
+                    "iconType": "material",
+                    "size": null,
+                    "style": null,
+                    "underlayColor": "#000",
+                  }
+                }
+                large={true}
+                onEditPress={null}
+                rounded={true}
+                showEditButton={false}
+                source={
+                  Object {
+                    "uri": "",
+                  }
+                }
+              />
+            </View>
+            <FormLabel>
+              Namn
+            </FormLabel>
+            <FormInput
+              autoCapitalize="words"
+              normalizeFontSize={true}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              placeholder="Namn"
+              value="test"
+            />
+            <FormLabel>
+              Användarnamn
+            </FormLabel>
+            <FormInput
+              autoCapitalize="none"
+              normalizeFontSize={true}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              placeholder="Användarnamn"
+              value={null}
+            />
+            <FormLabel>
+              Lösenord
+            </FormLabel>
+            <FormInput
+              autoCapitalize="none"
+              normalizeFontSize={true}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              placeholder="Lösenord"
+              secureTextEntry={true}
+              value={null}
+            />
+            <FormLabel>
+              E-postadress
+            </FormLabel>
+            <FormInput
+              autoCapitalize="none"
+              keyboardType="email-address"
+              normalizeFontSize={true}
+              onBlur={[Function]}
+              onChangeText={[Function]}
+              placeholder="E-postadress"
+              value={null}
+            />
+            <FormLabel>
+              Autologin
+            </FormLabel>
+            <Switch
+              disabled={false}
+              onValueChange={[Function]}
+              style={
                 Object {
-                  "uri": "",
+                  "marginBottom": 10,
+                  "marginLeft": 15,
+                  "marginTop": 5,
                 }
               }
+              value={false}
             />
           </View>
-          <UNDEFINED
+          <Button
             icon={
               Object {
                 "name": "sign-out",
@@ -141,25 +330,106 @@ ShallowWrapper {
         "props": Object {
           "children": Array [
             <View>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "flex-start",
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "padding": 10,
+                    },
+                  ]
+                }
               >
-                test
-              </Text>
-              <UNDEFINED
-                activeOpacity={0.7}
-                large={true}
-                rounded={true}
-                source={
+                <Avatar
+                  activeOpacity={0.7}
+                  editButton={
+                    Object {
+                      "iconColor": "#fff",
+                      "iconName": "mode-edit",
+                      "iconType": "material",
+                      "size": null,
+                      "style": null,
+                      "underlayColor": "#000",
+                    }
+                  }
+                  large={true}
+                  onEditPress={null}
+                  rounded={true}
+                  showEditButton={false}
+                  source={
+                    Object {
+                      "uri": "",
+                    }
+                  }
+                />
+              </View>
+              <FormLabel>
+                Namn
+              </FormLabel>
+              <FormInput
+                autoCapitalize="words"
+                normalizeFontSize={true}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                placeholder="Namn"
+                value="test"
+              />
+              <FormLabel>
+                Användarnamn
+              </FormLabel>
+              <FormInput
+                autoCapitalize="none"
+                normalizeFontSize={true}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                placeholder="Användarnamn"
+                value={null}
+              />
+              <FormLabel>
+                Lösenord
+              </FormLabel>
+              <FormInput
+                autoCapitalize="none"
+                normalizeFontSize={true}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                placeholder="Lösenord"
+                secureTextEntry={true}
+                value={null}
+              />
+              <FormLabel>
+                E-postadress
+              </FormLabel>
+              <FormInput
+                autoCapitalize="none"
+                keyboardType="email-address"
+                normalizeFontSize={true}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                placeholder="E-postadress"
+                value={null}
+              />
+              <FormLabel>
+                Autologin
+              </FormLabel>
+              <Switch
+                disabled={false}
+                onValueChange={[Function]}
+                style={
                   Object {
-                    "uri": "",
+                    "marginBottom": 10,
+                    "marginLeft": 15,
+                    "marginTop": 5,
                   }
                 }
+                value={false}
               />
             </View>,
-            <UNDEFINED
+            <Button
               icon={
                 Object {
                   "name": "sign-out",
@@ -176,6 +446,14 @@ ShallowWrapper {
               title="Sign out"
             />,
           ],
+          "style": Array [
+            Object {
+              "flex": 1,
+            },
+            Object {
+              "padding": 10,
+            },
+          ],
         },
         "ref": null,
         "rendered": Array [
@@ -185,22 +463,103 @@ ShallowWrapper {
             "nodeType": "class",
             "props": Object {
               "children": Array [
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "flex-start",
+                        "flexDirection": "row",
+                        "justifyContent": "center",
+                      },
+                      Object {
+                        "padding": 10,
+                      },
+                    ]
+                  }
                 >
-                  test
-                </Text>,
-                <UNDEFINED
-                  activeOpacity={0.7}
-                  large={true}
-                  rounded={true}
-                  source={
+                  <Avatar
+                    activeOpacity={0.7}
+                    editButton={
+                      Object {
+                        "iconColor": "#fff",
+                        "iconName": "mode-edit",
+                        "iconType": "material",
+                        "size": null,
+                        "style": null,
+                        "underlayColor": "#000",
+                      }
+                    }
+                    large={true}
+                    onEditPress={null}
+                    rounded={true}
+                    showEditButton={false}
+                    source={
+                      Object {
+                        "uri": "",
+                      }
+                    }
+                  />
+                </View>,
+                <FormLabel>
+                  Namn
+                </FormLabel>,
+                <FormInput
+                  autoCapitalize="words"
+                  normalizeFontSize={true}
+                  onBlur={[Function]}
+                  onChangeText={[Function]}
+                  placeholder="Namn"
+                  value="test"
+                />,
+                <FormLabel>
+                  Användarnamn
+                </FormLabel>,
+                <FormInput
+                  autoCapitalize="none"
+                  normalizeFontSize={true}
+                  onBlur={[Function]}
+                  onChangeText={[Function]}
+                  placeholder="Användarnamn"
+                  value={null}
+                />,
+                <FormLabel>
+                  Lösenord
+                </FormLabel>,
+                <FormInput
+                  autoCapitalize="none"
+                  normalizeFontSize={true}
+                  onBlur={[Function]}
+                  onChangeText={[Function]}
+                  placeholder="Lösenord"
+                  secureTextEntry={true}
+                  value={null}
+                />,
+                <FormLabel>
+                  E-postadress
+                </FormLabel>,
+                <FormInput
+                  autoCapitalize="none"
+                  keyboardType="email-address"
+                  normalizeFontSize={true}
+                  onBlur={[Function]}
+                  onChangeText={[Function]}
+                  placeholder="E-postadress"
+                  value={null}
+                />,
+                <FormLabel>
+                  Autologin
+                </FormLabel>,
+                <Switch
+                  disabled={false}
+                  onValueChange={[Function]}
+                  style={
                     Object {
-                      "uri": "",
+                      "marginBottom": 10,
+                      "marginLeft": 15,
+                      "marginTop": 5,
                     }
                   }
+                  value={false}
                 />,
               ],
             },
@@ -211,13 +570,66 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "class",
                 "props": Object {
-                  "accessible": true,
-                  "allowFontScaling": true,
-                  "children": "test",
-                  "ellipsizeMode": "tail",
+                  "children": <Avatar
+                    activeOpacity={0.7}
+                    editButton={
+                      Object {
+                        "iconColor": "#fff",
+                        "iconName": "mode-edit",
+                        "iconType": "material",
+                        "size": null,
+                        "style": null,
+                        "underlayColor": "#000",
+                      }
+                    }
+                    large={true}
+                    onEditPress={null}
+                    rounded={true}
+                    showEditButton={false}
+                    source={
+                      Object {
+                        "uri": "",
+                      }
+                    }
+                  />,
+                  "style": Array [
+                    Object {
+                      "alignItems": "flex-start",
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "padding": 10,
+                    },
+                  ],
                 },
                 "ref": null,
-                "rendered": "test",
+                "rendered": Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "activeOpacity": 0.7,
+                    "editButton": Object {
+                      "iconColor": "#fff",
+                      "iconName": "mode-edit",
+                      "iconType": "material",
+                      "size": null,
+                      "style": null,
+                      "underlayColor": "#000",
+                    },
+                    "large": true,
+                    "onEditPress": null,
+                    "rounded": true,
+                    "showEditButton": false,
+                    "source": Object {
+                      "uri": "",
+                    },
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
                 "type": [Function],
               },
               Object {
@@ -225,16 +637,139 @@ ShallowWrapper {
                 "key": undefined,
                 "nodeType": "function",
                 "props": Object {
-                  "activeOpacity": 0.7,
-                  "large": true,
-                  "rounded": true,
-                  "source": Object {
-                    "uri": "",
-                  },
+                  "children": "Namn",
+                },
+                "ref": null,
+                "rendered": "Namn",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "autoCapitalize": "words",
+                  "normalizeFontSize": true,
+                  "onBlur": [Function],
+                  "onChangeText": [Function],
+                  "placeholder": "Namn",
+                  "value": "test",
                 },
                 "ref": null,
                 "rendered": null,
-                "type": undefined,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "Användarnamn",
+                },
+                "ref": null,
+                "rendered": "Användarnamn",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "autoCapitalize": "none",
+                  "normalizeFontSize": true,
+                  "onBlur": [Function],
+                  "onChangeText": [Function],
+                  "placeholder": "Användarnamn",
+                  "value": null,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "Lösenord",
+                },
+                "ref": null,
+                "rendered": "Lösenord",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "autoCapitalize": "none",
+                  "normalizeFontSize": true,
+                  "onBlur": [Function],
+                  "onChangeText": [Function],
+                  "placeholder": "Lösenord",
+                  "secureTextEntry": true,
+                  "value": null,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "E-postadress",
+                },
+                "ref": null,
+                "rendered": "E-postadress",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "autoCapitalize": "none",
+                  "keyboardType": "email-address",
+                  "normalizeFontSize": true,
+                  "onBlur": [Function],
+                  "onChangeText": [Function],
+                  "placeholder": "E-postadress",
+                  "value": null,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "function",
+                "props": Object {
+                  "children": "Autologin",
+                },
+                "ref": null,
+                "rendered": "Autologin",
+                "type": [Function],
+              },
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "class",
+                "props": Object {
+                  "disabled": false,
+                  "onValueChange": [Function],
+                  "style": Object {
+                    "marginBottom": 10,
+                    "marginLeft": 15,
+                    "marginTop": 5,
+                  },
+                  "value": false,
+                },
+                "ref": null,
+                "rendered": null,
+                "type": [Function],
               },
             ],
             "type": [Function],
@@ -257,7 +792,7 @@ ShallowWrapper {
             },
             "ref": null,
             "rendered": null,
-            "type": undefined,
+            "type": [Function],
           },
         ],
         "type": [Function],
@@ -275,27 +810,119 @@ ShallowWrapper {
         "children": <ScrollView
           testID="scrollView"
         >
-          <View>
+          <View
+            style={
+              Array [
+                Object {
+                  "flex": 1,
+                },
+                Object {
+                  "padding": 10,
+                },
+              ]
+            }
+          >
             <View>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "flex-start",
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "padding": 10,
+                    },
+                  ]
+                }
               >
-                test
-              </Text>
-              <UNDEFINED
-                activeOpacity={0.7}
-                large={true}
-                rounded={true}
-                source={
+                <Avatar
+                  activeOpacity={0.7}
+                  editButton={
+                    Object {
+                      "iconColor": "#fff",
+                      "iconName": "mode-edit",
+                      "iconType": "material",
+                      "size": null,
+                      "style": null,
+                      "underlayColor": "#000",
+                    }
+                  }
+                  large={true}
+                  onEditPress={null}
+                  rounded={true}
+                  showEditButton={false}
+                  source={
+                    Object {
+                      "uri": "",
+                    }
+                  }
+                />
+              </View>
+              <FormLabel>
+                Namn
+              </FormLabel>
+              <FormInput
+                autoCapitalize="words"
+                normalizeFontSize={true}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                placeholder="Namn"
+                value="test"
+              />
+              <FormLabel>
+                Användarnamn
+              </FormLabel>
+              <FormInput
+                autoCapitalize="none"
+                normalizeFontSize={true}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                placeholder="Användarnamn"
+                value={null}
+              />
+              <FormLabel>
+                Lösenord
+              </FormLabel>
+              <FormInput
+                autoCapitalize="none"
+                normalizeFontSize={true}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                placeholder="Lösenord"
+                secureTextEntry={true}
+                value={null}
+              />
+              <FormLabel>
+                E-postadress
+              </FormLabel>
+              <FormInput
+                autoCapitalize="none"
+                keyboardType="email-address"
+                normalizeFontSize={true}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                placeholder="E-postadress"
+                value={null}
+              />
+              <FormLabel>
+                Autologin
+              </FormLabel>
+              <Switch
+                disabled={false}
+                onValueChange={[Function]}
+                style={
                   Object {
-                    "uri": "",
+                    "marginBottom": 10,
+                    "marginLeft": 15,
+                    "marginTop": 5,
                   }
                 }
+                value={false}
               />
             </View>
-            <UNDEFINED
+            <Button
               icon={
                 Object {
                   "name": "sign-out",
@@ -313,10 +940,14 @@ ShallowWrapper {
             />
           </View>
         </ScrollView>,
-        "style": Object {
-          "display": "flex",
-          "padding": 10,
-        },
+        "style": Array [
+          Object {
+            "flex": 1,
+          },
+          Object {
+            "padding": 10,
+          },
+        ],
       },
       "ref": null,
       "rendered": Object {
@@ -324,27 +955,119 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "children": <View>
+          "children": <View
+            style={
+              Array [
+                Object {
+                  "flex": 1,
+                },
+                Object {
+                  "padding": 10,
+                },
+              ]
+            }
+          >
             <View>
-              <Text
-                accessible={true}
-                allowFontScaling={true}
-                ellipsizeMode="tail"
+              <View
+                style={
+                  Array [
+                    Object {
+                      "alignItems": "flex-start",
+                      "flexDirection": "row",
+                      "justifyContent": "center",
+                    },
+                    Object {
+                      "padding": 10,
+                    },
+                  ]
+                }
               >
-                test
-              </Text>
-              <UNDEFINED
-                activeOpacity={0.7}
-                large={true}
-                rounded={true}
-                source={
+                <Avatar
+                  activeOpacity={0.7}
+                  editButton={
+                    Object {
+                      "iconColor": "#fff",
+                      "iconName": "mode-edit",
+                      "iconType": "material",
+                      "size": null,
+                      "style": null,
+                      "underlayColor": "#000",
+                    }
+                  }
+                  large={true}
+                  onEditPress={null}
+                  rounded={true}
+                  showEditButton={false}
+                  source={
+                    Object {
+                      "uri": "",
+                    }
+                  }
+                />
+              </View>
+              <FormLabel>
+                Namn
+              </FormLabel>
+              <FormInput
+                autoCapitalize="words"
+                normalizeFontSize={true}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                placeholder="Namn"
+                value="test"
+              />
+              <FormLabel>
+                Användarnamn
+              </FormLabel>
+              <FormInput
+                autoCapitalize="none"
+                normalizeFontSize={true}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                placeholder="Användarnamn"
+                value={null}
+              />
+              <FormLabel>
+                Lösenord
+              </FormLabel>
+              <FormInput
+                autoCapitalize="none"
+                normalizeFontSize={true}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                placeholder="Lösenord"
+                secureTextEntry={true}
+                value={null}
+              />
+              <FormLabel>
+                E-postadress
+              </FormLabel>
+              <FormInput
+                autoCapitalize="none"
+                keyboardType="email-address"
+                normalizeFontSize={true}
+                onBlur={[Function]}
+                onChangeText={[Function]}
+                placeholder="E-postadress"
+                value={null}
+              />
+              <FormLabel>
+                Autologin
+              </FormLabel>
+              <Switch
+                disabled={false}
+                onValueChange={[Function]}
+                style={
                   Object {
-                    "uri": "",
+                    "marginBottom": 10,
+                    "marginLeft": 15,
+                    "marginTop": 5,
                   }
                 }
+                value={false}
               />
             </View>
-            <UNDEFINED
+            <Button
               icon={
                 Object {
                   "name": "sign-out",
@@ -371,25 +1094,106 @@ ShallowWrapper {
           "props": Object {
             "children": Array [
               <View>
-                <Text
-                  accessible={true}
-                  allowFontScaling={true}
-                  ellipsizeMode="tail"
+                <View
+                  style={
+                    Array [
+                      Object {
+                        "alignItems": "flex-start",
+                        "flexDirection": "row",
+                        "justifyContent": "center",
+                      },
+                      Object {
+                        "padding": 10,
+                      },
+                    ]
+                  }
                 >
-                  test
-                </Text>
-                <UNDEFINED
-                  activeOpacity={0.7}
-                  large={true}
-                  rounded={true}
-                  source={
+                  <Avatar
+                    activeOpacity={0.7}
+                    editButton={
+                      Object {
+                        "iconColor": "#fff",
+                        "iconName": "mode-edit",
+                        "iconType": "material",
+                        "size": null,
+                        "style": null,
+                        "underlayColor": "#000",
+                      }
+                    }
+                    large={true}
+                    onEditPress={null}
+                    rounded={true}
+                    showEditButton={false}
+                    source={
+                      Object {
+                        "uri": "",
+                      }
+                    }
+                  />
+                </View>
+                <FormLabel>
+                  Namn
+                </FormLabel>
+                <FormInput
+                  autoCapitalize="words"
+                  normalizeFontSize={true}
+                  onBlur={[Function]}
+                  onChangeText={[Function]}
+                  placeholder="Namn"
+                  value="test"
+                />
+                <FormLabel>
+                  Användarnamn
+                </FormLabel>
+                <FormInput
+                  autoCapitalize="none"
+                  normalizeFontSize={true}
+                  onBlur={[Function]}
+                  onChangeText={[Function]}
+                  placeholder="Användarnamn"
+                  value={null}
+                />
+                <FormLabel>
+                  Lösenord
+                </FormLabel>
+                <FormInput
+                  autoCapitalize="none"
+                  normalizeFontSize={true}
+                  onBlur={[Function]}
+                  onChangeText={[Function]}
+                  placeholder="Lösenord"
+                  secureTextEntry={true}
+                  value={null}
+                />
+                <FormLabel>
+                  E-postadress
+                </FormLabel>
+                <FormInput
+                  autoCapitalize="none"
+                  keyboardType="email-address"
+                  normalizeFontSize={true}
+                  onBlur={[Function]}
+                  onChangeText={[Function]}
+                  placeholder="E-postadress"
+                  value={null}
+                />
+                <FormLabel>
+                  Autologin
+                </FormLabel>
+                <Switch
+                  disabled={false}
+                  onValueChange={[Function]}
+                  style={
                     Object {
-                      "uri": "",
+                      "marginBottom": 10,
+                      "marginLeft": 15,
+                      "marginTop": 5,
                     }
                   }
+                  value={false}
                 />
               </View>,
-              <UNDEFINED
+              <Button
                 icon={
                   Object {
                     "name": "sign-out",
@@ -406,6 +1210,14 @@ ShallowWrapper {
                 title="Sign out"
               />,
             ],
+            "style": Array [
+              Object {
+                "flex": 1,
+              },
+              Object {
+                "padding": 10,
+              },
+            ],
           },
           "ref": null,
           "rendered": Array [
@@ -415,22 +1227,103 @@ ShallowWrapper {
               "nodeType": "class",
               "props": Object {
                 "children": Array [
-                  <Text
-                    accessible={true}
-                    allowFontScaling={true}
-                    ellipsizeMode="tail"
+                  <View
+                    style={
+                      Array [
+                        Object {
+                          "alignItems": "flex-start",
+                          "flexDirection": "row",
+                          "justifyContent": "center",
+                        },
+                        Object {
+                          "padding": 10,
+                        },
+                      ]
+                    }
                   >
-                    test
-                  </Text>,
-                  <UNDEFINED
-                    activeOpacity={0.7}
-                    large={true}
-                    rounded={true}
-                    source={
+                    <Avatar
+                      activeOpacity={0.7}
+                      editButton={
+                        Object {
+                          "iconColor": "#fff",
+                          "iconName": "mode-edit",
+                          "iconType": "material",
+                          "size": null,
+                          "style": null,
+                          "underlayColor": "#000",
+                        }
+                      }
+                      large={true}
+                      onEditPress={null}
+                      rounded={true}
+                      showEditButton={false}
+                      source={
+                        Object {
+                          "uri": "",
+                        }
+                      }
+                    />
+                  </View>,
+                  <FormLabel>
+                    Namn
+                  </FormLabel>,
+                  <FormInput
+                    autoCapitalize="words"
+                    normalizeFontSize={true}
+                    onBlur={[Function]}
+                    onChangeText={[Function]}
+                    placeholder="Namn"
+                    value="test"
+                  />,
+                  <FormLabel>
+                    Användarnamn
+                  </FormLabel>,
+                  <FormInput
+                    autoCapitalize="none"
+                    normalizeFontSize={true}
+                    onBlur={[Function]}
+                    onChangeText={[Function]}
+                    placeholder="Användarnamn"
+                    value={null}
+                  />,
+                  <FormLabel>
+                    Lösenord
+                  </FormLabel>,
+                  <FormInput
+                    autoCapitalize="none"
+                    normalizeFontSize={true}
+                    onBlur={[Function]}
+                    onChangeText={[Function]}
+                    placeholder="Lösenord"
+                    secureTextEntry={true}
+                    value={null}
+                  />,
+                  <FormLabel>
+                    E-postadress
+                  </FormLabel>,
+                  <FormInput
+                    autoCapitalize="none"
+                    keyboardType="email-address"
+                    normalizeFontSize={true}
+                    onBlur={[Function]}
+                    onChangeText={[Function]}
+                    placeholder="E-postadress"
+                    value={null}
+                  />,
+                  <FormLabel>
+                    Autologin
+                  </FormLabel>,
+                  <Switch
+                    disabled={false}
+                    onValueChange={[Function]}
+                    style={
                       Object {
-                        "uri": "",
+                        "marginBottom": 10,
+                        "marginLeft": 15,
+                        "marginTop": 5,
                       }
                     }
+                    value={false}
                   />,
                 ],
               },
@@ -441,13 +1334,66 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "class",
                   "props": Object {
-                    "accessible": true,
-                    "allowFontScaling": true,
-                    "children": "test",
-                    "ellipsizeMode": "tail",
+                    "children": <Avatar
+                      activeOpacity={0.7}
+                      editButton={
+                        Object {
+                          "iconColor": "#fff",
+                          "iconName": "mode-edit",
+                          "iconType": "material",
+                          "size": null,
+                          "style": null,
+                          "underlayColor": "#000",
+                        }
+                      }
+                      large={true}
+                      onEditPress={null}
+                      rounded={true}
+                      showEditButton={false}
+                      source={
+                        Object {
+                          "uri": "",
+                        }
+                      }
+                    />,
+                    "style": Array [
+                      Object {
+                        "alignItems": "flex-start",
+                        "flexDirection": "row",
+                        "justifyContent": "center",
+                      },
+                      Object {
+                        "padding": 10,
+                      },
+                    ],
                   },
                   "ref": null,
-                  "rendered": "test",
+                  "rendered": Object {
+                    "instance": null,
+                    "key": undefined,
+                    "nodeType": "function",
+                    "props": Object {
+                      "activeOpacity": 0.7,
+                      "editButton": Object {
+                        "iconColor": "#fff",
+                        "iconName": "mode-edit",
+                        "iconType": "material",
+                        "size": null,
+                        "style": null,
+                        "underlayColor": "#000",
+                      },
+                      "large": true,
+                      "onEditPress": null,
+                      "rounded": true,
+                      "showEditButton": false,
+                      "source": Object {
+                        "uri": "",
+                      },
+                    },
+                    "ref": null,
+                    "rendered": null,
+                    "type": [Function],
+                  },
                   "type": [Function],
                 },
                 Object {
@@ -455,16 +1401,139 @@ ShallowWrapper {
                   "key": undefined,
                   "nodeType": "function",
                   "props": Object {
-                    "activeOpacity": 0.7,
-                    "large": true,
-                    "rounded": true,
-                    "source": Object {
-                      "uri": "",
-                    },
+                    "children": "Namn",
+                  },
+                  "ref": null,
+                  "rendered": "Namn",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "autoCapitalize": "words",
+                    "normalizeFontSize": true,
+                    "onBlur": [Function],
+                    "onChangeText": [Function],
+                    "placeholder": "Namn",
+                    "value": "test",
                   },
                   "ref": null,
                   "rendered": null,
-                  "type": undefined,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "Användarnamn",
+                  },
+                  "ref": null,
+                  "rendered": "Användarnamn",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "autoCapitalize": "none",
+                    "normalizeFontSize": true,
+                    "onBlur": [Function],
+                    "onChangeText": [Function],
+                    "placeholder": "Användarnamn",
+                    "value": null,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "Lösenord",
+                  },
+                  "ref": null,
+                  "rendered": "Lösenord",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "autoCapitalize": "none",
+                    "normalizeFontSize": true,
+                    "onBlur": [Function],
+                    "onChangeText": [Function],
+                    "placeholder": "Lösenord",
+                    "secureTextEntry": true,
+                    "value": null,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "E-postadress",
+                  },
+                  "ref": null,
+                  "rendered": "E-postadress",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "autoCapitalize": "none",
+                    "keyboardType": "email-address",
+                    "normalizeFontSize": true,
+                    "onBlur": [Function],
+                    "onChangeText": [Function],
+                    "placeholder": "E-postadress",
+                    "value": null,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "function",
+                  "props": Object {
+                    "children": "Autologin",
+                  },
+                  "ref": null,
+                  "rendered": "Autologin",
+                  "type": [Function],
+                },
+                Object {
+                  "instance": null,
+                  "key": undefined,
+                  "nodeType": "class",
+                  "props": Object {
+                    "disabled": false,
+                    "onValueChange": [Function],
+                    "style": Object {
+                      "marginBottom": 10,
+                      "marginLeft": 15,
+                      "marginTop": 5,
+                    },
+                    "value": false,
+                  },
+                  "ref": null,
+                  "rendered": null,
+                  "type": [Function],
                 },
               ],
               "type": [Function],
@@ -487,7 +1556,7 @@ ShallowWrapper {
               },
               "ref": null,
               "rendered": null,
-              "type": undefined,
+              "type": [Function],
             },
           ],
           "type": [Function],

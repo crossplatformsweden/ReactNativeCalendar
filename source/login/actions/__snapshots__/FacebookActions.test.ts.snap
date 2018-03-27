@@ -8,13 +8,18 @@ Array [
     "type": "APP = BUSY LOADING",
   },
   Object {
-    "payload": User {
+    "isLoggedIn": true,
+    "type": "LOGIN_SUCCESS",
+    "user": User {
       "accessToken": "fbTokenMock",
+      "autologin": false,
+      "email": null,
       "name": "MockName",
+      "password": null,
       "picture": "http://mockImageUrl/",
       "type": "Facebook",
+      "username": null,
     },
-    "type": "LOGIN_SUCCESS",
   },
   Object {
     "reason": "Friskar upp minnet",
@@ -26,9 +31,13 @@ Array [
     "type": "STORAGE = SAVED KEY",
     "value": User {
       "accessToken": "fbTokenMock",
+      "autologin": false,
+      "email": null,
       "name": "MockName",
+      "password": null,
       "picture": "http://mockImageUrl/",
       "type": "Facebook",
+      "username": null,
     },
   },
   Object {
