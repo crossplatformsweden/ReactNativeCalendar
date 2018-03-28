@@ -22,46 +22,75 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "function",
+    "nodeType": "class",
     "props": Object {
-      "children": <View
-        style={
+      "children": <UNDEFINED
+        items={
           Object {
-            "flex": 1,
+            "2018-05-22": Array [
+              Object {
+                "text": "item 1 - any js object",
+              },
+            ],
+            "2018-05-23": Array [
+              Object {
+                "text": "item 2 - any js object",
+              },
+            ],
+            "2018-05-24": Array [],
+            "2018-05-25": Array [
+              Object {
+                "text": "item 3 - any js object",
+              },
+              Object {
+                "text": "any js object",
+              },
+            ],
           }
         }
-      >
-        <UNDEFINED
-          items={
-            Object {
-              "2018-05-22": Array [
-                Object {
-                  "text": "item 1 - any js object",
-                },
-              ],
-              "2018-05-23": Array [
-                Object {
-                  "text": "item 2 - any js object",
-                },
-              ],
-              "2018-05-24": Array [],
-              "2018-05-25": Array [
-                Object {
-                  "text": "item 3 - any js object",
-                },
-                Object {
-                  "text": "any js object",
-                },
-              ],
-            }
-          }
-          style={Object {}}
-        />
-      </View>,
-      "hideClose": true,
+        style={Object {}}
+      />,
+      "style": Object {
+        "flex": 1,
+      },
     },
     "ref": null,
     "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "items": Object {
+          "2018-05-22": Array [
+            Object {
+              "text": "item 1 - any js object",
+            },
+          ],
+          "2018-05-23": Array [
+            Object {
+              "text": "item 2 - any js object",
+            },
+          ],
+          "2018-05-24": Array [],
+          "2018-05-25": Array [
+            Object {
+              "text": "item 3 - any js object",
+            },
+            Object {
+              "text": "any js object",
+            },
+          ],
+        },
+        "style": Object {},
+      },
+      "ref": null,
+      "rendered": null,
+      "type": undefined,
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
       "instance": null,
       "key": undefined,
       "nodeType": "class",
@@ -128,123 +157,6 @@ ShallowWrapper {
         "ref": null,
         "rendered": null,
         "type": undefined,
-      },
-      "type": [Function],
-    },
-    "type": [Function],
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "function",
-      "props": Object {
-        "children": <View
-          style={
-            Object {
-              "flex": 1,
-            }
-          }
-        >
-          <UNDEFINED
-            items={
-              Object {
-                "2018-05-22": Array [
-                  Object {
-                    "text": "item 1 - any js object",
-                  },
-                ],
-                "2018-05-23": Array [
-                  Object {
-                    "text": "item 2 - any js object",
-                  },
-                ],
-                "2018-05-24": Array [],
-                "2018-05-25": Array [
-                  Object {
-                    "text": "item 3 - any js object",
-                  },
-                  Object {
-                    "text": "any js object",
-                  },
-                ],
-              }
-            }
-            style={Object {}}
-          />
-        </View>,
-        "hideClose": true,
-      },
-      "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "class",
-        "props": Object {
-          "children": <UNDEFINED
-            items={
-              Object {
-                "2018-05-22": Array [
-                  Object {
-                    "text": "item 1 - any js object",
-                  },
-                ],
-                "2018-05-23": Array [
-                  Object {
-                    "text": "item 2 - any js object",
-                  },
-                ],
-                "2018-05-24": Array [],
-                "2018-05-25": Array [
-                  Object {
-                    "text": "item 3 - any js object",
-                  },
-                  Object {
-                    "text": "any js object",
-                  },
-                ],
-              }
-            }
-            style={Object {}}
-          />,
-          "style": Object {
-            "flex": 1,
-          },
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "items": Object {
-              "2018-05-22": Array [
-                Object {
-                  "text": "item 1 - any js object",
-                },
-              ],
-              "2018-05-23": Array [
-                Object {
-                  "text": "item 2 - any js object",
-                },
-              ],
-              "2018-05-24": Array [],
-              "2018-05-25": Array [
-                Object {
-                  "text": "item 3 - any js object",
-                },
-                Object {
-                  "text": "any js object",
-                },
-              ],
-            },
-            "style": Object {},
-          },
-          "ref": null,
-          "rendered": null,
-          "type": undefined,
-        },
-        "type": [Function],
       },
       "type": [Function],
     },
