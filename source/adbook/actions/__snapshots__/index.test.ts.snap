@@ -14,8 +14,8 @@ Array [
         "lon": 201,
       },
       "timeperiod": Object {
-        "timeEnd": "2018-03-28T12:14:37.790Z",
-        "timeStart": "2018-03-28T12:14:37.791Z",
+        "timeEnd": "2018-03-28T12:31:46.162Z",
+        "timeStart": "2018-03-28T12:31:46.162Z",
       },
       "vehicle": Object {
         "regNumber": "AAA123",
