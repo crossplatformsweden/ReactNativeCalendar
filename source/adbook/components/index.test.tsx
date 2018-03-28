@@ -19,6 +19,10 @@ function setup() {
       user: null,
       isLoggedIn: false,
     },
+    utility: {
+      isBusy: false,
+      busyReason: '',
+    },
   };
 
   const enzymeWrapper = shallow(<AdBook {...props} />);

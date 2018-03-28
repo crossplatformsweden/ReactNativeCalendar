@@ -16,14 +16,6 @@ export const Book = (book: types.IBooking, bookingaction: types.ParkingConstants
             null, null, null, null, null
         );
 
-        const changedbooking = new types.Booking(
-            booking.timeperiod,
-            booking.location,
-            booking.vehicle,
-            booking.adress,
-            booking.lessee
-        );
-
         if (bookingaction === types.ParkingConstants.BOOKING_ADDED) {
 
             const theBooking: types.IParkingAction = {
@@ -44,14 +36,6 @@ export const Book = (book: types.IBooking, bookingaction: types.ParkingConstants
 
             dispatch(theBooking);
             return;
-        }
-
-        if (bookingaction === types.ParkingConstants.BOOKING_CHANGED) {
-            const theBooking: types.IParkingAction = {
-                type: types.ParkingConstants.BOOKING_CHANGED,
-                booking: changedbooking,
-              };
-            dispatch(theBooking);
         }
 
 };

@@ -9,7 +9,9 @@ import { AutoLogin } from '../actions/LoginActions';
 import { GetByKey } from '../../storage';
 import { FacebookLogin, GoogleLogin } from '..';
 import { ComponentBase } from '../../utility';
+ // @ts-ignore - Redux base class issue
 import { Agenda } from 'react-native-calendars';
+ // @ts-ignore - Bank id function not yet functional
 import { BankIdLogin } from '../actions';
 
 interface IState {}
