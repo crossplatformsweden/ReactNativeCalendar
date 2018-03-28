@@ -3,6 +3,7 @@ import { LoginTypes } from './login/';
 import { AdBookTypes } from './adbook';
 import { UtilityTypes } from './utility/';
 import { StorageTypes, SaveByKey, RemoveKey, GetByKey } from './storage';
+import { AutoLogin } from './login/actions/LoginActions';
 
 /**
  * The global application state as contained in Redux
@@ -10,7 +11,7 @@ import { StorageTypes, SaveByKey, RemoveKey, GetByKey } from './storage';
  * All state objects might not be available.
  *
  * @export
- * @interface appTypes.IApplicationState
+ * @interface IApplicationState
  */
 export interface IApplicationState {
   route?: NavigatorTypes.INavigationState;
@@ -35,8 +36,10 @@ export interface IProps extends IApplicationState {
   AppErrorChanged?: UtilityTypes.IAppErrorChanged;
   AppLoadingChanged?: UtilityTypes.IAppLoadingChanged;
   GoogleLogin?: LoginTypes.GoogleLogin;
+  BankIdLogin?: LoginTypes.BankIdLogin;
   GetByKey?: GetByKey;
   RemoveKey?: RemoveKey;
   SaveByKey?: SaveByKey;
   Book?: AdBookTypes.Book;
+  AutoLogin?: AutoLogin;
 }

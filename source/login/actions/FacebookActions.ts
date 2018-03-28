@@ -57,10 +57,13 @@ export const FacebookLogin = () => async (
         'Facebook'
       );
 
-      dispatch({
+      const resultAction: loginTypes.ILoginAction = {
         type: loginTypes.LoginConstants.LOGIN_SUCCESS,
-        payload: user,
-      });
+        user,
+        isLoggedIn: true,
+      };
+
+      dispatch(resultAction);
 
       // Trigger Save to storage action
       await dispatch(
@@ -74,7 +77,7 @@ export const FacebookLogin = () => async (
         AppErrorChanged({
           hasError: true,
           reason: 'Login was cancelled',
-          exception: loginTypes.LoginConstants.LOGIN_FAILED,
+          exception: new Error(loginTypes.LoginConstants.LOGIN_FAILED),
           sender: facebookLogin,
         })
       );

@@ -9,7 +9,7 @@ import * as loginTypes from '../types';
 import * as types from '../../Types';
 import { GoogleLogin } from '../actions/GoogleActions';
 import { UtilityTypes } from '../../utility/';
-import { StorageConstants } from '../../storage/types';
+import * as StorageTypes from '../../storage/types';
 
 /**
  * Mock Redux store
@@ -58,25 +58,29 @@ describe('Google actions', () => {
   });
 
   test('GoogleLogin returns SUCCESS when done', async () => {
-    const expectedPayload = {
-      name: 'test',
-      picture: 'http://www.crossplatform,se/',
-      accessToken: 'id',
-      type: 'Google',
+    const expectedPayload = new loginTypes.User(
+      'id',
+      'test',
+      'http://www.crossplatform,se/',
+      'Google'
+    );
+
+    const LoginSuccessAction: loginTypes.ILoginAction = {
+      type: loginTypes.LoginConstants.LOGIN_SUCCESS,
+      user: expectedPayload,
+      isLoggedIn: true,
+    };
+    const StorageSavedAction: StorageTypes.IStorageAction = {
+      type: StorageTypes.StorageConstants.STORAGE_SAVED,
+      key: StorageTypes.StorageConstants.STORAGE_USER_KEY,
+      value: expectedPayload,
     };
 
     const expectedActions = [
       AppLoading('GoogleLogin', loginTypes.LoginConstants.LOGIN_BUSY),
-      {
-        type: loginTypes.LoginConstants.LOGIN_SUCCESS,
-        payload: expectedPayload,
-      },
-      AppLoading('SaveByKey', StorageConstants.STORAGE_BUSY),
-      {
-        type: StorageConstants.STORAGE_SAVED,
-        key: StorageConstants.STORAGE_USER_KEY,
-        value: expectedPayload,
-      },
+      LoginSuccessAction,
+      AppLoading('SaveByKey', StorageTypes.StorageConstants.STORAGE_BUSY),
+      StorageSavedAction,
       NoError('SaveByKey'),
       AppLoadDone('SaveByKey'),
       NoError('GoogleLogin'),

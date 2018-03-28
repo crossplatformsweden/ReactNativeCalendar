@@ -1,4 +1,5 @@
 // storage/reducers/index.test
+/// <reference types="jest"/>
 import * as types from '../types';
 import StorageReducer from './';
 

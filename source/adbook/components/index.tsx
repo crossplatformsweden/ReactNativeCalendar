@@ -2,7 +2,6 @@ import * as types from '../../Types';
 import React from 'react';
 import { Agenda } from 'react-native-calendars';
 import { View } from 'react-native';
-import * as Navigator from '../../navigator/components';
 import { Dispatch, connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { Book } from '../actions/index';
@@ -13,7 +12,7 @@ export class AdBook extends React.Component<types.IProps> {
       //   bookingLocal: new types.IProps.Book()
       // };
         return (
-          <Navigator.ModalBase hideClose>
+
           <View style={{flex: 1}}>
              <Agenda style={{}}
           // the list of items that have to be displayed in agenda. If you want to render item as empty date
@@ -28,7 +27,7 @@ export class AdBook extends React.Component<types.IProps> {
             // specify how each item should be rendered in agenda
               />
           </View>
-          </Navigator.ModalBase>
+
         );
       }
 }

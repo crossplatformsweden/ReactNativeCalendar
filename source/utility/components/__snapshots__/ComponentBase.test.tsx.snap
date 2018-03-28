@@ -5,24 +5,9 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <ComponentBase
-    FacebookLogin={[MockFunction]}
-    GetByKey={[MockFunction]}
-    GoogleLogin={[MockFunction]}
     login={
       Object {
         "isLoggedIn": false,
-        "user": Object {
-          "accessToken": "1",
-          "name": "test",
-          "picture": "",
-          "type": "Google",
-        },
-      }
-    }
-    storage={
-      Object {
-        "key": "",
-        "value": null,
       }
     }
     utility={
@@ -46,25 +31,10 @@ ShallowWrapper {
     "nodeType": "class",
     "props": Object {
       "children": Array [
-        <LoginBase
-          FacebookLogin={[MockFunction]}
-          GetByKey={[MockFunction]}
-          GoogleLogin={[MockFunction]}
+        <MainBase
           login={
             Object {
               "isLoggedIn": false,
-              "user": Object {
-                "accessToken": "1",
-                "name": "test",
-                "picture": "",
-                "type": "Google",
-              },
-            }
-          }
-          storage={
-            Object {
-              "key": "",
-              "value": null,
             }
           }
           utility={
@@ -93,21 +63,8 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "class",
         "props": Object {
-          "FacebookLogin": [MockFunction],
-          "GetByKey": [MockFunction],
-          "GoogleLogin": [MockFunction],
           "login": Object {
             "isLoggedIn": false,
-            "user": Object {
-              "accessToken": "1",
-              "name": "test",
-              "picture": "",
-              "type": "Google",
-            },
-          },
-          "storage": Object {
-            "key": "",
-            "value": null,
           },
           "utility": Object {
             "busyReason": null,
@@ -143,25 +100,10 @@ ShallowWrapper {
       "nodeType": "class",
       "props": Object {
         "children": Array [
-          <LoginBase
-            FacebookLogin={[MockFunction]}
-            GetByKey={[MockFunction]}
-            GoogleLogin={[MockFunction]}
+          <MainBase
             login={
               Object {
                 "isLoggedIn": false,
-                "user": Object {
-                  "accessToken": "1",
-                  "name": "test",
-                  "picture": "",
-                  "type": "Google",
-                },
-              }
-            }
-            storage={
-              Object {
-                "key": "",
-                "value": null,
               }
             }
             utility={
@@ -190,21 +132,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "class",
           "props": Object {
-            "FacebookLogin": [MockFunction],
-            "GetByKey": [MockFunction],
-            "GoogleLogin": [MockFunction],
             "login": Object {
               "isLoggedIn": false,
-              "user": Object {
-                "accessToken": "1",
-                "name": "test",
-                "picture": "",
-                "type": "Google",
-              },
-            },
-            "storage": Object {
-              "key": "",
-              "value": null,
             },
             "utility": Object {
               "busyReason": null,

@@ -2,13 +2,15 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect, Dispatch } from 'react-redux';
 import { View, StyleSheet, Image } from 'react-native';
-import { SocialIcon } from 'react-native-elements';
+import { SocialIcon, Button } from 'react-native-elements';
 
 import * as types from '../../Types';
-import { StorageTypes, GetByKey } from '../../storage';
+import { AutoLogin } from '../actions/LoginActions';
+import { GetByKey } from '../../storage';
 import { FacebookLogin, GoogleLogin } from '..';
 import { ComponentBase } from '../../utility';
 import { Agenda } from 'react-native-calendars';
+import { BankIdLogin } from '../actions';
 
 interface IState {}
 
@@ -19,25 +21,12 @@ interface IState {}
 export class LoginBase extends React.Component<types.IProps, IState> {
   componentWillMount() {
     if (!this.props.login.isLoggedIn) {
-      this.props.GetByKey(StorageTypes.StorageConstants.STORAGE_USER_KEY);
+      // Try to auto login by getting user from storage
+      this.props.AutoLogin();
     }
 
-    if (super.componentWillMount) {
+    if (typeof super.componentWillMount === 'function') {
       super.componentWillMount();
-    }
-  }
-
-  /**
-   * Wraps {@link FacebookActions.FacebookLogin}
-   * @type {function}
-   * @private
-   */
-  async facebookLogin() {
-    await this.props.FacebookLogin();
-    // @ts-ignore
-    if (super.checkLogin) {
-      // @ts-ignore
-      super.checkLogin();
     }
   }
 
@@ -51,13 +40,14 @@ export class LoginBase extends React.Component<types.IProps, IState> {
               width: 120,
               height: 120,
             }}
-          /></View>
+          />
+        </View>
         <SocialIcon
           title='Sign In With Facebook'
           button
           // @ts-ignore - id is unknown
           id='buttonFacebook'
-          onPress={this.facebookLogin}
+          onPress={this.props.FacebookLogin}
           type='facebook'
         />
         <SocialIcon
@@ -79,6 +69,13 @@ export class LoginBase extends React.Component<types.IProps, IState> {
             '2018-05-25': [{text: 'item 3 - any js object'}, {text: 'any js object'}],
             }}
             // specify how each item should be rendered in agenda
+          />
+        <Button
+          // @ts-ignore
+          rounded
+          title='Sign in with BankId'
+          color='blue'
+          onPress={this.props.BankIdLogin}
         />
       </View>
     );
@@ -112,6 +109,8 @@ const mapDispatchToProps = (dispatch: Dispatch<types.IProps>) => ({
   FacebookLogin: bindActionCreators(FacebookLogin, dispatch),
   GoogleLogin: bindActionCreators(GoogleLogin, dispatch),
   GetByKey: bindActionCreators(GetByKey, dispatch),
+  AutoLogin: bindActionCreators(AutoLogin, dispatch),
+  BankIdLogin: bindActionCreators(BankIdLogin, dispatch),
   dispatch,
 });
 

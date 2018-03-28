@@ -29,6 +29,7 @@ function setup() {
     GetByKey: jest.fn(),
     FacebookLogin: jest.fn(),
     GoogleLogin: jest.fn(),
+    AutoLogin: jest.fn(),
     utility: { isBusy: false, busyReason: null, hasError: false },
     login: {
       user,
