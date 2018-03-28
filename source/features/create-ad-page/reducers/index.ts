@@ -5,7 +5,7 @@ import moment from 'moment';
 //
 const initialState: types.ICreateState = {
     createAd: { fromDate: moment(),
-                toDate: moment().add('h', '1')},
+                toDate: moment()},
 };
 
 function CreateAdPageState(

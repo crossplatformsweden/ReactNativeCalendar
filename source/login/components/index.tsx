@@ -58,7 +58,6 @@ export class LoginBase extends React.Component<types.IProps, IState> {
           onPress={this.props.GoogleLogin}
           type='google-plus-official'
         />
-        <CreateAdBooking />;
         <Button
           // @ts-ignore
           rounded

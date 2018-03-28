@@ -29,14 +29,15 @@ describe('App actions', () => {
     const busyReason = 'Loading test';
 
     const expectedActions: types.ICreateAction = {
-        type: types.CreateConstants.CREATE_SUCCESS,
-        createAd: { fromDate: moment(),
-            toDate: moment().add(1, 'h'),
-          },
-      };
+      type: types.CreateConstants.CREATE_SUCCESS,
+      createAd: {
+        fromDate: moment(),
+        toDate: moment().add(1, 'h'),
+      },
+    };
 
     // @ts-ignore - bad mappings
-      store.dispatch(CreateAd());
+    store.dispatch(CreateAd());
 
     // @ts-ignore - bad mappings
     expect(store.getActions()).toMatchSnapshot();
