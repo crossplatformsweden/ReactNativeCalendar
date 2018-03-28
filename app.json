@@ -58,7 +58,7 @@
     },
     "splash": {
       "backgroundColor": "#000000",
-      "image": "./resources/splash.jpeg",
+      "image": "./resources/splash.png",
       "resizeMode": "cover"
     },
     "androidStatusBar": {
