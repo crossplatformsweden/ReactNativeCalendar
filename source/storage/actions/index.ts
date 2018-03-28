@@ -33,7 +33,7 @@ async (dispatch: Redux.Dispatch<storageTypes.IStorageAction>) => {
     dispatch(AppErrorChanged({
       hasError: true,
       reason: 'Key or value was null',
-      exception: storageTypes.StorageConstants.STORAGE_SAVE_FAILED,
+      exception: new Error(storageTypes.StorageConstants.STORAGE_SAVE_FAILED),
       sender: saveByKey,
     }));
   }
@@ -46,7 +46,7 @@ async (dispatch: Redux.Dispatch<storageTypes.IStorageAction>) => {
         dispatch(AppErrorChanged({
           hasError: true,
           reason: storageTypes.StorageConstants.STORAGE_SAVE_FAILED,
-          exception: e.message,
+          exception: e,
           sender: saveByKey,
         }));
       }
@@ -100,7 +100,7 @@ async (dispatch: Redux.Dispatch<storageTypes.IStorageAction>) => {
       dispatch(AppErrorChanged({
         hasError: true,
         reason: storageTypes.StorageConstants.STORAGE_REMOVED_FAILED,
-        exception: e.message,
+        exception: e,
         sender: removeKey,
       }));
     }

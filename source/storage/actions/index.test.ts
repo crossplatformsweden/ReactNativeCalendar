@@ -1,4 +1,5 @@
 // storage/actions/index.test
+/// <reference types="jest"/>
 import configureMockStore from 'redux-mock-store';
 
 import { Store } from '../../Store';

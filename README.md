@@ -2,6 +2,10 @@ Demonstrates how to use [Calendar](https://github.com/wix/react-native-calendars
 
 ![Build Status VSTS](https://crossplatformsweden.visualstudio.com/_apis/public/build/definitions/d78cd34c-7dba-4915-95f8-68d9b3dd56db/4/badge)
 
+## Modules
+### Create ad
+### Book ad
+
 ## Authentication
 The app has a Login page that's displayed modally and shows Facebook and Google login buttons implemented through Expo (ExpoKit SDK).
 To use these providers, configure appropriate fields in `app.json`.
@@ -24,30 +28,37 @@ Below you'll find information about performing common tasks. The most recent ver
 
 ## Table of Contents
 
-* [Updating to New Releases](#updating-to-new-releases)
-* [Available Scripts](#available-scripts)
-  * [npm run build](#npm-run-build)
-  * [npm run build-watch](#npm-run-build-watch)
-  * [npm start](#npm-start)
-  * [npm test](#npm-test)
-  * [npm run testbuild](#npm-run-testbuild)
-  * [npm run ios](#npm-run-ios)
-  * [npm run android](#npm-run-android)
-  * [npm run eject](#npm-run-eject)
-* [Writing and Running Tests](#writing-and-running-tests)
-* [Environment Variables](#environment-variables)
+- [Authentication](#authentication)
+- [Updating to New Releases](#updating-to-new-releases)
+- [Integrations](#integrations)
+  * [Sentry](#sentry)
+- [Available Scripts](#available-scripts)
+  * [`npm run build`](#-npm-run-build-)
+  * [`npm run build-watch`](#-npm-run-build-watch-)
+  * [`npm start`](#-npm-start-)
+    + [`npm test`](#-npm-test-)
+    + [`npm run testbuild`](#-npm-run-testbuild-)
+    + [`npm run ios`](#-npm-run-ios-)
+    + [`npm run android`](#-npm-run-android-)
+      - [Using Android Studio's `adb`](#using-android-studio-s--adb-)
+      - [Using Genymotion's `adb`](#using-genymotion-s--adb-)
+    + [`npm run eject`](#-npm-run-eject-)
+- [Customizing App Display Name and Icon](#customizing-app-display-name-and-icon)
+- [Writing and Running Tests](#writing-and-running-tests)
+- [Environment Variables](#environment-variables)
   * [Configuring Packager IP Address](#configuring-packager-ip-address)
-* [Customizing App Display Name and Icon](#customizing-app-display-name-and-icon)
-* [Sharing and Deployment](#sharing-and-deployment)
-  * [Publishing to Expo's React Native Community](#publishing-to-expos-react-native-community)
-  * [Building an Expo "standalone" app](#building-an-expo-standalone-app)
+- [Sharing and Deployment](#sharing-and-deployment)
+  * [Publishing to Expo's React Native Community](#publishing-to-expo-s-react-native-community)
+  * [Building an Expo "standalone" app](#building-an-expo--standalone--app)
   * [Ejecting from Create React Native App](#ejecting-from-create-react-native-app)
-    * [Build Dependencies (Xcode & Android Studio)](#build-dependencies-xcode-android-studio)
-    * [Should I Use ExpoKit?](#should-i-use-expokit)
-* [Troubleshooting](#troubleshooting)
+    + [Should I Use ExpoKit?](#should-i-use-expokit-)
+- [Troubleshooting](#troubleshooting)
   * [Networking](#networking)
-  * [iOS Simulator won't open](#ios-simulator-wont-open)
+  * [iOS Simulator won't open](#ios-simulator-won-t-open)
   * [QR Code does not scan](#qr-code-does-not-scan)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 ## Updating to New Releases
 
@@ -56,6 +67,25 @@ You should only need to update the global installation of `create-react-native-a
 Updating the `react-native-scripts` dependency of your app should be as simple as bumping the version number in `package.json` and reinstalling your project's dependencies.
 
 Upgrading to a new version of React Native requires updating the `react-native`, `react`, and `expo` package versions, and setting the correct `sdkVersion` in `app.json`. See the [versioning guide](https://github.com/react-community/create-react-native-app/blob/master/VERSIONS.md) for up-to-date information about package version compatibility.
+
+## Integrations
+### Sentry
+The app supports error logging through [Sentry.io](https://www.sentry.io). 
+
+To configure Sentry, create an account and configure id in the parameter `extra.sentryPublicDsn` in `app.json`:
+```json
+    "extra": {
+      "sentryPublicDsn": "https://myPublicDsn@sentry.io/appId",
+      "google": {
+        "maps": "id",
+        "webClientId": "id",
+        "androidStandaloneAppClientId": "id",
+        "iosStandaloneAppClientId": "id",
+        "androidClientId": "id",
+        "iosClientId": "id"
+      }
+    }
+```
 
 ## Available Scripts
 
