@@ -23,22 +23,22 @@ export enum IVehicleType {
     StationWagon= 'StationWagon',
 }
 
-interface IVehicle {
+export interface IVehicle {
     vehicleType: IVehicleType;
     vehicleModel?: string;
     regNumber: string;
 }
 
-interface IPerson {
+export interface IPerson {
     firstName: string;
     lastName: string;
 }
 
-interface ITimePeriod {
+export interface ITimePeriod {
     timeStart: Moment.Moment;
     timeEnd: Moment.Moment;
 }
-interface ILocation {
+export interface ILocation {
     lat: number;
     lon: number;
 }
@@ -60,8 +60,23 @@ export interface IParkingAction extends IBookingState {
 }
 
 export class Booking implements IBooking {
-    constructor (readonly timeperiod: ITimePeriod, readonly location: ILocation,
-        readonly vehicle: IVehicle, readonly adress: string, readonly lessee: IPerson ) {
+    // TODO: Default values (time period etc)
 
+    constructor (readonly timeperiod: ITimePeriod = null, readonly location: ILocation = null,
+        readonly vehicle: IVehicle = null, readonly adress: string = '', readonly lessee: IPerson = null ) {
+            if (!timeperiod) { this.timeperiod = {timeStart: Moment(), timeEnd: Moment()}; }
+            if (!location) { this.location = {lat: 0, lon: 0}; }
+            if (!vehicle) { this.vehicle = {vehicleType: IVehicleType.Sedan, vehicleModel: '', regNumber: ''}; }
+            if (!adress) {this.adress = ''; }
+            if (!lessee) {this.lessee = {firstName: '', lastName: ''}; }
         }
 }
+export const ParkingAction = (
+    type: ParkingConstants,
+    booking: IBooking = new Booking()
+): IParkingAction => {
+    const result: IParkingAction = {
+        type, booking,
+    };
+    return result;
+};

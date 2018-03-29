@@ -1,8 +1,5 @@
 {
   "expoServerPort": 19000,
-  "packagerPort": 19002,
-  "packagerPid": 29067,
-  "expoServerNgrokUrl": "https://n4-hwg.tomcrusader.reactnativetypescript.exp.direct",
-  "packagerNgrokUrl": "https://packager.n4-hwg.tomcrusader.reactnativetypescript.exp.direct",
-  "ngrokPid": 13158
+  "packagerPort": 19001,
+  "packagerPid": 2828
 }

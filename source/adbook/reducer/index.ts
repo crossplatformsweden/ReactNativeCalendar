@@ -7,7 +7,7 @@ function CreateBookingState(booking: bookingtypes.IBooking): bookingtypes.IBooki
 }
 
 const initialState: bookingtypes.IBookingState = {
-    booking: null,
+    booking: new bookingtypes.Booking(),
 };
 
 const BookingReducer = ( state = initialState, action: bookingtypes.IParkingAction): bookingtypes.IBookingState => {
