@@ -11,6 +11,8 @@ import { FacebookLogin, GoogleLogin } from '..';
 import { ComponentBase } from '../../utility';
 import { CreateAdBooking } from '../../features/create-ad-page/components/index';
 import { BankIdLogin } from '../actions';
+import { Actions } from 'react-native-router-flux';
+import { NavigationConstants } from '../../navigator/types';
 
 interface IState {}
 
@@ -28,6 +30,10 @@ export class LoginBase extends React.Component<types.IProps, IState> {
     if (typeof super.componentWillMount === 'function') {
       super.componentWillMount();
     }
+  }
+
+  goToAdCreateScreen() {
+    Actions.push(NavigationConstants.ADCREATE);
   }
 
   render() {
@@ -65,6 +71,12 @@ export class LoginBase extends React.Component<types.IProps, IState> {
           color='blue'
           onPress={this.props.BankIdLogin}
         />
+        <Button
+        style={{padding: 10}}
+        rounded
+        color='white'
+        title='100% error'
+          onPress={this.goToAdCreateScreen}/>
       </View>
     );
   }

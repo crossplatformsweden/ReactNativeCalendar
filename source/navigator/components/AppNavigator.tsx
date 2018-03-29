@@ -17,6 +17,7 @@ import { NavigationConstants } from '../../navigator/types';
 import { LoginContainer } from '../../login/';
 import { MainContainer } from '../../main/';
 import { ProfileContainer } from '../../profile/';
+import { CreateAdBooking } from '../../features/create-ad-page';
 
 interface RouterProps {
   sceneStyle?: any;
@@ -89,6 +90,13 @@ export const Routes = Actions.create(
           icon={profileIcon}
         />
       </Tabs>
+      <Scene
+        key={NavigationConstants.ADCREATE}
+        component={CreateAdBooking}
+        hideNavBar
+        back={false}
+        direction='vertical'
+      />
       <Scene
         key={NavigationConstants.LOGIN}
         component={LoginContainer}

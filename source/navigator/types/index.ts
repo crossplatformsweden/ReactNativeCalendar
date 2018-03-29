@@ -19,6 +19,10 @@ export interface INavigationConstants {
    * The profile screen
    */
   PROFILE?: Function;
+  //
+  // Create ad Screen
+  //
+  ADCREATE?: Function;
 }
 
 export interface INavigationState extends INavigationConstants {
@@ -59,4 +63,8 @@ export enum NavigationConstants {
    * The profile screen
    */
   PROFILE = 'ProfileScreen',
+  /**
+   * The Create ad booking
+   */
+  ADCREATE = 'createAdScreen',
 }
