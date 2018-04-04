@@ -1,6 +1,5 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Actions } from 'react-native-router-flux';
 import { connect, Dispatch } from 'react-redux';
 
 import * as types from '../../Types';
@@ -12,12 +11,6 @@ const styles = StyleSheet.create({
 });
 
 export class MainBase extends React.Component<types.IProps, {}> {
-  componentDidMount() {
-    if (!this.props.login.isLoggedIn) {
-      Actions.push('login');
-    }
-  }
-
   render() {
     return (
       <View style={[Theme.container, styles.padding]}>

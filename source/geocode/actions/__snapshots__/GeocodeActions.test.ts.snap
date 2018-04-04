@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`geocoding actions GeocodeAddress returns SUCCESS when done 1`] = `
+Array [
+  Object {
+    "reason": "Läser kartboken",
+    "sender": "GeocodeAddress",
+    "type": "APP = BUSY LOADING",
+  },
+  Object {
+    "results": Array [
+      Object {
+        "address_components": Array [
+          Object {
+            "long_name": "1600",
+            "short_name": "1600",
+            "types": Array [
+              "street_number",
+            ],
+          },
+        ],
+      },
+    ],
+    "type": "GEOCODE = SUCCESS",
+  },
+  Object {
+    "exception": null,
+    "reason": null,
+    "sender": "GeocodeAddress",
+    "type": "APP NO ERROR",
+  },
+  Object {
+    "reason": null,
+    "sender": "GeocodeAddress",
+    "type": "APP = DONE LOADING",
+  },
+]
+`;

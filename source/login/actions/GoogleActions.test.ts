@@ -22,35 +22,6 @@ jest.mock('../../navigator', () => ({
   AppNavigator: 'Button',
 }));
 
-function NoError(
-  sender: string,
-  reason: string = null,
-  exception: string = null
-) {
-  return {
-    sender,
-    type: UtilityTypes.UtilityConstants.APP_NO_ERROR,
-    reason,
-    exception,
-  };
-}
-
-function AppLoading(sender: string, reason: string) {
-  return {
-    sender,
-    reason,
-    type: UtilityTypes.UtilityConstants.APP_LOAD_BUSY,
-  };
-}
-
-function AppLoadDone(sender: string, reason: string = null) {
-  return {
-    sender,
-    type: UtilityTypes.UtilityConstants.APP_LOAD_DONE,
-    reason,
-  };
-}
-
 describe('Google actions', () => {
   beforeEach(() => {
     // @ts-ignore
@@ -65,26 +36,52 @@ describe('Google actions', () => {
       'Google'
     );
 
-    const LoginSuccessAction: loginTypes.ILoginAction = {
-      type: loginTypes.LoginConstants.LOGIN_SUCCESS,
-      user: expectedPayload,
-      isLoggedIn: true,
-    };
-    const StorageSavedAction: StorageTypes.IStorageAction = {
-      type: StorageTypes.StorageConstants.STORAGE_SAVED,
-      key: StorageTypes.StorageConstants.STORAGE_USER_KEY,
-      value: expectedPayload,
-    };
+    const methodName = 'GoogleLogin';
+    const methodNameStorageSave = 'SaveByKey';
 
     const expectedActions = [
-      AppLoading('GoogleLogin', loginTypes.LoginConstants.LOGIN_BUSY),
-      LoginSuccessAction,
-      AppLoading('SaveByKey', StorageTypes.StorageConstants.STORAGE_BUSY),
-      StorageSavedAction,
-      NoError('SaveByKey'),
-      AppLoadDone('SaveByKey'),
-      NoError('GoogleLogin'),
-      AppLoadDone('GoogleLogin'),
+      UtilityTypes.AppLoadingChangedAction(
+        UtilityTypes.UtilityConstants.APP_LOAD_BUSY,
+        loginTypes.LoginConstants.LOGIN_BUSY,
+        methodName
+      ),
+      loginTypes.LoginState(
+        loginTypes.LoginConstants.LOGIN_SUCCESS,
+        expectedPayload,
+        true
+      ),
+      UtilityTypes.AppLoadingChangedAction(
+        UtilityTypes.UtilityConstants.APP_LOAD_BUSY,
+        StorageTypes.StorageConstants.STORAGE_BUSY,
+        methodNameStorageSave
+      ),
+      StorageTypes.StorageState(
+        StorageTypes.StorageConstants.STORAGE_SAVED,
+        StorageTypes.StorageConstants.STORAGE_USER_KEY,
+        expectedPayload
+      ),
+      UtilityTypes.AppErrorChangedAction(
+        UtilityTypes.UtilityConstants.APP_NO_ERROR,
+        null,
+        null,
+        methodNameStorageSave
+      ),
+      UtilityTypes.AppLoadingChangedAction(
+        UtilityTypes.UtilityConstants.APP_LOAD_DONE,
+        null,
+        methodNameStorageSave
+      ),
+      UtilityTypes.AppErrorChangedAction(
+        UtilityTypes.UtilityConstants.APP_NO_ERROR,
+        null,
+        null,
+        methodName
+      ),
+      UtilityTypes.AppLoadingChangedAction(
+        UtilityTypes.UtilityConstants.APP_LOAD_DONE,
+        null,
+        methodName
+      ),
     ];
 
     // Dispatch action

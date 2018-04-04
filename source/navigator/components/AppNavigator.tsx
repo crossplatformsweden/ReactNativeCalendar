@@ -14,9 +14,9 @@ import Theme, { Colors, TabIconSize } from '../../styles';
 import { NavigationConstants } from '../../navigator/types';
 
 // Component views used in navigation
-import { LoginContainer } from '../../login/';
 import { MainContainer } from '../../main/';
-import { ProfileContainer } from '../../profile/';
+import LoginContainer from '../../login/components/';
+import ProfileContainer from '../../profile/components/';
 
 interface RouterProps {
   sceneStyle?: any;

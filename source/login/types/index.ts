@@ -1,5 +1,6 @@
 // login/types/index
 import { FacebookLogin, GoogleLogin, BankIdLogin } from '../actions';
+import _ from 'lodash';
 
 export type FacebookLogin = typeof FacebookLogin;
 
@@ -32,10 +33,10 @@ export interface IUser {
 
 export class User implements IUser {
   constructor(
-    readonly accessToken: string,
-    readonly name: string,
+    readonly accessToken: string = null,
+    readonly name: string = null,
     readonly picture: string = '',
-    readonly type: string,
+    readonly type: string = null,
     readonly username: string = null,
     readonly password: string = null,
     readonly email: string = null,
@@ -70,6 +71,11 @@ export enum LoginConstants {
    * Login state: logged out of app
    */
   LOGGED_OUT = 'LOGGED_OUT',
+
+  /**
+   * Login state: login was cancelled by user
+   */
+  LOGIN_CANCELLED = 'Inloggning avbruten',
 }
 
 export interface ILoginState {
@@ -87,8 +93,31 @@ export interface ILoginState {
    * @memberof ILoginReducer
    */
   isLoggedIn: boolean;
-}
 
-export interface ILoginAction extends ILoginState {
+  /**
+   * Action type constant string
+   *
+   * @type {LoginConstants}
+   * @memberof ILoginState
+   */
   type: LoginConstants;
 }
+
+/**
+ * Returns a {ILoginState} object
+ * @param type Action type
+ * @param user User object
+ * @param isLoggedIn Determines if the user is logged in
+ */
+export const LoginState = (
+  type: LoginConstants = null,
+  user: IUser = null,
+  isLoggedIn: boolean = false
+): ILoginState => {
+  const r: ILoginState = {
+    type: type,
+    user: _.isNil(user) ? new User() : user,
+    isLoggedIn: isLoggedIn,
+  };
+  return r;
+};

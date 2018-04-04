@@ -4,6 +4,7 @@ import { View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { FormValidationMessage } from 'react-native-elements';
 import Sentry from 'sentry-expo';
+import _ from 'lodash';
 
 import BusyIndicator from './BusyIndicator';
 import * as types from '../../Types';
@@ -36,14 +37,15 @@ const componentBase = <P, S>(WrappedComponent: React.ComponentType<P>) =>
     protected async checkLogin() {
       const iProps = this.props as types.IProps;
       if (iProps && iProps.login && iProps.login.isLoggedIn) {
-
         // User is logged in - set user info for debugging
-        if (iProps.login.user)
+        if (!_.isNil(iProps.login.user)) {
+          console.log('Setting Sentry user context');
           Sentry.setUserContext({
             email: iProps.login.user.email,
-            username: iProps.login.user.username,
-            extra: { type: iProps.login.user.type },
+            username: iProps.login.user.name,
+            extra: { type: iProps.login.user.type, username: iProps.login.user.username },
           });
+        }
 
         if (
           Actions.currentScene === NavigatorTypes.NavigationConstants.LOGIN &&
@@ -53,12 +55,13 @@ const componentBase = <P, S>(WrappedComponent: React.ComponentType<P>) =>
           // Close login modal
           Actions.pop();
         }
-      } else if (Actions.LoginScreen) {
-
-        // Push login screen
-        if (!iProps.login.isLoggedIn) {
-        Actions.LoginScreen(); }
       }
+      // else if (Actions.LoginScreen) {
+      //   // Push login screen
+      //   if (!iProps.login.isLoggedIn) {
+      //     Actions.LoginScreen();
+      //   }
+      // }
     }
 
     componentWillMount() {

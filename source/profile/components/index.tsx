@@ -3,7 +3,6 @@ import * as React from 'react';
 import { connect, Dispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { NavigationActions } from 'react-navigation';
-import { Actions } from 'react-native-router-flux';
 
 import { View, ScrollView, StyleSheet, Switch } from 'react-native';
 import { Avatar, Button, FormLabel, FormInput } from 'react-native-elements';
@@ -138,7 +137,7 @@ export class ProfileBase extends React.Component<
   async autologinChanged() {
     let user = this.state.userLocal;
     user.autologin = !user.autologin;
-    this.setState({userLocal: user});
+    this.setState({ userLocal: user });
     await this.saveUserLocalToStorage();
   }
 
@@ -230,16 +229,7 @@ const mapStateToProps = (state: types.IApplicationState) => ({
 const mapDispatchToProps = (
   dispatch: Dispatch<ProfileTypes.IProfileProps>
 ) => ({
-  Logout: async () => {
-    // Remove user from storage
-    await dispatch(
-      storage.RemoveKey(storage.StorageTypes.StorageConstants.STORAGE_USER_KEY)
-    );
-    // Set state to logged out
-    dispatch({ type: login.LoginTypes.LoginConstants.LOGGED_OUT });
-    // Display login screen
-    Actions.LoginScreen();
-  },
+  Logout: bindActionCreators(login.Logout, dispatch),
   Login: () =>
     dispatch(
       NavigationActions.navigate({

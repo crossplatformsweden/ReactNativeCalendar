@@ -2,7 +2,8 @@ import { NavigatorTypes } from './navigator/';
 import { LoginTypes } from './login/';
 import { UtilityTypes } from './utility/';
 import { StorageTypes, SaveByKey, RemoveKey, GetByKey } from './storage';
-import { AutoLogin } from './login/actions/LoginActions';
+import { GeocodeTypes, GeocodeAddress } from './geocode';
+import { AutoLogin, Logout } from './login/actions/';
 
 /**
  * The global application state as contained in Redux
@@ -17,6 +18,7 @@ export interface IApplicationState {
   login?: LoginTypes.ILoginState;
   utility?: UtilityTypes.IUtilityState;
   storage?: StorageTypes.IStorageState;
+  geocoding?: GeocodeTypes.IGeocodeState;
 }
 
 /**
@@ -31,12 +33,14 @@ export interface IProps extends IApplicationState {
   // AppLoadingChanged?: appActions.AppLoadingChanged;
   dispatch?: any;
   FacebookLogin?: LoginTypes.FacebookLogin;
-  AppErrorChanged?: UtilityTypes.IAppErrorChanged;
-  AppLoadingChanged?: UtilityTypes.IAppLoadingChanged;
+  AppErrorChanged?: UtilityTypes.IAppErrorChangedAction;
+  AppLoadingChanged?: UtilityTypes.IAppLoadingChangedAction;
   GoogleLogin?: LoginTypes.GoogleLogin;
+  GeocodeAddress?: GeocodeAddress;
   BankIdLogin?: LoginTypes.BankIdLogin;
   GetByKey?: GetByKey;
   RemoveKey?: RemoveKey;
   SaveByKey?: SaveByKey;
   AutoLogin?: AutoLogin;
+  Logout?: Logout;
 }

@@ -15,11 +15,14 @@ const initialAuthState: appTypes.IUtilityState = {
  * @param {Object} state
  * @param {Object} action
  */
-const UtilityReducer = (state = initialAuthState, action: appTypes.UtilityActionTypes): appTypes.IUtilityState => {
-    let newState: appTypes.IUtilityState = null;
+const UtilityReducer = (
+  state = initialAuthState,
+  action: appTypes.UtilityActionTypes
+): appTypes.IUtilityState => {
+  let newState: appTypes.IUtilityState = null;
   switch (action.type) {
     case appTypes.UtilityConstants.APP_LOAD_BUSY:
-    newState = {
+      newState = {
         ...state,
         isBusy: true,
         busyReason: action.reason,
@@ -27,7 +30,7 @@ const UtilityReducer = (state = initialAuthState, action: appTypes.UtilityAction
       };
       return Object.assign({}, state, newState);
     case appTypes.UtilityConstants.APP_LOAD_DONE:
-    newState = {
+      newState = {
         ...state,
         isBusy: false,
         busyReason: null,
@@ -35,16 +38,16 @@ const UtilityReducer = (state = initialAuthState, action: appTypes.UtilityAction
       };
       return Object.assign({}, state, newState);
     case appTypes.UtilityConstants.APP_HAS_ERROR:
-    newState = {
+      newState = {
         ...state,
         hasError: true,
         errorMessage: action.reason,
-        exception: (<appTypes.IAppErrorChanged>action).exception,
+        exception: (<appTypes.IAppErrorChangedAction>action).exception,
         sender: action.sender,
       };
       return Object.assign({}, state, newState);
     case appTypes.UtilityConstants.APP_NO_ERROR:
-     newState =  {
+      newState = {
         ...state,
         hasError: false,
         errorMessage: null,

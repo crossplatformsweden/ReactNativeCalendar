@@ -3,8 +3,8 @@
 import configureMockStore from 'redux-mock-store';
 
 import { Store } from '../../Store';
-import * as storageTypes from '../types';
-import {UtilityTypes} from '../../utility';
+import * as types from '../types';
+import { UtilityTypes } from '../../utility';
 import { SaveByKey, GetByKey, RemoveKey } from './';
 
 /**
@@ -20,16 +20,31 @@ jest.mock('../../navigator', () => ({
 
 describe('Storage actions', () => {
   beforeEach(() => {
-      // @ts-ignore
-      storeMock.clearActions();
+    // @ts-ignore
+    storeMock.clearActions();
   });
 
   test('RemoveKey returns expected actions', async () => {
     const key = 'RemoveKey';
+    const methodName = 'RemoveKey';
     const expectedActions = [
-      { type: UtilityTypes.UtilityConstants.APP_LOAD_BUSY, reason: storageTypes.StorageConstants.STORAGE_BUSY, sender: 'RemoveKey' },
-      { type: storageTypes.StorageConstants.STORAGE_REMOVEDKEY, key },
-      { type: UtilityTypes.UtilityConstants.APP_LOAD_DONE, reason: null, sender: 'RemoveKey' },
+      UtilityTypes.AppLoadingChangedAction(
+        UtilityTypes.UtilityConstants.APP_LOAD_BUSY,
+        types.StorageConstants.STORAGE_BUSY,
+        methodName
+      ),
+      types.StorageState(types.StorageConstants.STORAGE_REMOVEDKEY, key),
+      UtilityTypes.AppErrorChangedAction(
+        UtilityTypes.UtilityConstants.APP_NO_ERROR,
+        null,
+        null,
+        methodName
+      ),
+      UtilityTypes.AppLoadingChangedAction(
+        UtilityTypes.UtilityConstants.APP_LOAD_DONE,
+        null,
+        methodName
+      ),
     ];
 
     // @ts-ignore
@@ -42,28 +57,33 @@ describe('Storage actions', () => {
   });
 
   test('SaveByKey returns  expected actions', async () => {
+    const methodName = 'SaveByKey';
     const model = { name: 'test name', phone: '555-222 33' };
-    const expectedPayload = {
-      key: 'test key',
-      model,
-    };
+    const testKey = 'test key';
 
     const expectedActions = [
-      { type: UtilityTypes.UtilityConstants.APP_LOAD_BUSY, reason: storageTypes.StorageConstants.STORAGE_BUSY, sender: 'SaveByKey' },
-      {
-        type: storageTypes.StorageConstants.STORAGE_SAVED,
-        key: expectedPayload.key,
-        value: model,
-      },
-      {
-        type: UtilityTypes.UtilityConstants.APP_NO_ERROR, reason: null, exception: null, sender: 'SaveByKey',
-      },
-      { type: UtilityTypes.UtilityConstants.APP_LOAD_DONE, reason: null, sender: 'SaveByKey' },
+      UtilityTypes.AppLoadingChangedAction(
+        UtilityTypes.UtilityConstants.APP_LOAD_BUSY,
+        types.StorageConstants.STORAGE_BUSY,
+        methodName
+      ),
+      types.StorageState(types.StorageConstants.STORAGE_SAVED, testKey, model),
+      UtilityTypes.AppErrorChangedAction(
+        UtilityTypes.UtilityConstants.APP_NO_ERROR,
+        null,
+        null,
+        methodName
+      ),
+      UtilityTypes.AppLoadingChangedAction(
+        UtilityTypes.UtilityConstants.APP_LOAD_DONE,
+        null,
+        methodName
+      ),
     ];
 
     // Dispatch action
     // @ts-ignore
-    await storeMock.dispatch(SaveByKey(expectedPayload.key, model));
+    await storeMock.dispatch(SaveByKey(testKey, model));
 
     // @ts-ignore
     expect(storeMock.getActions()).toMatchSnapshot();
@@ -72,27 +92,33 @@ describe('Storage actions', () => {
   });
 
   test('GetByKey returns expected actions', async () => {
-    const key = 'GetByKey';
-    const expectedModel = {
-      key,
+    const methodName = 'GetByKey';
+    const model = {
+      key: methodName,
     };
 
     const expectedActions = [
-
-      { type: UtilityTypes.UtilityConstants.APP_LOAD_BUSY, reason: storageTypes.StorageConstants.STORAGE_BUSY, sender: key },
-      {
-        type: storageTypes.StorageConstants.STORAGE_GOTKEY,
-        key,
-        value: expectedModel,
-      },
-      {
-        type: UtilityTypes.UtilityConstants.APP_NO_ERROR, reason: null, exception: null, sender: key,
-      },
-      { type: UtilityTypes.UtilityConstants.APP_LOAD_DONE, reason: null, sender: key },
+      UtilityTypes.AppLoadingChangedAction(
+        UtilityTypes.UtilityConstants.APP_LOAD_BUSY,
+        types.StorageConstants.STORAGE_BUSY,
+        methodName
+      ),
+      types.StorageState(types.StorageConstants.STORAGE_GOTKEY, methodName, model),
+      UtilityTypes.AppErrorChangedAction(
+        UtilityTypes.UtilityConstants.APP_NO_ERROR,
+        null,
+        null,
+        methodName
+      ),
+      UtilityTypes.AppLoadingChangedAction(
+        UtilityTypes.UtilityConstants.APP_LOAD_DONE,
+        null,
+        methodName
+      ),
     ];
 
     // @ts-ignore
-    await storeMock.dispatch(GetByKey(key));
+    await storeMock.dispatch(GetByKey(methodName));
 
     // @ts-ignore
     expect(storeMock.getActions()).toMatchSnapshot();

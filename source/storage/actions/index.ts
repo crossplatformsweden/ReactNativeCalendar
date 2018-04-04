@@ -17,52 +17,65 @@ const saveByKey = 'SaveByKey';
  * @public
  * @memberof StorageActions
  */
-export const SaveByKey = (key: string, value: object) =>
-async (dispatch: Redux.Dispatch<storageTypes.IStorageAction>) => {
-  /**
-   * The resulting dispatch
-   * @type {SaveByKeyDispatch}
-   */
-  let resultDispatch = null;
-  dispatch(AppLoadingChanged({
-    isBusy: true,
-    reason: storageTypes.StorageConstants.STORAGE_BUSY,
-    sender: saveByKey,
-  }));
-  if (_.isNil(key) || _.isNil(value)) {
-    dispatch(AppErrorChanged({
-      hasError: true,
-      reason: 'Key or value was null',
-      exception: new Error(storageTypes.StorageConstants.STORAGE_SAVE_FAILED),
+export const SaveByKey = (key: string, value: object) => async (
+  dispatch: Redux.Dispatch<storageTypes.IStorageState>
+) => {
+  dispatch(
+    // Busy
+    AppLoadingChanged({
+      isBusy: true,
+      reason: storageTypes.StorageConstants.STORAGE_BUSY,
       sender: saveByKey,
-    }));
+    })
+  );
+  if (_.isNil(key) || _.isNil(value)) {
+    dispatch(
+      AppErrorChanged({
+        hasError: true,
+        reason: 'Key or value was null',
+        exception: new Error(storageTypes.StorageConstants.STORAGE_SAVE_FAILED),
+        sender: saveByKey,
+      })
+    );
   }
 
   const model = JSON.stringify(value);
 
   try {
-    await AsyncStorage.setItem(key, model, (e) => {
+    await AsyncStorage.setItem(key, model, e => {
       if (!_.isNil(e)) {
-        dispatch(AppErrorChanged({
-          hasError: true,
-          reason: storageTypes.StorageConstants.STORAGE_SAVE_FAILED,
-          exception: e,
-          sender: saveByKey,
-        }));
+        dispatch(
+          AppErrorChanged({
+            hasError: true,
+            reason: storageTypes.StorageConstants.STORAGE_SAVE_FAILED,
+            exception: e,
+            sender: saveByKey,
+          })
+        );
       }
     });
 
-    resultDispatch = { type: storageTypes.StorageConstants.STORAGE_SAVED, key, value };
-    dispatch(resultDispatch);
+    dispatch(
+      storageTypes.StorageState(
+        storageTypes.StorageConstants.STORAGE_SAVED,
+        key,
+        value
+      )
+    );
+
+    // Reset errors
     dispatch(AppErrorChanged({ hasError: false, sender: saveByKey }));
   } catch (e) {
-    dispatch(AppErrorChanged({
-      hasError: true,
-      reason: storageTypes.StorageConstants.STORAGE_SAVE_FAILED,
-      exception: e,
-      sender: saveByKey,
-    }));
+    dispatch(
+      AppErrorChanged({
+        hasError: true,
+        reason: storageTypes.StorageConstants.STORAGE_SAVE_FAILED,
+        exception: e,
+        sender: saveByKey,
+      })
+    );
   } finally {
+    // Reset busy
     dispatch(AppLoadingChanged({ isBusy: false, sender: saveByKey }));
   }
 };
@@ -79,32 +92,42 @@ const removeKey = 'RemoveKey';
  * @public
  * @memberof StorageActions
  */
-export const RemoveKey = (key: string) =>
-async (dispatch: Redux.Dispatch<storageTypes.IStorageAction>) => {
-  /**
-   * The resulting dispatch
-   * @type {RemoveKeyDispatch}
-   */
-  let resultDispatch = null;
-  dispatch(AppLoadingChanged({
-    isBusy: true,
-    reason: storageTypes.StorageConstants.STORAGE_BUSY,
-    sender: removeKey,
-  }));
+export const RemoveKey = (key: string) => async (
+  dispatch: Redux.Dispatch<storageTypes.IStorageState>
+) => {
+  dispatch(
+    // Busy
+    AppLoadingChanged({
+      isBusy: true,
+      reason: storageTypes.StorageConstants.STORAGE_BUSY,
+      sender: removeKey,
+    })
+  );
 
-  await AsyncStorage.removeItem(key, (e) => {
+  await AsyncStorage.removeItem(key, e => {
     if (_.isNil(e)) {
-      resultDispatch = { type: storageTypes.StorageConstants.STORAGE_REMOVEDKEY, key };
-      dispatch(resultDispatch);
+      // Success
+      dispatch(
+        storageTypes.StorageState(
+          storageTypes.StorageConstants.STORAGE_REMOVEDKEY,
+          key
+        )
+      );
+
+      // Reset errors
+      dispatch(AppErrorChanged({ hasError: false, sender: removeKey }));
     } else {
-      dispatch(AppErrorChanged({
-        hasError: true,
-        reason: storageTypes.StorageConstants.STORAGE_REMOVED_FAILED,
-        exception: e,
-        sender: removeKey,
-      }));
+      dispatch(
+        AppErrorChanged({
+          hasError: true,
+          reason: storageTypes.StorageConstants.STORAGE_REMOVED_FAILED,
+          exception: e,
+          sender: removeKey,
+        })
+      );
     }
 
+    // Reset busy
     dispatch(AppLoadingChanged({ isBusy: false, sender: removeKey }));
   });
 };
@@ -121,53 +144,63 @@ const getByKey = 'GetByKey';
  * @public
  * @memberof StorageActions
  */
-export const GetByKey = (key: string ) => async (dispatch: Redux.Dispatch<storageTypes.IStorageAction>) => {
-  /**
-   * The resulting dispatch
-   * @type {GetByKeyDispatch}
-   */
-  let resultDispatch = null;
-  dispatch(AppLoadingChanged({
-    isBusy: true,
-    reason: storageTypes.StorageConstants.STORAGE_BUSY,
-    sender: getByKey,
-  }));
+export const GetByKey = (key: string) => async (
+  dispatch: Redux.Dispatch<storageTypes.IStorageState>
+) => {
+  // Busy
+  dispatch(
+    AppLoadingChanged({
+      isBusy: true,
+      reason: storageTypes.StorageConstants.STORAGE_BUSY,
+      sender: getByKey,
+    })
+  );
 
   try {
     const res = await AsyncStorage.getItem(key);
     if (_.isNil(res)) {
-      dispatch(AppErrorChanged({
-        hasError: true,
-        reason: storageTypes.StorageConstants.STORAGE_NOSUCHKEY,
-        sender: getByKey,
-      }));
+      // Does not exist
+      dispatch(
+        storageTypes.StorageState(
+          storageTypes.StorageConstants.STORAGE_NOSUCHKEY,
+          key
+        )
+      );
     }
 
     const model = JSON.parse(res);
     if (!_.isNil(model)) {
-      // Object was found in storage and deserialized
-      resultDispatch = {
-        type: storageTypes.StorageConstants.STORAGE_GOTKEY,
-        value: model,
-        key,
-      };
-      dispatch(resultDispatch);
+      // Success
+      dispatch(
+        storageTypes.StorageState(
+          storageTypes.StorageConstants.STORAGE_GOTKEY,
+          key,
+          model
+        )
+      );
+
+      // Reset errors
       dispatch(AppErrorChanged({ hasError: false, sender: getByKey }));
     } else {
-      dispatch(AppErrorChanged({
-        hasError: true,
-        reason: storageTypes.StorageConstants.STORAGE_NOSUCHKEY,
-        sender: getByKey,
-      }));
+      // Does not exist
+      dispatch(
+        storageTypes.StorageState(
+          storageTypes.StorageConstants.STORAGE_NOSUCHKEY,
+          key
+        )
+      );
     }
   } catch (ex) {
-    dispatch(AppErrorChanged({
-      hasError: true,
-      reason: storageTypes.StorageConstants.STORAGE_NOSUCHKEY,
-      exception: ex,
-      sender: getByKey,
-    }));
+    dispatch(
+      AppErrorChanged({
+        hasError: true,
+        reason: storageTypes.StorageConstants.STORAGE_NOSUCHKEY,
+        exception: ex,
+        sender: getByKey,
+      })
+    );
   } finally {
+    // Reset busy
     dispatch(AppLoadingChanged({ isBusy: false, sender: getByKey }));
   }
 };

@@ -3,6 +3,16 @@
 exports[`LoginReducer should return initial state 1`] = `
 Object {
   "isLoggedIn": false,
-  "user": null,
+  "type": null,
+  "user": User {
+    "accessToken": null,
+    "autologin": false,
+    "email": null,
+    "name": null,
+    "password": null,
+    "picture": "",
+    "type": null,
+    "username": null,
+  },
 }
 `;
