@@ -6,6 +6,7 @@ import configureMockStore from 'redux-mock-store';
 import { Store } from '../../Store';
 import * as types from '../types/';
 import { AppLoadingChanged, AppErrorChanged } from './';
+import { AppErrorChangedAction } from '../types/index';
 
 /**
  * Mock Redux store
@@ -28,11 +29,11 @@ describe('App actions', () => {
     const busyReason = 'Loading test';
 
     const expectedActions = [
-      {
-        type: types.UtilityConstants.APP_LOAD_BUSY,
-        reason: busyReason,
-        sender: 'TestMethod',
-      },
+      types.AppLoadingChangedAction(
+        types.UtilityConstants.APP_LOAD_BUSY,
+        busyReason,
+        'TestMethod'
+      ),
     ];
 
     // Dispatch action
@@ -54,14 +55,12 @@ describe('App actions', () => {
   test('AppErrorChanged dispatches error message', () => {
     const errorMessage = 'Error test';
 
-    const expectedAction: types.IAppErrorChanged = {
-      type: types.UtilityConstants.APP_HAS_ERROR,
-      reason: errorMessage,
-      exception: null,
-      sender: null,
-    };
-
-    const expectedActions = [expectedAction];
+    const expectedActions = [ types.AppErrorChangedAction(
+      types.UtilityConstants.APP_HAS_ERROR,
+      null,
+      errorMessage,
+      null
+   )];
 
     // Dispatch action
     // @ts-ignore - bad mappings

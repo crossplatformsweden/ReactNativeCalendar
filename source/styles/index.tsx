@@ -146,13 +146,32 @@ const Theme = StyleSheet.create({
     backgroundColor: '#ffffff',
   },
   overlay: {
-    backgroundColor: 'black',
-    opacity: 0.3,
+    backgroundColor: 'rgba(254, 222, 0, 0.3)',
     position: 'absolute',
     left: 0,
     top: 0,
     bottom: 0,
     right: 0,
+  },
+  spinner: {
+    width: 50,
+    height: 50,
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+    opacity: 1,
+  },
+  textCenter: {
+    textAlign: 'center',
+  },
+  textSpinner: {
+    fontSize: 20,
+    color: Colors.CrossLightBlue,
+    textAlign: 'center',
+    fontWeight: 'normal',
+    marginTop: 5,
+    opacity: 1,
   },
 });
 

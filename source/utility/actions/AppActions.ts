@@ -1,7 +1,8 @@
 // utility/actions/AppActions
 import * as Redux from 'redux';
-import * as appTypes from '../types';
+import * as types from '../types';
 import Sentry from 'sentry-expo';
+import _ from 'lodash';
 
 /**
  * The app loading state has changed
@@ -15,16 +16,18 @@ export const AppLoadingChanged = ({
   isBusy,
   reason = null,
   sender = null,
-}: appTypes.IUtilityLoadingChangedPayload) => (
-  dispatch: Redux.Dispatch<appTypes.IAppLoadingChanged>
+}: types.IUtilityLoadingChangedPayload) => (
+  dispatch: Redux.Dispatch<types.IAppLoadingChangedAction>
 ) => {
-  dispatch({
-    type: isBusy
-      ? appTypes.UtilityConstants.APP_LOAD_BUSY
-      : appTypes.UtilityConstants.APP_LOAD_DONE,
-    reason,
-    sender,
-  });
+  dispatch(
+    types.AppLoadingChangedAction(
+      isBusy
+        ? types.UtilityConstants.APP_LOAD_BUSY
+        : types.UtilityConstants.APP_LOAD_DONE,
+      reason,
+      sender
+    )
+  );
 };
 
 export type AppLoadingChanged = typeof AppLoadingChanged;
@@ -41,22 +44,26 @@ export const AppErrorChanged = ({
   reason = null,
   exception = null,
   sender = null,
-}: appTypes.IUtilityErrorPayload) => (
-  dispatch: Redux.Dispatch<appTypes.IAppErrorChanged>
+}: types.IAppErrorPayload) => (
+  dispatch: Redux.Dispatch<types.IAppErrorChangedAction>
 ) => {
-  try {
-    Sentry.captureException(exception);
-  } catch (ex) {
-    console.log(ex);
+  if (!_.isNil(exception)) {
+    try {
+      Sentry.captureException(exception);
+    } catch (ex) {
+      console.log(ex);
+    }
   }
-  dispatch({
-    type: hasError
-      ? appTypes.UtilityConstants.APP_HAS_ERROR
-      : appTypes.UtilityConstants.APP_NO_ERROR,
-    reason,
-    exception,
-    sender,
-  });
+  dispatch(
+    types.AppErrorChangedAction(
+      hasError
+        ? types.UtilityConstants.APP_HAS_ERROR
+        : types.UtilityConstants.APP_NO_ERROR,
+      exception,
+      reason,
+      sender
+    )
+  );
 };
 
 export type AppErrorChanged = typeof AppErrorChanged;

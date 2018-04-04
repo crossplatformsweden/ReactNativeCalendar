@@ -8,6 +8,7 @@ ShallowWrapper {
     login={
       Object {
         "isLoggedIn": false,
+        "type": null,
       }
     }
     utility={
@@ -35,6 +36,7 @@ ShallowWrapper {
           login={
             Object {
               "isLoggedIn": false,
+              "type": null,
             }
           }
           utility={
@@ -65,6 +67,7 @@ ShallowWrapper {
         "props": Object {
           "login": Object {
             "isLoggedIn": false,
+            "type": null,
           },
           "utility": Object {
             "busyReason": null,
@@ -104,6 +107,7 @@ ShallowWrapper {
             login={
               Object {
                 "isLoggedIn": false,
+                "type": null,
               }
             }
             utility={
@@ -134,6 +138,7 @@ ShallowWrapper {
           "props": Object {
             "login": Object {
               "isLoggedIn": false,
+              "type": null,
             },
             "utility": Object {
               "busyReason": null,

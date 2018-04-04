@@ -14,10 +14,9 @@ import Theme, { Colors, TabIconSize } from '../../styles';
 import { NavigationConstants } from '../../navigator/types';
 
 // Component views used in navigation
-import { LoginContainer } from '../../login/';
 import { MainContainer } from '../../main/';
-import { ProfileContainer } from '../../profile/';
-import { BookComponent } from '../../adbook';
+import LoginContainer from '../../login/components/';
+import ProfileContainer from '../../profile/components/';
 
 interface RouterProps {
   sceneStyle?: any;
@@ -67,7 +66,6 @@ export const Routes = Actions.create(
         tabBarPosition='bottom'
         tabBarStyle={Theme.tabBar}
         lazy
-
         key='tabMain'
       >
         <Scene
@@ -77,7 +75,6 @@ export const Routes = Actions.create(
           key={NavigationConstants.MAP}
           component={MainContainer}
           tabBarLabel='Home'
-          initial
           // @ts-ignore - bad TS map
           icon={homeIcon}
         />
@@ -98,13 +95,6 @@ export const Routes = Actions.create(
         hideNavBar
         back={false}
         direction='vertical'
-      />
-      <Scene
-       key={NavigationConstants.ADBOOK}
-       component={BookComponent}
-       hideNavBar
-       back={false}
-       direction='vertical'
       />
     </Modal>
   </Scene>

@@ -25,7 +25,7 @@ const bankIdLogin = 'BankIdLogin';
  */
 // @ts-ignore
 export const BankIdLogin = (personalNr: string) => async (
-  dispatch: Redux.Dispatch<login.ILoginAction>
+  dispatch: Redux.Dispatch<login.ILoginState>
 ) => {
   dispatch(
     AppLoadingChanged({

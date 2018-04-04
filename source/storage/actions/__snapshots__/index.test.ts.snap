@@ -38,6 +38,13 @@ Array [
   Object {
     "key": "RemoveKey",
     "type": "STORAGE = REMOVED KEY",
+    "value": null,
+  },
+  Object {
+    "exception": null,
+    "reason": null,
+    "sender": "RemoveKey",
+    "type": "APP NO ERROR",
   },
   Object {
     "reason": null,

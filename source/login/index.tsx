@@ -2,7 +2,7 @@
 import LoginContainer, { LoginBase, Login } from './components';
 import LoginReducer from './reducers';
 import * as LoginTypes from './types';
-import { FacebookLogin, GoogleLogin, AutoLogin } from './actions';
+import { FacebookLogin, GoogleLogin, AutoLogin, Logout, BankIdLogin } from './actions';
 
 export {
   LoginContainer,
@@ -12,5 +12,7 @@ export {
   LoginTypes,
   FacebookLogin,
   GoogleLogin,
-  AutoLogin
+  AutoLogin,
+  Logout,
+  BankIdLogin
 };

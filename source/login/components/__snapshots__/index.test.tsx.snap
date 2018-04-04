@@ -18,17 +18,23 @@ ShallowWrapper {
     login={
       Object {
         "isLoggedIn": false,
-        "user": Object {
+        "type": "LOGIN_SUCCESS",
+        "user": User {
           "accessToken": "1",
+          "autologin": false,
+          "email": null,
           "name": "test",
+          "password": null,
           "picture": "",
           "type": "Google",
+          "username": null,
         },
       }
     }
     storage={
       Object {
-        "key": "",
+        "key": null,
+        "type": null,
         "value": null,
       }
     }
@@ -210,7 +216,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
           "items": Object {
             "2018-05-22": Array [
@@ -420,7 +426,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "items": Object {
               "2018-05-22": Array [

@@ -18,30 +18,22 @@ describe('LoginReducer', () => {
     ).toMatchSnapshot();
   });
   test(`should handle ${types.LoginConstants.LOGIN_FAILED}`, () => {
-    const loginAction: types.ILoginAction = {
-      type: types.LoginConstants.LOGIN_FAILED,
-      isLoggedIn: false,
-      user: null,
-    };
+    const expectedState = types.LoginState(
+      types.LoginConstants.LOGIN_FAILED,
+      null,
+      false
+    );
 
-    const expectedState: types.ILoginState = {
-      isLoggedIn: false,
-      user: null,
-    };
-
-    expect(LoginReducer(null, loginAction)).toEqual(expectedState);
+    expect(LoginReducer(null, expectedState)).toEqual(expectedState);
   });
 
   test(`should handle ${types.LoginConstants.LOGIN_SUCCESS}`, () => {
-    const loginAction: types.ILoginAction = {
-      type: types.LoginConstants.LOGIN_SUCCESS,
-      isLoggedIn: true,
-      user: userMock,
-    };
-    const expectedState: types.ILoginState = {
-      isLoggedIn: true,
-      user: userMock,
-    };
-    expect(LoginReducer(null, loginAction)).toEqual(expectedState);
+    const expectedState = types.LoginState(
+      types.LoginConstants.LOGIN_SUCCESS,
+      userMock,
+      true
+    );
+
+    expect(LoginReducer(null, expectedState)).toEqual(expectedState);
   });
 });

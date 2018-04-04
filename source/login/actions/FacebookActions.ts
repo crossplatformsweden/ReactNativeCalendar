@@ -14,7 +14,7 @@ import { StorageTypes, SaveByKey } from '../../storage';
  */
 let user: loginTypes.IUser = null;
 
-const facebookLogin = 'FacebookLogin';
+const methodName = 'FacebookLogin';
 
 /**
  * Login to Facebook and store user to AsyncStorage
@@ -25,13 +25,13 @@ const facebookLogin = 'FacebookLogin';
  * @global
  */
 export const FacebookLogin = () => async (
-  dispatch: Redux.Dispatch<loginTypes.ILoginAction>
+  dispatch: Redux.Dispatch<loginTypes.ILoginState>
 ) => {
   dispatch(
     AppLoadingChanged({
       isBusy: true,
       reason: loginTypes.LoginConstants.LOGIN_BUSY,
-      sender: facebookLogin,
+      sender: methodName,
     })
   );
 
@@ -60,13 +60,13 @@ export const FacebookLogin = () => async (
         'Facebook'
       );
 
-      const resultAction: loginTypes.ILoginAction = {
-        type: loginTypes.LoginConstants.LOGIN_SUCCESS,
-        user,
-        isLoggedIn: true,
-      };
-
-      dispatch(resultAction);
+      dispatch(
+        loginTypes.LoginState(
+          loginTypes.LoginConstants.LOGIN_SUCCESS,
+          user,
+          true
+        )
+      );
 
       // Trigger Save to storage action
       await dispatch(
@@ -74,15 +74,14 @@ export const FacebookLogin = () => async (
       );
 
       // Reset errors
-      dispatch(AppErrorChanged({ hasError: false, sender: facebookLogin }));
+      dispatch(AppErrorChanged({ hasError: false, sender: methodName }));
     } else if (type === 'cancel') {
       dispatch(
-        AppErrorChanged({
-          hasError: true,
-          reason: 'Login was cancelled',
-          exception: new Error(loginTypes.LoginConstants.LOGIN_FAILED),
-          sender: facebookLogin,
-        })
+        loginTypes.LoginState(
+          loginTypes.LoginConstants.LOGIN_CANCELLED,
+          null,
+          false
+        )
       );
     }
   } catch (error) {
@@ -91,11 +90,11 @@ export const FacebookLogin = () => async (
         hasError: true,
         reason: loginTypes.LoginConstants.LOGIN_FAILED,
         exception: error,
-        sender: facebookLogin,
+        sender: methodName,
       })
     );
   } finally {
-    dispatch(AppLoadingChanged({ isBusy: false, sender: facebookLogin }));
+    dispatch(AppLoadingChanged({ isBusy: false, sender: methodName }));
   }
 };
 

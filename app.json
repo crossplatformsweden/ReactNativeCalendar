@@ -71,12 +71,12 @@
     "androidShowExponentNotificationInShellApp": true,
     "extra": {
       "google": {
-        "maps": "id",
-        "webClientId": "id",
-        "androidStandaloneAppClientId": "id",
-        "iosStandaloneAppClientId": "id",
-        "androidClientId": "id",
-        "iosClientId": "id"
+        "maps": "",
+        "webClientId": "",
+        "androidStandaloneAppClientId": "",
+        "iosStandaloneAppClientId": "",
+        "androidClientId": "",
+        "iosClientId": "",
       }
     }
   }

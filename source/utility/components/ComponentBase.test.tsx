@@ -26,7 +26,7 @@ function setup() {
     type: 'Google',
   };
   const props: types.IProps = {
-    login: { isLoggedIn: false },
+    login: { isLoggedIn: false, type: null },
     utility: { isBusy: false, busyReason: null, hasError: false },
   };
 
