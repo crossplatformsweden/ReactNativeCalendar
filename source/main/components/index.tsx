@@ -6,6 +6,8 @@ import { connect, Dispatch } from 'react-redux';
 import * as types from '../../Types';
 import Theme from '../../styles';
 import { ComponentBase } from '../../utility';
+import { NavigationConstants } from '../../navigator/types';
+import { Button } from 'react-native-elements';
 
 const styles = StyleSheet.create({
   padding: { padding: 20 },
@@ -18,10 +20,21 @@ export class MainBase extends React.Component<types.IProps, {}> {
     }
   }
 
+  goToAdCreateScreen() {
+    Actions.push(NavigationConstants.ADCREATE);
+  }
+
   render() {
     return (
       <View style={[Theme.container, styles.padding]}>
         <Text>Home</Text>
+        <Button
+        style={{padding: 10}}
+        // @ts-ignore
+        rounded
+        color='white'
+        title='100% error'
+          onPress={this.goToAdCreateScreen}/>
       </View>
     );
   }

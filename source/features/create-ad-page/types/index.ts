@@ -8,12 +8,6 @@ export enum CreateConstants {
     CREATE_CANCEL = 'CREATE DID CANCEL',
 }
 
-export interface IUser {
-    accessToken: string;
-    name: string;
-    type: string;
-  }
-
 export interface ICreateAdPage {
     fromDate: moment.Moment;
     toDate: moment.Moment;

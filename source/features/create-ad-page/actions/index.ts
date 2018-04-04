@@ -1,11 +1,7 @@
 // login/actions/index
 import * as Redux from 'redux';
-import axios from 'axios';
-import { Constants } from 'expo';
 
 import * as types from '../types';
-import { AppErrorChanged, AppLoadingChanged } from '../../../utility/';
-import { StorageTypes, SaveByKey } from '../../../storage';
 import moment from 'moment';
 
 let createAdAction: types.ICreateAction;
@@ -18,7 +14,7 @@ let createAdAction: types.ICreateAction;
  * @global
  */
 
-export const CreateAd = () => async (
+export const CreateAd = () => (
   dispatch: Redux.Dispatch<types.ICreateAction>
 ) => {
   createAdAction = {
@@ -32,3 +28,18 @@ export const CreateAd = () => async (
   );
   return;
 };
+export type CreateAd = typeof CreateAd;
+
+export const UpdateAd = (createAd: types.ICreateAdPage) => (
+  dispatch: Redux.Dispatch<types.ICreateAction>
+) => {
+  createAdAction = {
+    type: types.CreateConstants.CREATE_UPDATED,
+    createAd,
+  };
+  dispatch(
+    createAdAction
+  );
+  return;
+};
+export type UpdateAd = typeof UpdateAd;

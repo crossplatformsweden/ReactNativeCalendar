@@ -17,7 +17,7 @@ import { NavigationConstants } from '../../navigator/types';
 import { LoginContainer } from '../../login/';
 import { MainContainer } from '../../main/';
 import { ProfileContainer } from '../../profile/';
-import { CreateAdBooking } from '../../features/create-ad-page';
+import CreateAdBooking from '../../features/create-ad-page/components/index';
 
 interface RouterProps {
   sceneStyle?: any;

@@ -1,0 +1,149 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components CreateAdBooking should render self and subcomponents 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <CreateAdBooking
+    AutoLogin={[MockFunction]}
+    FacebookLogin={[MockFunction]}
+    GetByKey={[MockFunction]}
+    GoogleLogin={[MockFunction]}
+    storage={
+      Object {
+        "key": "",
+        "value": null,
+      }
+    }
+    utility={
+      Object {
+        "busyReason": null,
+        "hasError": false,
+        "isBusy": false,
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "class",
+    "props": Object {
+      "children": <View
+        allowRangeSelection={true}
+        onDateChange={[Function]}
+        selectedDayColor="#00bfff"
+        startFromMonday={true}
+        weekdays={
+          Array [
+            "Mån",
+            "Tis",
+            "Ons",
+            "Tor",
+            "Fre",
+            "Lör",
+            "Sön",
+          ]
+        }
+      />,
+      "style": Object {
+        "flex": 1,
+        "marginTop": 100,
+      },
+    },
+    "ref": null,
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "allowRangeSelection": true,
+        "onDateChange": [Function],
+        "selectedDayColor": "#00bfff",
+        "startFromMonday": true,
+        "weekdays": Array [
+          "Mån",
+          "Tis",
+          "Ons",
+          "Tor",
+          "Fre",
+          "Lör",
+          "Sön",
+        ],
+      },
+      "ref": null,
+      "rendered": null,
+      "type": "View",
+    },
+    "type": [Function],
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "class",
+      "props": Object {
+        "children": <View
+          allowRangeSelection={true}
+          onDateChange={[Function]}
+          selectedDayColor="#00bfff"
+          startFromMonday={true}
+          weekdays={
+            Array [
+              "Mån",
+              "Tis",
+              "Ons",
+              "Tor",
+              "Fre",
+              "Lör",
+              "Sön",
+            ]
+          }
+        />,
+        "style": Object {
+          "flex": 1,
+          "marginTop": 100,
+        },
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "allowRangeSelection": true,
+          "onDateChange": [Function],
+          "selectedDayColor": "#00bfff",
+          "startFromMonday": true,
+          "weekdays": Array [
+            "Mån",
+            "Tis",
+            "Ons",
+            "Tor",
+            "Fre",
+            "Lör",
+            "Sön",
+          ],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "View",
+      },
+      "type": [Function],
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

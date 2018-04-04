@@ -6,9 +6,9 @@ import { SocialIcon } from 'react-native-elements';
 import { BusyIndicator } from '../../../utility';
 import * as createAdTypes from '../types/';
 import * as types from '../../../Types';
-import { CalendarPicker } from 'react-native-calendar-picker';
+import CalendarPicker from 'react-native-calendar-picker';
 import moment from 'moment';
-import { CreateAdBooking } from './';
+import { CreateAdBooking } from './index';
 
 jest.unmock('react-native');
 jest.unmock('react-native-elements');

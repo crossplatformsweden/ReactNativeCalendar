@@ -4,6 +4,7 @@ import { UtilityTypes } from './utility/';
 import { StorageTypes, SaveByKey, RemoveKey, GetByKey } from './storage';
 import { CreateAdTypes } from './features/create-ad-page';
 import { AutoLogin } from './login/actions/LoginActions';
+import { CreateAd, UpdateAd } from './features/create-ad-page/actions/index';
 
 /**
  * The global application state as contained in Redux
@@ -18,7 +19,7 @@ export interface IApplicationState {
   login?: LoginTypes.ILoginState;
   utility?: UtilityTypes.IUtilityState;
   storage?: StorageTypes.IStorageState;
-  createAd?: CreateAdTypes.ICreateState;
+  createAdPage?: CreateAdTypes.ICreateState;
 }
 
 /**
@@ -41,4 +42,6 @@ export interface IProps extends IApplicationState {
   RemoveKey?: RemoveKey;
   SaveByKey?: SaveByKey;
   AutoLogin?: AutoLogin;
+  CreateAd?: CreateAd;
+  UpdateAd?: UpdateAd;
 }

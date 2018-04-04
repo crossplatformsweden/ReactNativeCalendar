@@ -10,7 +10,6 @@ import * as ProfileTypes from '../types';
 import { LoginTypes } from '../../login';
 import { ProfileBase } from '.';
 import { BusyIndicator } from '../../utility';
-import instance from '../../map/services/index';
 
 jest.unmock('react-native');
 jest.unmock('react-native-elements');

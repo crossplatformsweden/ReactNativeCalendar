@@ -98,6 +98,17 @@ ShallowWrapper {
           rounded={true}
           title="Sign in with BankId"
         />,
+        <Button
+          color="white"
+          onPress={[Function]}
+          rounded={true}
+          style={
+            Object {
+              "padding": 10,
+            }
+          }
+          title="100% error"
+        />,
       ],
       "style": Object {
         "flex": 1,
@@ -195,6 +206,23 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "color": "white",
+          "onPress": [Function],
+          "rounded": true,
+          "style": Object {
+            "padding": 10,
+          },
+          "title": "100% error",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
     ],
     "type": [Function],
   },
@@ -249,6 +277,17 @@ ShallowWrapper {
             onPress={undefined}
             rounded={true}
             title="Sign in with BankId"
+          />,
+          <Button
+            color="white"
+            onPress={[Function]}
+            rounded={true}
+            style={
+              Object {
+                "padding": 10,
+              }
+            }
+            title="100% error"
           />,
         ],
         "style": Object {
@@ -342,6 +381,23 @@ ShallowWrapper {
             "onPress": undefined,
             "rounded": true,
             "title": "Sign in with BankId",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "color": "white",
+            "onPress": [Function],
+            "rounded": true,
+            "style": Object {
+              "padding": 10,
+            },
+            "title": "100% error",
           },
           "ref": null,
           "rendered": null,

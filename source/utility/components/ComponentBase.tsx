@@ -53,12 +53,12 @@ const componentBase = <P, S>(WrappedComponent: React.ComponentType<P>) =>
           // Close login modal
           Actions.pop();
         }
-      } else if (Actions.LoginScreen) {
-
-        // Push login screen
-        if (!iProps.login.isLoggedIn) {
-        Actions.LoginScreen(); }
       }
+      // else if (Actions.LoginScreen) {
+      //   // Push login screen
+      //   if (!iProps.login.isLoggedIn) {
+      //   Actions.LoginScreen(); }
+      // }
     }
 
     componentWillMount() {
