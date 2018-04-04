@@ -68,16 +68,36 @@ export enum UtilityConstants {
 
 /**
  * App loading changed action dispatch
- * @typedef IUtilityLoadingChangedActionAction
+ * @typedef IAppLoadingChangedAction
  * @public
  * @export
  * @property {UtilityConstants} type
  * @property {string?} reason
  * @property {sender?} sender
  */
-export interface IAppLoadingChanged extends IReasonSender {
+export interface IAppLoadingChangedAction extends IReasonSender {
   type: UtilityConstants;
 }
+
+/**
+ * Creates an {@link IAppLoadingChangedAction}
+ *
+ * @export
+ * @function AppLoadingChangedAction
+ * @returns {IAppLoadingChangedAction}
+ */
+export const AppLoadingChangedAction = (
+  type: UtilityConstants = UtilityConstants.APP_LOAD_BUSY,
+  reason: string = null,
+  sender: string = null
+): IAppLoadingChangedAction => {
+  const result: IAppLoadingChangedAction = {
+    type,
+    reason,
+    sender,
+  };
+  return result;
+};
 
 export interface IUtilityLoadingChangedPayload extends IReasonSender {
   /**
@@ -93,10 +113,10 @@ export interface IUtilityLoadingChangedPayload extends IReasonSender {
  * Describes an exception caused by the app
  *
  * @export
- * @interface IUtilityException
+ * @interface IAppException
  * @extends {IReasonSender}
  */
-export interface IUtilityException extends IReasonSender {
+export interface IAppException extends IReasonSender {
   /**
    * The exception that occured if any
    *
@@ -106,7 +126,7 @@ export interface IUtilityException extends IReasonSender {
   exception?: Error;
 }
 
-export interface IUtilityErrorPayload extends IUtilityException {
+export interface IAppErrorPayload extends IAppException {
   /**
    * New error state
    *
@@ -117,22 +137,37 @@ export interface IUtilityErrorPayload extends IUtilityException {
 }
 
 /**
- * Dispatch from utility action
+ * Describes the App Error Changed action
  *
  * @export
- * @interface IUtilityErrorAction
- * @extends {IUtilityException}
+ * @interface IAppErrorChangedAction
+ * @extends {IAppException}
  */
-export interface IAppErrorChanged extends IUtilityException {
+export interface IAppErrorChangedAction extends IAppException {
   type: UtilityConstants;
 }
+
+export const AppErrorChangedAction = (
+  type: UtilityConstants = UtilityConstants.APP_HAS_ERROR,
+  exception: Error = null,
+  reason: string = null,
+  sender: string = null
+): IAppErrorChangedAction => {
+  const result: IAppErrorChangedAction = {
+    type,
+    exception,
+    reason,
+    sender,
+  };
+  return result;
+};
 
 /**
  * The possible actions in the Utility module
  */
 export type UtilityActionTypes =
-  | IAppErrorChanged
-  | IAppLoadingChanged;
+  | IAppErrorChangedAction
+  | IAppLoadingChangedAction;
 
 /**
  * Redux state object containing utility properties

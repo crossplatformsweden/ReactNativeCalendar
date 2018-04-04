@@ -7,41 +7,32 @@ const testValue = { value: 'testValue' };
 
 describe('StorageReducer', () => {
   test('should return initial state', () => {
-    expect(StorageReducer(undefined, {type: null, key: ''}))
-      .toMatchSnapshot();
+    expect(StorageReducer(undefined, types.StorageState())).toMatchSnapshot();
   });
 
   test(`should handle ${types.StorageConstants.STORAGE_GOTKEY}`, () => {
-    expect(StorageReducer(null, {
-      type: types.StorageConstants.STORAGE_GOTKEY,
-      key: 'test',
-      value: testValue,
-    }))
-      .toEqual({
-        key: 'test',
-        value: {value: 'testValue'},
-      });
+    const expectedState = types.StorageState(
+      types.StorageConstants.STORAGE_GOTKEY,
+      'test',
+      testValue
+    );
+    expect(StorageReducer(null, expectedState)).toEqual(expectedState);
   });
 
   test(`should handle ${types.StorageConstants.STORAGE_SAVED}`, () => {
-    expect(StorageReducer(null, {
-      type: types.StorageConstants.STORAGE_SAVED,
-      key: 'test',
-      value: testValue,
-    }))
-      .toEqual({
-        key: 'test',
-        value: testValue,
-      });
+    const expectedState = types.StorageState(
+      types.StorageConstants.STORAGE_SAVED,
+      'test',
+      testValue
+    );
+    expect(StorageReducer(null, expectedState)).toEqual(expectedState);
   });
 
   test(`should handle ${types.StorageConstants.STORAGE_REMOVEDKEY}`, () => {
-    expect(StorageReducer(null, {
-      type: types.StorageConstants.STORAGE_REMOVEDKEY,
-      key: 'test',
-    }))
-      .toEqual({
-        key: 'test',
-      });
+    const expectedState = types.StorageState(
+      types.StorageConstants.STORAGE_REMOVEDKEY,
+      'test'
+    );
+    expect(StorageReducer(null, expectedState)).toEqual(expectedState);
   });
 });

@@ -58,7 +58,7 @@
     },
     "splash": {
       "backgroundColor": "#000000",
-      "image": "./resources/splash.jpeg",
+      "image": "./resources/splash.png",
       "resizeMode": "cover"
     },
     "androidStatusBar": {
@@ -71,12 +71,12 @@
     "androidShowExponentNotificationInShellApp": true,
     "extra": {
       "google": {
-        "maps": "id",
-        "webClientId": "id",
-        "androidStandaloneAppClientId": "id",
-        "iosStandaloneAppClientId": "id",
-        "androidClientId": "id",
-        "iosClientId": "id"
+        "maps": "",
+        "webClientId": "",
+        "androidStandaloneAppClientId": "",
+        "iosStandaloneAppClientId": "",
+        "androidClientId": "",
+        "iosClientId": "",
       }
     }
   }

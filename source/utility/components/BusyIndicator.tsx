@@ -10,9 +10,8 @@ import {
   SkypeIndicator,
   UIActivityIndicator,
   WaveIndicator,
-}
-// @ts-ignore
-from 'react-native-indicators';
+  // @ts-ignore
+} from 'react-native-indicators';
 
 import Theme, { Colors } from '../../styles';
 
@@ -38,17 +37,34 @@ export enum IndicatorType {
  * Generates a spinner of the provided type
  * @param param0 type and style
  */
-export const Spinner = ({ type, style }: { type: IndicatorType, style: any }) => {
+export const Spinner = ({
+  type,
+  style = null,
+  color = Colors.CrossLightBlue,
+}: {
+  type: IndicatorType;
+  style?: any;
+  color?: string,
+}) => {
   switch (type) {
-    case 'BallIndicator': return <BallIndicator style={style} color={Colors.CrossDarkBlue} />;
-    case 'BarIndicator': return <BarIndicator style={style} color={Colors.CrossDarkBlue} />;
-    case 'DotIndicator': return <DotIndicator style={style} color={Colors.CrossDarkBlue} />;
-    case 'PacmanIndicator': return <PacmanIndicator style={style} color={Colors.CrossDarkBlue} />;
-    case 'PulseIndicator': return <PulseIndicator style={style} color={Colors.CrossDarkBlue} />;
-    case 'SkypeIndicator': return <SkypeIndicator style={style} color={Colors.CrossDarkBlue} />;
-    case 'UIActivityIndicator': return <UIActivityIndicator style={style} color={Colors.CrossDarkBlue} />;
-    case 'WaveIndicator': return <WaveIndicator style={style} color={Colors.CrossDarkBlue} />;
-    default: return <MaterialIndicator style={style} color={Colors.CrossDarkBlue} />;
+    case 'BallIndicator':
+      return <BallIndicator style={style} color={color} />;
+    case 'BarIndicator':
+      return <BarIndicator style={style} color={color} />;
+    case 'DotIndicator':
+      return <DotIndicator style={style} color={color} />;
+    case 'PacmanIndicator':
+      return <PacmanIndicator style={style} color={color} />;
+    case 'PulseIndicator':
+      return <PulseIndicator style={style} color={color} />;
+    case 'SkypeIndicator':
+      return <SkypeIndicator style={style} color={color} />;
+    case 'UIActivityIndicator':
+      return <UIActivityIndicator style={style} color={color} />;
+    case 'WaveIndicator':
+      return <WaveIndicator style={style} color={color} />;
+    default:
+      return <MaterialIndicator style={style} color={color} />;
   }
 };
 
@@ -99,19 +115,19 @@ const busyIndicator = ({
   isBusy = true,
   message = '',
   type = IndicatorType.MaterialIndicator,
-  testID = '1' }: IBusyIndicatorProps
-) =>
-  (isBusy ?
-    (
-      <View style={Theme.overlay} testID={testID}>
-        <View style={[Theme.containerCentered, Theme.horizontal]}>
-          <View style={[Theme.container, Theme.verticalTopCenter]}>
-            <Spinner type={type} style={[Theme.container, Theme.verticalTopCenter]} />
-            <Text style={[Theme.container, Theme.verticalTopCenter]}>{message}</Text>
+  testID = '1',
+}: IBusyIndicatorProps) =>
+  isBusy ? (
+    <View style={Theme.overlay} testID={testID}>
+      <View style={[Theme.containerCentered]}>
+          <View style={[Theme.verticalTopCenter]}>
+            <Spinner type={type} style={[Theme.spinner]} />
           </View>
-        </View>
+          <Text style={[Theme.verticalTopCenter, Theme.textSpinner]}>
+            {message}
+          </Text>
       </View>
-    )
-    : null);
+    </View>
+  ) : null;
 
 export default busyIndicator;

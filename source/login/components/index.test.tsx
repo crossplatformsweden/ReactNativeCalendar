@@ -5,8 +5,9 @@ import { shallow } from 'enzyme';
 import { SocialIcon } from 'react-native-elements';
 
 import { LoginBase } from './';
-import { BusyIndicator } from '../../utility';
+import { BusyIndicator, UtilityTypes } from '../../utility';
 import * as loginTypes from '../types/';
+import { StorageTypes } from '../../storage';
 import * as types from '../../Types';
 
 jest.unmock('react-native');
@@ -19,26 +20,20 @@ jest.mock('../../navigator', () => ({
 }));
 
 function setup() {
-  const user: loginTypes.IUser = {
-    accessToken: '1',
-    name: 'test',
-    picture: '',
-    type: 'Google',
-  };
+  const user = new loginTypes.User('1', 'test', '', 'Google');
+
   const props: types.IProps = {
     GetByKey: jest.fn(),
     FacebookLogin: jest.fn(),
     GoogleLogin: jest.fn(),
     AutoLogin: jest.fn(),
     utility: { isBusy: false, busyReason: null, hasError: false },
-    login: {
+    login: loginTypes.LoginState(
+      loginTypes.LoginConstants.LOGIN_SUCCESS,
       user,
-      isLoggedIn: false,
-    },
-    storage: {
-      key: '',
-      value: null,
-    },
+      false
+    ),
+    storage: StorageTypes.StorageState(),
   };
 
   const enzymeWrapper = shallow(<LoginBase {...props} />);

@@ -73,4 +73,11 @@ module.exports = {
         resolve(appId && opt ? fbMock : null);
       }),
   },
+  MapView: 'View',
+  Marker: 'View',
+  Callout: 'View',
+  Ploygon: 'View',
+  Polyline: 'View',
+  Circle: 'View',
+  Overlay: 'View',
 };

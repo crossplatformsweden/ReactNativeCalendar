@@ -53,65 +53,69 @@ describe('Facebook actions', () => {
       )
       .reply(200, expectedReply);
 
-    const expectedPayload: loginTypes.IUser = {
-      name: expectedReply.name,
-      picture: expectedReply.picture.data.url,
-      accessToken: token,
-      type: 'Facebook',
-      autologin: false,
-      email: null,
-      password: null,
-      username: null,
-    };
+    const expectedPayload = new loginTypes.User(
+      token,
+      expectedReply.name,
+      expectedReply.picture.data.url,
+      'Facebook',
+      null,
+      null,
+      null,
+      false
+    );
 
-    const NoError = (
-      sender: string,
-      reason: string = null,
-      exception: string = null
-    ) => {
-      return {
-        sender,
-        type: UtilityTypes.UtilityConstants.APP_NO_ERROR,
-        reason,
-        exception,
-      };
-    };
+    const StorageSavedAction = StorageTypes.StorageState(
+      StorageTypes.StorageConstants.STORAGE_SAVED,
+      StorageTypes.StorageConstants.STORAGE_USER_KEY,
+      expectedPayload
+    );
 
-    const AppLoading = (sender: string, reason: string) => {
-      return {
-        sender,
-        reason,
-        type: UtilityTypes.UtilityConstants.APP_LOAD_BUSY,
-      };
-    };
+    const methodName = 'FacebookLogin';
+    const methodNameStorageSave = 'SaveByKey';
 
-    const AppLoadDone = (sender: string, reason: string = null) => {
-      return {
-        sender,
-        type: UtilityTypes.UtilityConstants.APP_LOAD_DONE,
-        reason,
-      };
-    };
-
-    const LoginSuccessAction: loginTypes.ILoginAction = {
-      type: loginTypes.LoginConstants.LOGIN_SUCCESS,
-      user: expectedPayload,
-      isLoggedIn: true,
-    };
-    const StorageSavedAction: StorageTypes.IStorageAction = {
-      type: StorageTypes.StorageConstants.STORAGE_SAVED,
-      key: StorageTypes.StorageConstants.STORAGE_USER_KEY,
-      value: expectedPayload,
-    };
     const expectedActions = [
-      AppLoading('FacebookLogin', loginTypes.LoginConstants.LOGIN_BUSY),
-      LoginSuccessAction,
-      AppLoading('SaveByKey', StorageTypes.StorageConstants.STORAGE_BUSY),
-      StorageSavedAction,
-      NoError('SaveByKey'),
-      AppLoadDone('SaveByKey'),
-      NoError('FacebookLogin'),
-      AppLoadDone('FacebookLogin'),
+      UtilityTypes.AppLoadingChangedAction(
+        UtilityTypes.UtilityConstants.APP_LOAD_BUSY,
+        loginTypes.LoginConstants.LOGIN_BUSY,
+        methodName
+      ),
+      loginTypes.LoginState(
+        loginTypes.LoginConstants.LOGIN_SUCCESS,
+        expectedPayload,
+        true
+      ),
+      UtilityTypes.AppLoadingChangedAction(
+        UtilityTypes.UtilityConstants.APP_LOAD_BUSY,
+        StorageTypes.StorageConstants.STORAGE_BUSY,
+        methodNameStorageSave
+      ),
+      StorageTypes.StorageState(
+        StorageTypes.StorageConstants.STORAGE_SAVED,
+        StorageTypes.StorageConstants.STORAGE_USER_KEY,
+        expectedPayload
+      ),
+      UtilityTypes.AppErrorChangedAction(
+        UtilityTypes.UtilityConstants.APP_NO_ERROR,
+        null,
+        null,
+        methodNameStorageSave
+      ),
+      UtilityTypes.AppLoadingChangedAction(
+        UtilityTypes.UtilityConstants.APP_LOAD_DONE,
+        null,
+        methodNameStorageSave
+      ),
+      UtilityTypes.AppErrorChangedAction(
+        UtilityTypes.UtilityConstants.APP_NO_ERROR,
+        null,
+        null,
+        methodName
+      ),
+      UtilityTypes.AppLoadingChangedAction(
+        UtilityTypes.UtilityConstants.APP_LOAD_DONE,
+        null,
+        methodName
+      ),
     ];
 
     // Dispatch action
@@ -119,9 +123,11 @@ describe('Facebook actions', () => {
     await storeMock.dispatch(FacebookLogin());
 
     // @ts-ignore
-    expect(storeMock.getActions()).toMatchSnapshot();
+    const actionResult = storeMock.getActions();
+
+    expect(actionResult).toMatchSnapshot();
 
     // @ts-ignore
-    expect(storeMock.getActions()).toEqual(expectedActions);
+    expect(actionResult).toEqual(expectedActions);
   });
 });

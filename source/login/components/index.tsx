@@ -1,15 +1,16 @@
 import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect, Dispatch } from 'react-redux';
-import { View, StyleSheet, Image } from 'react-native';
-import { SocialIcon, Button } from 'react-native-elements';
+import { View, StyleSheet, Image, Button } from 'react-native';
+import { SocialIcon } from 'react-native-elements';
 
 import * as types from '../../Types';
-import { AutoLogin } from '../actions/LoginActions';
 import { GetByKey } from '../../storage';
-import { FacebookLogin, GoogleLogin } from '..';
-import { ComponentBase } from '../../utility';
 import { BankIdLogin } from '../actions';
+import { FacebookLogin, GoogleLogin } from '../actions';
+import ComponentBase from '../../utility/components/ComponentBase';
+import { AutoLogin } from '../actions/LoginActions';
+import { Actions } from 'react-native-router-flux';
 
 interface IState {}
 
@@ -18,15 +19,24 @@ interface IState {}
  * @class
  */
 export class LoginBase extends React.Component<types.IProps, IState> {
-  componentWillMount() {
+  constructor(props: types.IProps) {
+    super(props);
+    this.cancel = this.cancel.bind(this);
+  }
+
+  async componentWillMount() {
     if (!this.props.login.isLoggedIn) {
       // Try to auto login by getting user from storage
-      this.props.AutoLogin();
+      await this.props.AutoLogin();
     }
 
     if (typeof super.componentWillMount === 'function') {
       super.componentWillMount();
     }
+  }
+
+  cancel() {
+    Actions.pop();
   }
 
   render() {
@@ -63,6 +73,13 @@ export class LoginBase extends React.Component<types.IProps, IState> {
           title='Sign in with BankId'
           color='blue'
           onPress={this.props.BankIdLogin}
+        />
+        <Button
+          // @ts-ignore
+          rounded
+          title='Cancel'
+          color='red'
+          onPress={this.cancel}
         />
       </View>
     );
