@@ -57,23 +57,6 @@ describe('components', () => {
         // @ts-ignore
       expect(calend).toBeDefined();
     });
-
-    // it('should be able to press button', () => {
-    //   const { enzymeWrapper } = setup();
-    //   const buttonFacebook = enzymeWrapper
-    //     .find(SocialIcon)
-    //     .at(0)
-    //     .props();
-    //   buttonFacebook.onPress();
-    // });
-
-    // it('should be able to press Google button', () => {
-    //   const { enzymeWrapper } = setup();
-    //   const buttonGoogle = enzymeWrapper
-    //     .find(SocialIcon)
-    //     .at(1)
-    //     .props();
-    //   buttonGoogle.onPress();
-    // });
+    // add more test data here...
   });
 });

@@ -42,8 +42,8 @@ export class CreateAdBooking extends React.Component<types.IProps, {}> {
           startFromMonday={true}
           allowRangeSelection={true}
           onDateChange={this.onDateChange}
-          weekdays={['Mån', 'Tis', 'Ons', 'Tor', 'Fre', 'Lör', 'Sön']}
-          selectedDayColor='#00bfff'
+          // weekdays={['Mån', 'Tis', 'Ons', 'Tor', 'Fre', 'Lör', 'Sön']}
+          selectedDayColor='#00ffff'
         />
       </View>
     );

@@ -33,7 +33,7 @@ export class MainBase extends React.Component<types.IProps, {}> {
         // @ts-ignore
         rounded
         color='white'
-        title='100% error'
+        title='99% error'
           onPress={this.goToAdCreateScreen}/>
       </View>
     );
